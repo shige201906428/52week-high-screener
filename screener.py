@@ -1,5 +1,6 @@
 import datetime
 import os
+import sys
 import pandas as pd
 import yfinance as yf
 from tqdm import tqdm
@@ -212,10 +213,22 @@ def generate_html_report(df, output_path, title_suffix=""):
 
 if __name__ == "__main__":
     print("=== 52週新高値＆トレンド スクリーナー ===")
-    print("1: S&P 500 (米国株・全銘柄自動取得)")
-    print("2: TOPIX (日本株・ファイル読み込み)")
-    print("3: 両方実行")
-    choice = input("実行するスクリーニングの番号を選択してください: ")
+
+    # GitHub Actions（非対話環境）を考慮し、環境変数や引数から選択を取得
+    # 指定がない場合は自動的に "3" (両方実行) にする
+    choice = os.environ.get("SCREENER_CHOICE")
+    if not choice and len(sys.argv) > 1:
+        choice = sys.argv[1]
+
+    if not choice:
+        # ローカル実行時のみ入力を求める
+        if sys.stdin.isatty():
+            print("1: S&P 500 (米国株・全銘柄自動取得)")
+            print("2: TOPIX (日本株・ファイル読み込み)")
+            print("3: 両方実行")
+            choice = input("実行するスクリーニングの番号を選択してください: ")
+        else:
+            choice = "3"  # 自動実行時はデフォルトで両方
 
     tickers = []
     title_suffix = ""
@@ -244,7 +257,6 @@ if __name__ == "__main__":
     result_df = check_52week_high_and_trend(tickers, lookback_days=10)
 
     if not result_df.empty:
-        # 出力先をプロジェクトのルート直下にある「index.html」に固定
         html_name = "index.html"
         generate_html_report(result_df, html_name, title_suffix)
         print(f"\n[成功] スクリーニング結果を '{html_name}' に上書き保存しました。")
