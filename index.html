@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>⚡ 52週新高値更新銘柄 [S&P 500] [TOPIX] </title>
+    <title>⚡ 52週新高値更新回数 [S&P 500] [TOPIX] </title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdn.datatables.net/1.10.21/css/dataTables.bootstrap4.min.css">
     <style>
@@ -11,20 +11,17 @@
         .container { margin-top: 30px; margin-bottom: 50px; }
         .header-section { background: linear-gradient(135deg, #1f4037 0%, #99f2c8 100%); color: white; padding: 30px; border-radius: 8px; margin-bottom: 30px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
         .card { border: none; box-shadow: 0 4px 6px rgba(0,0,0,0.05); border-radius: 8px; }
-        .table thead th { background-color: #2c3e50; color: white; border: none; }
-        .highlight-price { color: #27ae60; font-weight: bold; }
-        .ticker-link { color: #007bff; text-decoration: none; }
-        .ticker-link:hover { text-decoration: underline; color: #0056b3; }
+        .table thead th { background-color: #2c3e50; color: white; border: none; vertical-align: middle; }
         footer { text-align: center; margin-top: 30px; color: #777; font-size: 0.9rem; }
     </style>
 </head>
 <body>
     <div class="container">
         <div class="header-section">
-            <h1 class="display-5">📈 52週新高値更新 銘柄一覧 [S&P 500] [TOPIX] </h1>
-            <p class="lead mb-0">直近10日間で52週最高値を更新した銘柄（TradingViewリンク付）</p>
+            <h1 class="display-5">📈 52週高値 更新回数ランキング [S&P 500] [TOPIX] </h1>
+            <p class="lead mb-0">過去3週間（15営業日）の中で、何回52週最高値を更新したかを表示しています</p>
             <hr class="my-2" style="border-color: rgba(255,255,255,0.2);">
-            <small>最終更新日時: <strong>2026-07-01 12:12:33</strong> | ヒット数: 116 銘柄</small>
+            <small>最終更新日時: <strong>2026-07-01 12:27:07</strong> | ヒット数: 136 銘柄</small>
         </div>
 
         <div class="card p-4">
@@ -33,6 +30,7 @@
                     <thead>
                         <tr>
                             <th>ティッカー (Ticker)</th>
+                            <th class="text-center">新高値カウント (過去3週間)</th>
                             <th>直近終値 (Current Price)</th>
                             <th>52週最高値 (52W High Price)</th>
                         </tr>
@@ -41,1162 +39,1498 @@
                         
         <tr>
             <td>
-                <a href="https://jp.tradingview.com/symbols/TSE-1306/" target="_blank" class="ticker-link">
-                    <strong>1306.T</strong> <small>🔗</small>
+                <a href="https://jp.tradingview.com/symbols/GL/" target="_blank" class="ticker-link" style="color: #007bff; text-decoration: none; font-weight: bold;">
+                    GL 🔗
                 </a>
             </td>
-            <td class="highlight-price">¥423.6</td>
-            <td>¥435.6</td>
-        </tr>
-        
-        <tr>
-            <td>
-                <a href="https://jp.tradingview.com/symbols/ABBV/" target="_blank" class="ticker-link">
-                    <strong>ABBV</strong> <small>🔗</small>
-                </a>
-            </td>
-            <td class="highlight-price">$251.64</td>
-            <td>$255.99</td>
-        </tr>
-        
-        <tr>
-            <td>
-                <a href="https://jp.tradingview.com/symbols/ABNB/" target="_blank" class="ticker-link">
-                    <strong>ABNB</strong> <small>🔗</small>
-                </a>
-            </td>
-            <td class="highlight-price">$143.1</td>
-            <td>$150.19</td>
-        </tr>
-        
-        <tr>
-            <td>
-                <a href="https://jp.tradingview.com/symbols/ADI/" target="_blank" class="ticker-link">
-                    <strong>ADI</strong> <small>🔗</small>
-                </a>
-            </td>
-            <td class="highlight-price">$397.17</td>
-            <td>$445.91</td>
-        </tr>
-        
-        <tr>
-            <td>
-                <a href="https://jp.tradingview.com/symbols/AEE/" target="_blank" class="ticker-link">
-                    <strong>AEE</strong> <small>🔗</small>
-                </a>
-            </td>
-            <td class="highlight-price">$113.04</td>
-            <td>$118.32</td>
-        </tr>
-        
-        <tr>
-            <td>
-                <a href="https://jp.tradingview.com/symbols/AEP/" target="_blank" class="ticker-link">
-                    <strong>AEP</strong> <small>🔗</small>
-                </a>
-            </td>
-            <td class="highlight-price">$136.81</td>
-            <td>$139.33</td>
-        </tr>
-        
-        <tr>
-            <td>
-                <a href="https://jp.tradingview.com/symbols/AFL/" target="_blank" class="ticker-link">
-                    <strong>AFL</strong> <small>🔗</small>
-                </a>
-            </td>
-            <td class="highlight-price">$117.25</td>
-            <td>$120.29</td>
-        </tr>
-        
-        <tr>
-            <td>
-                <a href="https://jp.tradingview.com/symbols/AIZ/" target="_blank" class="ticker-link">
-                    <strong>AIZ</strong> <small>🔗</small>
-                </a>
-            </td>
-            <td class="highlight-price">$268.53</td>
-            <td>$270.78</td>
-        </tr>
-        
-        <tr>
-            <td>
-                <a href="https://jp.tradingview.com/symbols/ALL/" target="_blank" class="ticker-link">
-                    <strong>ALL</strong> <small>🔗</small>
-                </a>
-            </td>
-            <td class="highlight-price">$237.94</td>
-            <td>$242.67</td>
-        </tr>
-        
-        <tr>
-            <td>
-                <a href="https://jp.tradingview.com/symbols/AMAT/" target="_blank" class="ticker-link">
-                    <strong>AMAT</strong> <small>🔗</small>
-                </a>
-            </td>
-            <td class="highlight-price">$723.0</td>
-            <td>$739.67</td>
-        </tr>
-        
-        <tr>
-            <td>
-                <a href="https://jp.tradingview.com/symbols/AMD/" target="_blank" class="ticker-link">
-                    <strong>AMD</strong> <small>🔗</small>
-                </a>
-            </td>
-            <td class="highlight-price">$580.91</td>
-            <td>$584.73</td>
-        </tr>
-        
-        <tr>
-            <td>
-                <a href="https://jp.tradingview.com/symbols/AME/" target="_blank" class="ticker-link">
-                    <strong>AME</strong> <small>🔗</small>
-                </a>
-            </td>
-            <td class="highlight-price">$241.94</td>
-            <td>$244.71</td>
-        </tr>
-        
-        <tr>
-            <td>
-                <a href="https://jp.tradingview.com/symbols/APH/" target="_blank" class="ticker-link">
-                    <strong>APH</strong> <small>🔗</small>
-                </a>
-            </td>
-            <td class="highlight-price">$176.32</td>
-            <td>$178.52</td>
-        </tr>
-        
-        <tr>
-            <td>
-                <a href="https://jp.tradingview.com/symbols/BAC/" target="_blank" class="ticker-link">
-                    <strong>BAC</strong> <small>🔗</small>
-                </a>
-            </td>
-            <td class="highlight-price">$56.98</td>
-            <td>$59.2</td>
-        </tr>
-        
-        <tr>
-            <td>
-                <a href="https://jp.tradingview.com/symbols/BEN/" target="_blank" class="ticker-link">
-                    <strong>BEN</strong> <small>🔗</small>
-                </a>
-            </td>
-            <td class="highlight-price">$33.27</td>
-            <td>$34.08</td>
-        </tr>
-        
-        <tr>
-            <td>
-                <a href="https://jp.tradingview.com/symbols/BIIB/" target="_blank" class="ticker-link">
-                    <strong>BIIB</strong> <small>🔗</small>
-                </a>
-            </td>
-            <td class="highlight-price">$216.06</td>
-            <td>$219.72</td>
-        </tr>
-        
-        <tr>
-            <td>
-                <a href="https://jp.tradingview.com/symbols/BNY/" target="_blank" class="ticker-link">
-                    <strong>BNY</strong> <small>🔗</small>
-                </a>
-            </td>
-            <td class="highlight-price">$144.61</td>
-            <td>$148.5</td>
-        </tr>
-        
-        <tr>
-            <td>
-                <a href="https://jp.tradingview.com/symbols/C/" target="_blank" class="ticker-link">
-                    <strong>C</strong> <small>🔗</small>
-                </a>
-            </td>
-            <td class="highlight-price">$139.96</td>
-            <td>$147.96</td>
-        </tr>
-        
-        <tr>
-            <td>
-                <a href="https://jp.tradingview.com/symbols/CAH/" target="_blank" class="ticker-link">
-                    <strong>CAH</strong> <small>🔗</small>
-                </a>
-            </td>
-            <td class="highlight-price">$237.56</td>
-            <td>$240.93</td>
-        </tr>
-        
-        <tr>
-            <td>
-                <a href="https://jp.tradingview.com/symbols/CAT/" target="_blank" class="ticker-link">
-                    <strong>CAT</strong> <small>🔗</small>
-                </a>
-            </td>
-            <td class="highlight-price">$1,064.9</td>
-            <td>$1,073.46</td>
-        </tr>
-        
-        <tr>
-            <td>
-                <a href="https://jp.tradingview.com/symbols/CB/" target="_blank" class="ticker-link">
-                    <strong>CB</strong> <small>🔗</small>
-                </a>
-            </td>
-            <td class="highlight-price">$340.74</td>
-            <td>$344.85</td>
-        </tr>
-        
-        <tr>
-            <td>
-                <a href="https://jp.tradingview.com/symbols/CFG/" target="_blank" class="ticker-link">
-                    <strong>CFG</strong> <small>🔗</small>
-                </a>
-            </td>
-            <td class="highlight-price">$70.07</td>
-            <td>$71.21</td>
-        </tr>
-        
-        <tr>
-            <td>
-                <a href="https://jp.tradingview.com/symbols/CINF/" target="_blank" class="ticker-link">
-                    <strong>CINF</strong> <small>🔗</small>
-                </a>
-            </td>
-            <td class="highlight-price">$185.14</td>
-            <td>$187.4</td>
-        </tr>
-        
-        <tr>
-            <td>
-                <a href="https://jp.tradingview.com/symbols/CMI/" target="_blank" class="ticker-link">
-                    <strong>CMI</strong> <small>🔗</small>
-                </a>
-            </td>
-            <td class="highlight-price">$713.21</td>
-            <td>$737.76</td>
-        </tr>
-        
-        <tr>
-            <td>
-                <a href="https://jp.tradingview.com/symbols/CNP/" target="_blank" class="ticker-link">
-                    <strong>CNP</strong> <small>🔗</small>
-                </a>
-            </td>
-            <td class="highlight-price">$44.04</td>
-            <td>$45.22</td>
-        </tr>
-        
-        <tr>
-            <td>
-                <a href="https://jp.tradingview.com/symbols/CPT/" target="_blank" class="ticker-link">
-                    <strong>CPT</strong> <small>🔗</small>
-                </a>
-            </td>
-            <td class="highlight-price">$114.49</td>
-            <td>$115.69</td>
-        </tr>
-        
-        <tr>
-            <td>
-                <a href="https://jp.tradingview.com/symbols/CSX/" target="_blank" class="ticker-link">
-                    <strong>CSX</strong> <small>🔗</small>
-                </a>
-            </td>
-            <td class="highlight-price">$47.53</td>
-            <td>$48.42</td>
-        </tr>
-        
-        <tr>
-            <td>
-                <a href="https://jp.tradingview.com/symbols/CVS/" target="_blank" class="ticker-link">
-                    <strong>CVS</strong> <small>🔗</small>
-                </a>
-            </td>
-            <td class="highlight-price">$103.45</td>
-            <td>$106.15</td>
-        </tr>
-        
-        <tr>
-            <td>
-                <a href="https://jp.tradingview.com/symbols/D/" target="_blank" class="ticker-link">
-                    <strong>D</strong> <small>🔗</small>
-                </a>
-            </td>
-            <td class="highlight-price">$68.29</td>
-            <td>$70.17</td>
-        </tr>
-        
-        <tr>
-            <td>
-                <a href="https://jp.tradingview.com/symbols/DAL/" target="_blank" class="ticker-link">
-                    <strong>DAL</strong> <small>🔗</small>
-                </a>
-            </td>
-            <td class="highlight-price">$93.66</td>
-            <td>$95.14</td>
-        </tr>
-        
-        <tr>
-            <td>
-                <a href="https://jp.tradingview.com/symbols/DGX/" target="_blank" class="ticker-link">
-                    <strong>DGX</strong> <small>🔗</small>
-                </a>
-            </td>
-            <td class="highlight-price">$211.95</td>
-            <td>$214.21</td>
-        </tr>
-        
-        <tr>
-            <td>
-                <a href="https://jp.tradingview.com/symbols/DOC/" target="_blank" class="ticker-link">
-                    <strong>DOC</strong> <small>🔗</small>
-                </a>
-            </td>
-            <td class="highlight-price">$21.4</td>
-            <td>$21.91</td>
-        </tr>
-        
-        <tr>
-            <td>
-                <a href="https://jp.tradingview.com/symbols/DTE/" target="_blank" class="ticker-link">
-                    <strong>DTE</strong> <small>🔗</small>
-                </a>
-            </td>
-            <td class="highlight-price">$152.37</td>
-            <td>$155.06</td>
-        </tr>
-        
-        <tr>
-            <td>
-                <a href="https://jp.tradingview.com/symbols/DVA/" target="_blank" class="ticker-link">
-                    <strong>DVA</strong> <small>🔗</small>
-                </a>
-            </td>
-            <td class="highlight-price">$222.48</td>
-            <td>$224.19</td>
-        </tr>
-        
-        <tr>
-            <td>
-                <a href="https://jp.tradingview.com/symbols/EA/" target="_blank" class="ticker-link">
-                    <strong>EA</strong> <small>🔗</small>
-                </a>
-            </td>
-            <td class="highlight-price">$205.04</td>
-            <td>$205.69</td>
-        </tr>
-        
-        <tr>
-            <td>
-                <a href="https://jp.tradingview.com/symbols/EQIX/" target="_blank" class="ticker-link">
-                    <strong>EQIX</strong> <small>🔗</small>
-                </a>
-            </td>
-            <td class="highlight-price">$1,042.39</td>
-            <td>$1,124.0</td>
-        </tr>
-        
-        <tr>
-            <td>
-                <a href="https://jp.tradingview.com/symbols/EQR/" target="_blank" class="ticker-link">
-                    <strong>EQR</strong> <small>🔗</small>
-                </a>
-            </td>
-            <td class="highlight-price">$67.93</td>
-            <td>$68.46</td>
-        </tr>
-        
-        <tr>
-            <td>
-                <a href="https://jp.tradingview.com/symbols/ESS/" target="_blank" class="ticker-link">
-                    <strong>ESS</strong> <small>🔗</small>
-                </a>
-            </td>
-            <td class="highlight-price">$291.59</td>
-            <td>$293.86</td>
-        </tr>
-        
-        <tr>
-            <td>
-                <a href="https://jp.tradingview.com/symbols/ETN/" target="_blank" class="ticker-link">
-                    <strong>ETN</strong> <small>🔗</small>
-                </a>
-            </td>
-            <td class="highlight-price">$426.12</td>
-            <td>$436.74</td>
-        </tr>
-        
-        <tr>
-            <td>
-                <a href="https://jp.tradingview.com/symbols/EVRG/" target="_blank" class="ticker-link">
-                    <strong>EVRG</strong> <small>🔗</small>
-                </a>
-            </td>
-            <td class="highlight-price">$86.43</td>
-            <td>$87.57</td>
-        </tr>
-        
-        <tr>
-            <td>
-                <a href="https://jp.tradingview.com/symbols/EW/" target="_blank" class="ticker-link">
-                    <strong>EW</strong> <small>🔗</small>
-                </a>
-            </td>
-            <td class="highlight-price">$90.46</td>
-            <td>$92.88</td>
-        </tr>
-        
-        <tr>
-            <td>
-                <a href="https://jp.tradingview.com/symbols/FCX/" target="_blank" class="ticker-link">
-                    <strong>FCX</strong> <small>🔗</small>
-                </a>
-            </td>
-            <td class="highlight-price">$62.89</td>
-            <td>$72.28</td>
-        </tr>
-        
-        <tr>
-            <td>
-                <a href="https://jp.tradingview.com/symbols/FFIV/" target="_blank" class="ticker-link">
-                    <strong>FFIV</strong> <small>🔗</small>
-                </a>
-            </td>
-            <td class="highlight-price">$415.96</td>
-            <td>$427.54</td>
-        </tr>
-        
-        <tr>
-            <td>
-                <a href="https://jp.tradingview.com/symbols/FITB/" target="_blank" class="ticker-link">
-                    <strong>FITB</strong> <small>🔗</small>
-                </a>
-            </td>
-            <td class="highlight-price">$56.37</td>
-            <td>$56.74</td>
-        </tr>
-        
-        <tr>
-            <td>
-                <a href="https://jp.tradingview.com/symbols/FTNT/" target="_blank" class="ticker-link">
-                    <strong>FTNT</strong> <small>🔗</small>
-                </a>
-            </td>
-            <td class="highlight-price">$153.62</td>
-            <td>$159.07</td>
-        </tr>
-        
-        <tr>
-            <td>
-                <a href="https://jp.tradingview.com/symbols/GE/" target="_blank" class="ticker-link">
-                    <strong>GE</strong> <small>🔗</small>
-                </a>
-            </td>
-            <td class="highlight-price">$373.73</td>
-            <td>$379.67</td>
-        </tr>
-        
-        <tr>
-            <td>
-                <a href="https://jp.tradingview.com/symbols/GL/" target="_blank" class="ticker-link">
-                    <strong>GL</strong> <small>🔗</small>
-                </a>
-            </td>
-            <td class="highlight-price">$178.68</td>
+            <td class="text-center text-success"><strong>12 回</strong></td>
+            <td>$178.68</td>
             <td>$181.15</td>
         </tr>
         
         <tr>
             <td>
-                <a href="https://jp.tradingview.com/symbols/GLW/" target="_blank" class="ticker-link">
-                    <strong>GLW</strong> <small>🔗</small>
+                <a href="https://jp.tradingview.com/symbols/AMAT/" target="_blank" class="ticker-link" style="color: #007bff; text-decoration: none; font-weight: bold;">
+                    AMAT 🔗
                 </a>
             </td>
-            <td class="highlight-price">$255.43</td>
-            <td>$271.78</td>
+            <td class="text-center text-success"><strong>12 回</strong></td>
+            <td>$723.0</td>
+            <td>$739.67</td>
         </tr>
         
         <tr>
             <td>
-                <a href="https://jp.tradingview.com/symbols/GNRC/" target="_blank" class="ticker-link">
-                    <strong>GNRC</strong> <small>🔗</small>
+                <a href="https://jp.tradingview.com/symbols/MNST/" target="_blank" class="ticker-link" style="color: #007bff; text-decoration: none; font-weight: bold;">
+                    MNST 🔗
                 </a>
             </td>
-            <td class="highlight-price">$292.81</td>
-            <td>$296.44</td>
-        </tr>
-        
-        <tr>
-            <td>
-                <a href="https://jp.tradingview.com/symbols/GS/" target="_blank" class="ticker-link">
-                    <strong>GS</strong> <small>🔗</small>
-                </a>
-            </td>
-            <td class="highlight-price">$1,011.37</td>
-            <td>$1,125.0</td>
-        </tr>
-        
-        <tr>
-            <td>
-                <a href="https://jp.tradingview.com/symbols/GWW/" target="_blank" class="ticker-link">
-                    <strong>GWW</strong> <small>🔗</small>
-                </a>
-            </td>
-            <td class="highlight-price">$1,360.4</td>
-            <td>$1,390.96</td>
-        </tr>
-        
-        <tr>
-            <td>
-                <a href="https://jp.tradingview.com/symbols/HLT/" target="_blank" class="ticker-link">
-                    <strong>HLT</strong> <small>🔗</small>
-                </a>
-            </td>
-            <td class="highlight-price">$330.46</td>
-            <td>$358.0</td>
-        </tr>
-        
-        <tr>
-            <td>
-                <a href="https://jp.tradingview.com/symbols/HON/" target="_blank" class="ticker-link">
-                    <strong>HON</strong> <small>🔗</small>
-                </a>
-            </td>
-            <td class="highlight-price">$223.9</td>
-            <td>$252.0</td>
-        </tr>
-        
-        <tr>
-            <td>
-                <a href="https://jp.tradingview.com/symbols/HST/" target="_blank" class="ticker-link">
-                    <strong>HST</strong> <small>🔗</small>
-                </a>
-            </td>
-            <td class="highlight-price">$23.71</td>
-            <td>$24.47</td>
-        </tr>
-        
-        <tr>
-            <td>
-                <a href="https://jp.tradingview.com/symbols/HUM/" target="_blank" class="ticker-link">
-                    <strong>HUM</strong> <small>🔗</small>
-                </a>
-            </td>
-            <td class="highlight-price">$397.22</td>
-            <td>$398.8</td>
-        </tr>
-        
-        <tr>
-            <td>
-                <a href="https://jp.tradingview.com/symbols/HWM/" target="_blank" class="ticker-link">
-                    <strong>HWM</strong> <small>🔗</small>
-                </a>
-            </td>
-            <td class="highlight-price">$268.86</td>
-            <td>$290.63</td>
-        </tr>
-        
-        <tr>
-            <td>
-                <a href="https://jp.tradingview.com/symbols/IBKR/" target="_blank" class="ticker-link">
-                    <strong>IBKR</strong> <small>🔗</small>
-                </a>
-            </td>
-            <td class="highlight-price">$87.04</td>
-            <td>$97.84</td>
-        </tr>
-        
-        <tr>
-            <td>
-                <a href="https://jp.tradingview.com/symbols/IEX/" target="_blank" class="ticker-link">
-                    <strong>IEX</strong> <small>🔗</small>
-                </a>
-            </td>
-            <td class="highlight-price">$226.95</td>
-            <td>$230.18</td>
-        </tr>
-        
-        <tr>
-            <td>
-                <a href="https://jp.tradingview.com/symbols/INCY/" target="_blank" class="ticker-link">
-                    <strong>INCY</strong> <small>🔗</small>
-                </a>
-            </td>
-            <td class="highlight-price">$113.36</td>
-            <td>$115.56</td>
-        </tr>
-        
-        <tr>
-            <td>
-                <a href="https://jp.tradingview.com/symbols/INTC/" target="_blank" class="ticker-link">
-                    <strong>INTC</strong> <small>🔗</small>
-                </a>
-            </td>
-            <td class="highlight-price">$139.63</td>
-            <td>$142.35</td>
-        </tr>
-        
-        <tr>
-            <td>
-                <a href="https://jp.tradingview.com/symbols/IRM/" target="_blank" class="ticker-link">
-                    <strong>IRM</strong> <small>🔗</small>
-                </a>
-            </td>
-            <td class="highlight-price">$126.31</td>
-            <td>$134.68</td>
-        </tr>
-        
-        <tr>
-            <td>
-                <a href="https://jp.tradingview.com/symbols/JBL/" target="_blank" class="ticker-link">
-                    <strong>JBL</strong> <small>🔗</small>
-                </a>
-            </td>
-            <td class="highlight-price">$385.48</td>
-            <td>$428.93</td>
-        </tr>
-        
-        <tr>
-            <td>
-                <a href="https://jp.tradingview.com/symbols/JCI/" target="_blank" class="ticker-link">
-                    <strong>JCI</strong> <small>🔗</small>
-                </a>
-            </td>
-            <td class="highlight-price">$146.11</td>
-            <td>$149.38</td>
-        </tr>
-        
-        <tr>
-            <td>
-                <a href="https://jp.tradingview.com/symbols/JNJ/" target="_blank" class="ticker-link">
-                    <strong>JNJ</strong> <small>🔗</small>
-                </a>
-            </td>
-            <td class="highlight-price">$253.97</td>
-            <td>$259.9</td>
-        </tr>
-        
-        <tr>
-            <td>
-                <a href="https://jp.tradingview.com/symbols/JPM/" target="_blank" class="ticker-link">
-                    <strong>JPM</strong> <small>🔗</small>
-                </a>
-            </td>
-            <td class="highlight-price">$327.33</td>
-            <td>$343.45</td>
-        </tr>
-        
-        <tr>
-            <td>
-                <a href="https://jp.tradingview.com/symbols/KEY/" target="_blank" class="ticker-link">
-                    <strong>KEY</strong> <small>🔗</small>
-                </a>
-            </td>
-            <td class="highlight-price">$23.05</td>
-            <td>$23.72</td>
-        </tr>
-        
-        <tr>
-            <td>
-                <a href="https://jp.tradingview.com/symbols/KEYS/" target="_blank" class="ticker-link">
-                    <strong>KEYS</strong> <small>🔗</small>
-                </a>
-            </td>
-            <td class="highlight-price">$350.07</td>
-            <td>$374.96</td>
-        </tr>
-        
-        <tr>
-            <td>
-                <a href="https://jp.tradingview.com/symbols/KLAC/" target="_blank" class="ticker-link">
-                    <strong>KLAC</strong> <small>🔗</small>
-                </a>
-            </td>
-            <td class="highlight-price">$301.71</td>
-            <td>$307.37</td>
-        </tr>
-        
-        <tr>
-            <td>
-                <a href="https://jp.tradingview.com/symbols/KO/" target="_blank" class="ticker-link">
-                    <strong>KO</strong> <small>🔗</small>
-                </a>
-            </td>
-            <td class="highlight-price">$81.27</td>
-            <td>$83.62</td>
-        </tr>
-        
-        <tr>
-            <td>
-                <a href="https://jp.tradingview.com/symbols/LIN/" target="_blank" class="ticker-link">
-                    <strong>LIN</strong> <small>🔗</small>
-                </a>
-            </td>
-            <td class="highlight-price">$518.94</td>
-            <td>$527.94</td>
-        </tr>
-        
-        <tr>
-            <td>
-                <a href="https://jp.tradingview.com/symbols/LLY/" target="_blank" class="ticker-link">
-                    <strong>LLY</strong> <small>🔗</small>
-                </a>
-            </td>
-            <td class="highlight-price">$1,199.43</td>
-            <td>$1,238.0</td>
-        </tr>
-        
-        <tr>
-            <td>
-                <a href="https://jp.tradingview.com/symbols/LNT/" target="_blank" class="ticker-link">
-                    <strong>LNT</strong> <small>🔗</small>
-                </a>
-            </td>
-            <td class="highlight-price">$76.29</td>
-            <td>$77.36</td>
-        </tr>
-        
-        <tr>
-            <td>
-                <a href="https://jp.tradingview.com/symbols/LRCX/" target="_blank" class="ticker-link">
-                    <strong>LRCX</strong> <small>🔗</small>
-                </a>
-            </td>
-            <td class="highlight-price">$433.33</td>
-            <td>$438.5</td>
-        </tr>
-        
-        <tr>
-            <td>
-                <a href="https://jp.tradingview.com/symbols/LYV/" target="_blank" class="ticker-link">
-                    <strong>LYV</strong> <small>🔗</small>
-                </a>
-            </td>
-            <td class="highlight-price">$183.11</td>
-            <td>$184.86</td>
-        </tr>
-        
-        <tr>
-            <td>
-                <a href="https://jp.tradingview.com/symbols/MAS/" target="_blank" class="ticker-link">
-                    <strong>MAS</strong> <small>🔗</small>
-                </a>
-            </td>
-            <td class="highlight-price">$81.37</td>
-            <td>$81.82</td>
-        </tr>
-        
-        <tr>
-            <td>
-                <a href="https://jp.tradingview.com/symbols/MNST/" target="_blank" class="ticker-link">
-                    <strong>MNST</strong> <small>🔗</small>
-                </a>
-            </td>
-            <td class="highlight-price">$96.12</td>
+            <td class="text-center text-success"><strong>10 回</strong></td>
+            <td>$96.12</td>
             <td>$97.87</td>
         </tr>
         
         <tr>
             <td>
-                <a href="https://jp.tradingview.com/symbols/MO/" target="_blank" class="ticker-link">
-                    <strong>MO</strong> <small>🔗</small>
+                <a href="https://jp.tradingview.com/symbols/HUM/" target="_blank" class="ticker-link" style="color: #007bff; text-decoration: none; font-weight: bold;">
+                    HUM 🔗
                 </a>
             </td>
-            <td class="highlight-price">$71.95</td>
-            <td>$74.15</td>
+            <td class="text-center text-success"><strong>9 回</strong></td>
+            <td>$397.22</td>
+            <td>$398.8</td>
         </tr>
         
         <tr>
             <td>
-                <a href="https://jp.tradingview.com/symbols/MRK/" target="_blank" class="ticker-link">
-                    <strong>MRK</strong> <small>🔗</small>
+                <a href="https://jp.tradingview.com/symbols/STT/" target="_blank" class="ticker-link" style="color: #007bff; text-decoration: none; font-weight: bold;">
+                    STT 🔗
                 </a>
             </td>
-            <td class="highlight-price">$128.5</td>
-            <td>$130.29</td>
-        </tr>
-        
-        <tr>
-            <td>
-                <a href="https://jp.tradingview.com/symbols/MRNA/" target="_blank" class="ticker-link">
-                    <strong>MRNA</strong> <small>🔗</small>
-                </a>
-            </td>
-            <td class="highlight-price">$70.03</td>
-            <td>$73.28</td>
-        </tr>
-        
-        <tr>
-            <td>
-                <a href="https://jp.tradingview.com/symbols/MRVL/" target="_blank" class="ticker-link">
-                    <strong>MRVL</strong> <small>🔗</small>
-                </a>
-            </td>
-            <td class="highlight-price">$297.89</td>
-            <td>$329.88</td>
-        </tr>
-        
-        <tr>
-            <td>
-                <a href="https://jp.tradingview.com/symbols/MS/" target="_blank" class="ticker-link">
-                    <strong>MS</strong> <small>🔗</small>
-                </a>
-            </td>
-            <td class="highlight-price">$209.04</td>
-            <td>$230.47</td>
-        </tr>
-        
-        <tr>
-            <td>
-                <a href="https://jp.tradingview.com/symbols/MTB/" target="_blank" class="ticker-link">
-                    <strong>MTB</strong> <small>🔗</small>
-                </a>
-            </td>
-            <td class="highlight-price">$238.01</td>
-            <td>$239.83</td>
-        </tr>
-        
-        <tr>
-            <td>
-                <a href="https://jp.tradingview.com/symbols/MU/" target="_blank" class="ticker-link">
-                    <strong>MU</strong> <small>🔗</small>
-                </a>
-            </td>
-            <td class="highlight-price">$1,154.29</td>
-            <td>$1,255.0</td>
-        </tr>
-        
-        <tr>
-            <td>
-                <a href="https://jp.tradingview.com/symbols/NDSN/" target="_blank" class="ticker-link">
-                    <strong>NDSN</strong> <small>🔗</small>
-                </a>
-            </td>
-            <td class="highlight-price">$301.69</td>
-            <td>$307.74</td>
-        </tr>
-        
-        <tr>
-            <td>
-                <a href="https://jp.tradingview.com/symbols/NI/" target="_blank" class="ticker-link">
-                    <strong>NI</strong> <small>🔗</small>
-                </a>
-            </td>
-            <td class="highlight-price">$47.55</td>
-            <td>$49.21</td>
-        </tr>
-        
-        <tr>
-            <td>
-                <a href="https://jp.tradingview.com/symbols/NTRS/" target="_blank" class="ticker-link">
-                    <strong>NTRS</strong> <small>🔗</small>
-                </a>
-            </td>
-            <td class="highlight-price">$173.84</td>
-            <td>$178.7</td>
-        </tr>
-        
-        <tr>
-            <td>
-                <a href="https://jp.tradingview.com/symbols/PANW/" target="_blank" class="ticker-link">
-                    <strong>PANW</strong> <small>🔗</small>
-                </a>
-            </td>
-            <td class="highlight-price">$341.02</td>
-            <td>$342.48</td>
-        </tr>
-        
-        <tr>
-            <td>
-                <a href="https://jp.tradingview.com/symbols/PFG/" target="_blank" class="ticker-link">
-                    <strong>PFG</strong> <small>🔗</small>
-                </a>
-            </td>
-            <td class="highlight-price">$107.78</td>
-            <td>$112.45</td>
-        </tr>
-        
-        <tr>
-            <td>
-                <a href="https://jp.tradingview.com/symbols/PNC/" target="_blank" class="ticker-link">
-                    <strong>PNC</strong> <small>🔗</small>
-                </a>
-            </td>
-            <td class="highlight-price">$246.22</td>
-            <td>$249.01</td>
-        </tr>
-        
-        <tr>
-            <td>
-                <a href="https://jp.tradingview.com/symbols/PNW/" target="_blank" class="ticker-link">
-                    <strong>PNW</strong> <small>🔗</small>
-                </a>
-            </td>
-            <td class="highlight-price">$107.0</td>
-            <td>$108.41</td>
-        </tr>
-        
-        <tr>
-            <td>
-                <a href="https://jp.tradingview.com/symbols/REG/" target="_blank" class="ticker-link">
-                    <strong>REG</strong> <small>🔗</small>
-                </a>
-            </td>
-            <td class="highlight-price">$79.74</td>
-            <td>$81.93</td>
-        </tr>
-        
-        <tr>
-            <td>
-                <a href="https://jp.tradingview.com/symbols/ROK/" target="_blank" class="ticker-link">
-                    <strong>ROK</strong> <small>🔗</small>
-                </a>
-            </td>
-            <td class="highlight-price">$495.08</td>
-            <td>$497.36</td>
-        </tr>
-        
-        <tr>
-            <td>
-                <a href="https://jp.tradingview.com/symbols/SNA/" target="_blank" class="ticker-link">
-                    <strong>SNA</strong> <small>🔗</small>
-                </a>
-            </td>
-            <td class="highlight-price">$402.4</td>
-            <td>$404.46</td>
-        </tr>
-        
-        <tr>
-            <td>
-                <a href="https://jp.tradingview.com/symbols/SNDK/" target="_blank" class="ticker-link">
-                    <strong>SNDK</strong> <small>🔗</small>
-                </a>
-            </td>
-            <td class="highlight-price">$2,273.73</td>
-            <td>$2,354.39</td>
-        </tr>
-        
-        <tr>
-            <td>
-                <a href="https://jp.tradingview.com/symbols/SPG/" target="_blank" class="ticker-link">
-                    <strong>SPG</strong> <small>🔗</small>
-                </a>
-            </td>
-            <td class="highlight-price">$223.65</td>
-            <td>$228.58</td>
-        </tr>
-        
-        <tr>
-            <td>
-                <a href="https://jp.tradingview.com/symbols/STT/" target="_blank" class="ticker-link">
-                    <strong>STT</strong> <small>🔗</small>
-                </a>
-            </td>
-            <td class="highlight-price">$169.6</td>
+            <td class="text-center text-success"><strong>9 回</strong></td>
+            <td>$169.6</td>
             <td>$175.46</td>
         </tr>
         
         <tr>
             <td>
-                <a href="https://jp.tradingview.com/symbols/STX/" target="_blank" class="ticker-link">
-                    <strong>STX</strong> <small>🔗</small>
+                <a href="https://jp.tradingview.com/symbols/LRCX/" target="_blank" class="ticker-link" style="color: #007bff; text-decoration: none; font-weight: bold;">
+                    LRCX 🔗
                 </a>
             </td>
-            <td class="highlight-price">$965.0</td>
-            <td>$1,144.18</td>
+            <td class="text-center text-success"><strong>9 回</strong></td>
+            <td>$433.33</td>
+            <td>$438.5</td>
         </tr>
         
         <tr>
             <td>
-                <a href="https://jp.tradingview.com/symbols/SWK/" target="_blank" class="ticker-link">
-                    <strong>SWK</strong> <small>🔗</small>
+                <a href="https://jp.tradingview.com/symbols/CINF/" target="_blank" class="ticker-link" style="color: #007bff; text-decoration: none; font-weight: bold;">
+                    CINF 🔗
                 </a>
             </td>
-            <td class="highlight-price">$94.12</td>
-            <td>$95.01</td>
+            <td class="text-center text-success"><strong>8 回</strong></td>
+            <td>$185.14</td>
+            <td>$187.4</td>
         </tr>
         
         <tr>
             <td>
-                <a href="https://jp.tradingview.com/symbols/TER/" target="_blank" class="ticker-link">
-                    <strong>TER</strong> <small>🔗</small>
+                <a href="https://jp.tradingview.com/symbols/DVA/" target="_blank" class="ticker-link" style="color: #007bff; text-decoration: none; font-weight: bold;">
+                    DVA 🔗
                 </a>
             </td>
-            <td class="highlight-price">$483.84</td>
-            <td>$487.91</td>
+            <td class="text-center text-success"><strong>8 回</strong></td>
+            <td>$222.48</td>
+            <td>$224.19</td>
         </tr>
         
         <tr>
             <td>
-                <a href="https://jp.tradingview.com/symbols/TGT/" target="_blank" class="ticker-link">
-                    <strong>TGT</strong> <small>🔗</small>
+                <a href="https://jp.tradingview.com/symbols/KLAC/" target="_blank" class="ticker-link" style="color: #007bff; text-decoration: none; font-weight: bold;">
+                    KLAC 🔗
                 </a>
             </td>
-            <td class="highlight-price">$130.61</td>
-            <td>$142.82</td>
+            <td class="text-center text-success"><strong>8 回</strong></td>
+            <td>$301.71</td>
+            <td>$307.37</td>
         </tr>
         
         <tr>
             <td>
-                <a href="https://jp.tradingview.com/symbols/TROW/" target="_blank" class="ticker-link">
-                    <strong>TROW</strong> <small>🔗</small>
+                <a href="https://jp.tradingview.com/symbols/DOC/" target="_blank" class="ticker-link" style="color: #007bff; text-decoration: none; font-weight: bold;">
+                    DOC 🔗
                 </a>
             </td>
-            <td class="highlight-price">$113.69</td>
-            <td>$116.59</td>
+            <td class="text-center text-success"><strong>8 回</strong></td>
+            <td>$21.4</td>
+            <td>$21.91</td>
         </tr>
         
         <tr>
             <td>
-                <a href="https://jp.tradingview.com/symbols/TRV/" target="_blank" class="ticker-link">
-                    <strong>TRV</strong> <small>🔗</small>
+                <a href="https://jp.tradingview.com/symbols/TRV/" target="_blank" class="ticker-link" style="color: #007bff; text-decoration: none; font-weight: bold;">
+                    TRV 🔗
                 </a>
             </td>
-            <td class="highlight-price">$330.12</td>
+            <td class="text-center text-success"><strong>8 回</strong></td>
+            <td>$330.12</td>
             <td>$334.14</td>
         </tr>
         
         <tr>
             <td>
-                <a href="https://jp.tradingview.com/symbols/TT/" target="_blank" class="ticker-link">
-                    <strong>TT</strong> <small>🔗</small>
+                <a href="https://jp.tradingview.com/symbols/SPG/" target="_blank" class="ticker-link" style="color: #007bff; text-decoration: none; font-weight: bold;">
+                    SPG 🔗
                 </a>
             </td>
-            <td class="highlight-price">$491.16</td>
-            <td>$505.87</td>
+            <td class="text-center text-success"><strong>7 回</strong></td>
+            <td>$223.65</td>
+            <td>$228.58</td>
         </tr>
         
         <tr>
             <td>
-                <a href="https://jp.tradingview.com/symbols/TXN/" target="_blank" class="ticker-link">
-                    <strong>TXN</strong> <small>🔗</small>
+                <a href="https://jp.tradingview.com/symbols/IEX/" target="_blank" class="ticker-link" style="color: #007bff; text-decoration: none; font-weight: bold;">
+                    IEX 🔗
                 </a>
             </td>
-            <td class="highlight-price">$298.07</td>
-            <td>$334.03</td>
+            <td class="text-center text-success"><strong>7 回</strong></td>
+            <td>$226.95</td>
+            <td>$230.18</td>
         </tr>
         
         <tr>
             <td>
-                <a href="https://jp.tradingview.com/symbols/UAL/" target="_blank" class="ticker-link">
-                    <strong>UAL</strong> <small>🔗</small>
+                <a href="https://jp.tradingview.com/symbols/PFG/" target="_blank" class="ticker-link" style="color: #007bff; text-decoration: none; font-weight: bold;">
+                    PFG 🔗
                 </a>
             </td>
-            <td class="highlight-price">$135.99</td>
-            <td>$138.77</td>
+            <td class="text-center text-success"><strong>7 回</strong></td>
+            <td>$107.78</td>
+            <td>$112.45</td>
         </tr>
         
         <tr>
             <td>
-                <a href="https://jp.tradingview.com/symbols/UDR/" target="_blank" class="ticker-link">
-                    <strong>UDR</strong> <small>🔗</small>
+                <a href="https://jp.tradingview.com/symbols/C/" target="_blank" class="ticker-link" style="color: #007bff; text-decoration: none; font-weight: bold;">
+                    C 🔗
                 </a>
             </td>
-            <td class="highlight-price">$39.92</td>
-            <td>$40.28</td>
+            <td class="text-center text-success"><strong>7 回</strong></td>
+            <td>$139.96</td>
+            <td>$147.96</td>
         </tr>
         
         <tr>
             <td>
-                <a href="https://jp.tradingview.com/symbols/UNH/" target="_blank" class="ticker-link">
-                    <strong>UNH</strong> <small>🔗</small>
+                <a href="https://jp.tradingview.com/symbols/AIZ/" target="_blank" class="ticker-link" style="color: #007bff; text-decoration: none; font-weight: bold;">
+                    AIZ 🔗
                 </a>
             </td>
-            <td class="highlight-price">$415.63</td>
-            <td>$427.93</td>
+            <td class="text-center text-success"><strong>7 回</strong></td>
+            <td>$268.53</td>
+            <td>$270.78</td>
         </tr>
         
         <tr>
             <td>
-                <a href="https://jp.tradingview.com/symbols/URI/" target="_blank" class="ticker-link">
-                    <strong>URI</strong> <small>🔗</small>
+                <a href="https://jp.tradingview.com/symbols/NTRS/" target="_blank" class="ticker-link" style="color: #007bff; text-decoration: none; font-weight: bold;">
+                    NTRS 🔗
                 </a>
             </td>
-            <td class="highlight-price">$1,132.89</td>
-            <td>$1,143.69</td>
+            <td class="text-center text-success"><strong>7 回</strong></td>
+            <td>$173.84</td>
+            <td>$178.7</td>
         </tr>
         
         <tr>
             <td>
-                <a href="https://jp.tradingview.com/symbols/USB/" target="_blank" class="ticker-link">
-                    <strong>USB</strong> <small>🔗</small>
+                <a href="https://jp.tradingview.com/symbols/CVS/" target="_blank" class="ticker-link" style="color: #007bff; text-decoration: none; font-weight: bold;">
+                    CVS 🔗
                 </a>
             </td>
-            <td class="highlight-price">$60.4</td>
-            <td>$61.35</td>
+            <td class="text-center text-success"><strong>6 回</strong></td>
+            <td>$103.45</td>
+            <td>$106.15</td>
         </tr>
         
         <tr>
             <td>
-                <a href="https://jp.tradingview.com/symbols/VLO/" target="_blank" class="ticker-link">
-                    <strong>VLO</strong> <small>🔗</small>
+                <a href="https://jp.tradingview.com/symbols/FITB/" target="_blank" class="ticker-link" style="color: #007bff; text-decoration: none; font-weight: bold;">
+                    FITB 🔗
                 </a>
             </td>
-            <td class="highlight-price">$260.44</td>
-            <td>$272.17</td>
+            <td class="text-center text-success"><strong>6 回</strong></td>
+            <td>$56.37</td>
+            <td>$56.74</td>
         </tr>
         
         <tr>
             <td>
-                <a href="https://jp.tradingview.com/symbols/WAB/" target="_blank" class="ticker-link">
-                    <strong>WAB</strong> <small>🔗</small>
+                <a href="https://jp.tradingview.com/symbols/GE/" target="_blank" class="ticker-link" style="color: #007bff; text-decoration: none; font-weight: bold;">
+                    GE 🔗
                 </a>
             </td>
-            <td class="highlight-price">$269.6</td>
-            <td>$284.91</td>
+            <td class="text-center text-success"><strong>6 回</strong></td>
+            <td>$373.73</td>
+            <td>$379.67</td>
         </tr>
         
         <tr>
             <td>
-                <a href="https://jp.tradingview.com/symbols/WDC/" target="_blank" class="ticker-link">
-                    <strong>WDC</strong> <small>🔗</small>
+                <a href="https://jp.tradingview.com/symbols/WSM/" target="_blank" class="ticker-link" style="color: #007bff; text-decoration: none; font-weight: bold;">
+                    WSM 🔗
                 </a>
             </td>
-            <td class="highlight-price">$638.72</td>
-            <td>$799.87</td>
-        </tr>
-        
-        <tr>
-            <td>
-                <a href="https://jp.tradingview.com/symbols/WEC/" target="_blank" class="ticker-link">
-                    <strong>WEC</strong> <small>🔗</small>
-                </a>
-            </td>
-            <td class="highlight-price">$116.77</td>
-            <td>$119.06</td>
-        </tr>
-        
-        <tr>
-            <td>
-                <a href="https://jp.tradingview.com/symbols/WELL/" target="_blank" class="ticker-link">
-                    <strong>WELL</strong> <small>🔗</small>
-                </a>
-            </td>
-            <td class="highlight-price">$226.97</td>
-            <td>$230.07</td>
-        </tr>
-        
-        <tr>
-            <td>
-                <a href="https://jp.tradingview.com/symbols/WSM/" target="_blank" class="ticker-link">
-                    <strong>WSM</strong> <small>🔗</small>
-                </a>
-            </td>
-            <td class="highlight-price">$233.1</td>
+            <td class="text-center text-success"><strong>6 回</strong></td>
+            <td>$233.1</td>
             <td>$244.65</td>
         </tr>
         
         <tr>
             <td>
-                <a href="https://jp.tradingview.com/symbols/WST/" target="_blank" class="ticker-link">
-                    <strong>WST</strong> <small>🔗</small>
+                <a href="https://jp.tradingview.com/symbols/ROK/" target="_blank" class="ticker-link" style="color: #007bff; text-decoration: none; font-weight: bold;">
+                    ROK 🔗
                 </a>
             </td>
-            <td class="highlight-price">$359.0</td>
+            <td class="text-center text-success"><strong>6 回</strong></td>
+            <td>$495.08</td>
+            <td>$497.36</td>
+        </tr>
+        
+        <tr>
+            <td>
+                <a href="https://jp.tradingview.com/symbols/PNW/" target="_blank" class="ticker-link" style="color: #007bff; text-decoration: none; font-weight: bold;">
+                    PNW 🔗
+                </a>
+            </td>
+            <td class="text-center text-success"><strong>6 回</strong></td>
+            <td>$107.0</td>
+            <td>$108.41</td>
+        </tr>
+        
+        <tr>
+            <td>
+                <a href="https://jp.tradingview.com/symbols/ALL/" target="_blank" class="ticker-link" style="color: #007bff; text-decoration: none; font-weight: bold;">
+                    ALL 🔗
+                </a>
+            </td>
+            <td class="text-center text-success"><strong>6 回</strong></td>
+            <td>$237.94</td>
+            <td>$242.67</td>
+        </tr>
+        
+        <tr>
+            <td>
+                <a href="https://jp.tradingview.com/symbols/BAC/" target="_blank" class="ticker-link" style="color: #007bff; text-decoration: none; font-weight: bold;">
+                    BAC 🔗
+                </a>
+            </td>
+            <td class="text-center text-success"><strong>6 回</strong></td>
+            <td>$56.98</td>
+            <td>$59.2</td>
+        </tr>
+        
+        <tr>
+            <td>
+                <a href="https://jp.tradingview.com/symbols/CAT/" target="_blank" class="ticker-link" style="color: #007bff; text-decoration: none; font-weight: bold;">
+                    CAT 🔗
+                </a>
+            </td>
+            <td class="text-center text-success"><strong>6 回</strong></td>
+            <td>$1,064.9</td>
+            <td>$1,073.46</td>
+        </tr>
+        
+        <tr>
+            <td>
+                <a href="https://jp.tradingview.com/symbols/SNDK/" target="_blank" class="ticker-link" style="color: #007bff; text-decoration: none; font-weight: bold;">
+                    SNDK 🔗
+                </a>
+            </td>
+            <td class="text-center text-success"><strong>6 回</strong></td>
+            <td>$2,273.73</td>
+            <td>$2,354.39</td>
+        </tr>
+        
+        <tr>
+            <td>
+                <a href="https://jp.tradingview.com/symbols/MRNA/" target="_blank" class="ticker-link" style="color: #007bff; text-decoration: none; font-weight: bold;">
+                    MRNA 🔗
+                </a>
+            </td>
+            <td class="text-center text-success"><strong>5 回</strong></td>
+            <td>$70.03</td>
+            <td>$73.28</td>
+        </tr>
+        
+        <tr>
+            <td>
+                <a href="https://jp.tradingview.com/symbols/IBKR/" target="_blank" class="ticker-link" style="color: #007bff; text-decoration: none; font-weight: bold;">
+                    IBKR 🔗
+                </a>
+            </td>
+            <td class="text-center text-success"><strong>5 回</strong></td>
+            <td>$87.04</td>
+            <td>$97.84</td>
+        </tr>
+        
+        <tr>
+            <td>
+                <a href="https://jp.tradingview.com/symbols/GWW/" target="_blank" class="ticker-link" style="color: #007bff; text-decoration: none; font-weight: bold;">
+                    GWW 🔗
+                </a>
+            </td>
+            <td class="text-center text-success"><strong>5 回</strong></td>
+            <td>$1,360.4</td>
+            <td>$1,390.96</td>
+        </tr>
+        
+        <tr>
+            <td>
+                <a href="https://jp.tradingview.com/symbols/TGT/" target="_blank" class="ticker-link" style="color: #007bff; text-decoration: none; font-weight: bold;">
+                    TGT 🔗
+                </a>
+            </td>
+            <td class="text-center text-success"><strong>5 回</strong></td>
+            <td>$130.61</td>
+            <td>$142.82</td>
+        </tr>
+        
+        <tr>
+            <td>
+                <a href="https://jp.tradingview.com/symbols/MU/" target="_blank" class="ticker-link" style="color: #007bff; text-decoration: none; font-weight: bold;">
+                    MU 🔗
+                </a>
+            </td>
+            <td class="text-center text-success"><strong>5 回</strong></td>
+            <td>$1,154.29</td>
+            <td>$1,255.0</td>
+        </tr>
+        
+        <tr>
+            <td>
+                <a href="https://jp.tradingview.com/symbols/LYV/" target="_blank" class="ticker-link" style="color: #007bff; text-decoration: none; font-weight: bold;">
+                    LYV 🔗
+                </a>
+            </td>
+            <td class="text-center text-success"><strong>5 回</strong></td>
+            <td>$183.11</td>
+            <td>$184.86</td>
+        </tr>
+        
+        <tr>
+            <td>
+                <a href="https://jp.tradingview.com/symbols/MET/" target="_blank" class="ticker-link" style="color: #007bff; text-decoration: none; font-weight: bold;">
+                    MET 🔗
+                </a>
+            </td>
+            <td class="text-center text-success"><strong>5 回</strong></td>
+            <td>$84.61</td>
+            <td>$89.62</td>
+        </tr>
+        
+        <tr>
+            <td>
+                <a href="https://jp.tradingview.com/symbols/EW/" target="_blank" class="ticker-link" style="color: #007bff; text-decoration: none; font-weight: bold;">
+                    EW 🔗
+                </a>
+            </td>
+            <td class="text-center text-success"><strong>5 回</strong></td>
+            <td>$90.46</td>
+            <td>$92.88</td>
+        </tr>
+        
+        <tr>
+            <td>
+                <a href="https://jp.tradingview.com/symbols/D/" target="_blank" class="ticker-link" style="color: #007bff; text-decoration: none; font-weight: bold;">
+                    D 🔗
+                </a>
+            </td>
+            <td class="text-center text-success"><strong>5 回</strong></td>
+            <td>$68.29</td>
+            <td>$70.17</td>
+        </tr>
+        
+        <tr>
+            <td>
+                <a href="https://jp.tradingview.com/symbols/BEN/" target="_blank" class="ticker-link" style="color: #007bff; text-decoration: none; font-weight: bold;">
+                    BEN 🔗
+                </a>
+            </td>
+            <td class="text-center text-success"><strong>5 回</strong></td>
+            <td>$33.27</td>
+            <td>$34.08</td>
+        </tr>
+        
+        <tr>
+            <td>
+                <a href="https://jp.tradingview.com/symbols/HLT/" target="_blank" class="ticker-link" style="color: #007bff; text-decoration: none; font-weight: bold;">
+                    HLT 🔗
+                </a>
+            </td>
+            <td class="text-center text-success"><strong>5 回</strong></td>
+            <td>$330.46</td>
+            <td>$358.0</td>
+        </tr>
+        
+        <tr>
+            <td>
+                <a href="https://jp.tradingview.com/symbols/BNY/" target="_blank" class="ticker-link" style="color: #007bff; text-decoration: none; font-weight: bold;">
+                    BNY 🔗
+                </a>
+            </td>
+            <td class="text-center text-success"><strong>5 回</strong></td>
+            <td>$144.61</td>
+            <td>$148.5</td>
+        </tr>
+        
+        <tr>
+            <td>
+                <a href="https://jp.tradingview.com/symbols/GLW/" target="_blank" class="ticker-link" style="color: #007bff; text-decoration: none; font-weight: bold;">
+                    GLW 🔗
+                </a>
+            </td>
+            <td class="text-center text-success"><strong>5 回</strong></td>
+            <td>$255.43</td>
+            <td>$271.78</td>
+        </tr>
+        
+        <tr>
+            <td>
+                <a href="https://jp.tradingview.com/symbols/UNH/" target="_blank" class="ticker-link" style="color: #007bff; text-decoration: none; font-weight: bold;">
+                    UNH 🔗
+                </a>
+            </td>
+            <td class="text-center text-success"><strong>5 回</strong></td>
+            <td>$415.63</td>
+            <td>$427.93</td>
+        </tr>
+        
+        <tr>
+            <td>
+                <a href="https://jp.tradingview.com/symbols/TSE-1306/" target="_blank" class="ticker-link" style="color: #007bff; text-decoration: none; font-weight: bold;">
+                    1306.T 🔗
+                </a>
+            </td>
+            <td class="text-center text-success"><strong>5 回</strong></td>
+            <td>¥423.6</td>
+            <td>¥435.6</td>
+        </tr>
+        
+        <tr>
+            <td>
+                <a href="https://jp.tradingview.com/symbols/WST/" target="_blank" class="ticker-link" style="color: #007bff; text-decoration: none; font-weight: bold;">
+                    WST 🔗
+                </a>
+            </td>
+            <td class="text-center text-success"><strong>5 回</strong></td>
+            <td>$359.0</td>
             <td>$359.74</td>
+        </tr>
+        
+        <tr>
+            <td>
+                <a href="https://jp.tradingview.com/symbols/TER/" target="_blank" class="ticker-link" style="color: #007bff; text-decoration: none; font-weight: bold;">
+                    TER 🔗
+                </a>
+            </td>
+            <td class="text-center text-success"><strong>5 回</strong></td>
+            <td>$483.84</td>
+            <td>$487.91</td>
+        </tr>
+        
+        <tr>
+            <td>
+                <a href="https://jp.tradingview.com/symbols/MS/" target="_blank" class="ticker-link" style="color: #007bff; text-decoration: none; font-weight: bold;">
+                    MS 🔗
+                </a>
+            </td>
+            <td class="text-center text-success"><strong>4 回</strong></td>
+            <td>$209.04</td>
+            <td>$230.47</td>
+        </tr>
+        
+        <tr>
+            <td>
+                <a href="https://jp.tradingview.com/symbols/CSX/" target="_blank" class="ticker-link" style="color: #007bff; text-decoration: none; font-weight: bold;">
+                    CSX 🔗
+                </a>
+            </td>
+            <td class="text-center text-success"><strong>4 回</strong></td>
+            <td>$47.53</td>
+            <td>$48.42</td>
+        </tr>
+        
+        <tr>
+            <td>
+                <a href="https://jp.tradingview.com/symbols/EVRG/" target="_blank" class="ticker-link" style="color: #007bff; text-decoration: none; font-weight: bold;">
+                    EVRG 🔗
+                </a>
+            </td>
+            <td class="text-center text-success"><strong>4 回</strong></td>
+            <td>$86.43</td>
+            <td>$87.57</td>
+        </tr>
+        
+        <tr>
+            <td>
+                <a href="https://jp.tradingview.com/symbols/KIM/" target="_blank" class="ticker-link" style="color: #007bff; text-decoration: none; font-weight: bold;">
+                    KIM 🔗
+                </a>
+            </td>
+            <td class="text-center text-success"><strong>4 回</strong></td>
+            <td>$25.35</td>
+            <td>$26.08</td>
+        </tr>
+        
+        <tr>
+            <td>
+                <a href="https://jp.tradingview.com/symbols/KEY/" target="_blank" class="ticker-link" style="color: #007bff; text-decoration: none; font-weight: bold;">
+                    KEY 🔗
+                </a>
+            </td>
+            <td class="text-center text-success"><strong>4 回</strong></td>
+            <td>$23.05</td>
+            <td>$23.72</td>
+        </tr>
+        
+        <tr>
+            <td>
+                <a href="https://jp.tradingview.com/symbols/JCI/" target="_blank" class="ticker-link" style="color: #007bff; text-decoration: none; font-weight: bold;">
+                    JCI 🔗
+                </a>
+            </td>
+            <td class="text-center text-success"><strong>4 回</strong></td>
+            <td>$146.11</td>
+            <td>$149.38</td>
+        </tr>
+        
+        <tr>
+            <td>
+                <a href="https://jp.tradingview.com/symbols/MRK/" target="_blank" class="ticker-link" style="color: #007bff; text-decoration: none; font-weight: bold;">
+                    MRK 🔗
+                </a>
+            </td>
+            <td class="text-center text-success"><strong>4 回</strong></td>
+            <td>$128.5</td>
+            <td>$130.29</td>
+        </tr>
+        
+        <tr>
+            <td>
+                <a href="https://jp.tradingview.com/symbols/UAL/" target="_blank" class="ticker-link" style="color: #007bff; text-decoration: none; font-weight: bold;">
+                    UAL 🔗
+                </a>
+            </td>
+            <td class="text-center text-success"><strong>4 回</strong></td>
+            <td>$135.99</td>
+            <td>$138.77</td>
+        </tr>
+        
+        <tr>
+            <td>
+                <a href="https://jp.tradingview.com/symbols/WAB/" target="_blank" class="ticker-link" style="color: #007bff; text-decoration: none; font-weight: bold;">
+                    WAB 🔗
+                </a>
+            </td>
+            <td class="text-center text-success"><strong>4 回</strong></td>
+            <td>$269.6</td>
+            <td>$284.91</td>
+        </tr>
+        
+        <tr>
+            <td>
+                <a href="https://jp.tradingview.com/symbols/LIN/" target="_blank" class="ticker-link" style="color: #007bff; text-decoration: none; font-weight: bold;">
+                    LIN 🔗
+                </a>
+            </td>
+            <td class="text-center text-success"><strong>4 回</strong></td>
+            <td>$518.94</td>
+            <td>$527.94</td>
+        </tr>
+        
+        <tr>
+            <td>
+                <a href="https://jp.tradingview.com/symbols/RL/" target="_blank" class="ticker-link" style="color: #007bff; text-decoration: none; font-weight: bold;">
+                    RL 🔗
+                </a>
+            </td>
+            <td class="text-center text-success"><strong>4 回</strong></td>
+            <td>$401.41</td>
+            <td>$420.57</td>
+        </tr>
+        
+        <tr>
+            <td>
+                <a href="https://jp.tradingview.com/symbols/PLD/" target="_blank" class="ticker-link" style="color: #007bff; text-decoration: none; font-weight: bold;">
+                    PLD 🔗
+                </a>
+            </td>
+            <td class="text-center text-success"><strong>4 回</strong></td>
+            <td>$135.47</td>
+            <td>$149.1</td>
+        </tr>
+        
+        <tr>
+            <td>
+                <a href="https://jp.tradingview.com/symbols/CPT/" target="_blank" class="ticker-link" style="color: #007bff; text-decoration: none; font-weight: bold;">
+                    CPT 🔗
+                </a>
+            </td>
+            <td class="text-center text-success"><strong>4 回</strong></td>
+            <td>$114.49</td>
+            <td>$115.69</td>
+        </tr>
+        
+        <tr>
+            <td>
+                <a href="https://jp.tradingview.com/symbols/CAH/" target="_blank" class="ticker-link" style="color: #007bff; text-decoration: none; font-weight: bold;">
+                    CAH 🔗
+                </a>
+            </td>
+            <td class="text-center text-success"><strong>4 回</strong></td>
+            <td>$237.56</td>
+            <td>$240.93</td>
+        </tr>
+        
+        <tr>
+            <td>
+                <a href="https://jp.tradingview.com/symbols/CFG/" target="_blank" class="ticker-link" style="color: #007bff; text-decoration: none; font-weight: bold;">
+                    CFG 🔗
+                </a>
+            </td>
+            <td class="text-center text-success"><strong>4 回</strong></td>
+            <td>$70.07</td>
+            <td>$71.21</td>
+        </tr>
+        
+        <tr>
+            <td>
+                <a href="https://jp.tradingview.com/symbols/WELL/" target="_blank" class="ticker-link" style="color: #007bff; text-decoration: none; font-weight: bold;">
+                    WELL 🔗
+                </a>
+            </td>
+            <td class="text-center text-success"><strong>4 回</strong></td>
+            <td>$226.97</td>
+            <td>$230.07</td>
+        </tr>
+        
+        <tr>
+            <td>
+                <a href="https://jp.tradingview.com/symbols/WDC/" target="_blank" class="ticker-link" style="color: #007bff; text-decoration: none; font-weight: bold;">
+                    WDC 🔗
+                </a>
+            </td>
+            <td class="text-center text-success"><strong>4 回</strong></td>
+            <td>$638.72</td>
+            <td>$799.87</td>
+        </tr>
+        
+        <tr>
+            <td>
+                <a href="https://jp.tradingview.com/symbols/FRT/" target="_blank" class="ticker-link" style="color: #007bff; text-decoration: none; font-weight: bold;">
+                    FRT 🔗
+                </a>
+            </td>
+            <td class="text-center text-success"><strong>4 回</strong></td>
+            <td>$123.44</td>
+            <td>$126.41</td>
+        </tr>
+        
+        <tr>
+            <td>
+                <a href="https://jp.tradingview.com/symbols/ABBV/" target="_blank" class="ticker-link" style="color: #007bff; text-decoration: none; font-weight: bold;">
+                    ABBV 🔗
+                </a>
+            </td>
+            <td class="text-center text-success"><strong>3 回</strong></td>
+            <td>$251.64</td>
+            <td>$255.99</td>
+        </tr>
+        
+        <tr>
+            <td>
+                <a href="https://jp.tradingview.com/symbols/AFL/" target="_blank" class="ticker-link" style="color: #007bff; text-decoration: none; font-weight: bold;">
+                    AFL 🔗
+                </a>
+            </td>
+            <td class="text-center text-success"><strong>3 回</strong></td>
+            <td>$117.25</td>
+            <td>$120.29</td>
+        </tr>
+        
+        <tr>
+            <td>
+                <a href="https://jp.tradingview.com/symbols/DAL/" target="_blank" class="ticker-link" style="color: #007bff; text-decoration: none; font-weight: bold;">
+                    DAL 🔗
+                </a>
+            </td>
+            <td class="text-center text-success"><strong>3 回</strong></td>
+            <td>$93.66</td>
+            <td>$95.14</td>
+        </tr>
+        
+        <tr>
+            <td>
+                <a href="https://jp.tradingview.com/symbols/DTE/" target="_blank" class="ticker-link" style="color: #007bff; text-decoration: none; font-weight: bold;">
+                    DTE 🔗
+                </a>
+            </td>
+            <td class="text-center text-success"><strong>3 回</strong></td>
+            <td>$152.37</td>
+            <td>$155.06</td>
+        </tr>
+        
+        <tr>
+            <td>
+                <a href="https://jp.tradingview.com/symbols/MO/" target="_blank" class="ticker-link" style="color: #007bff; text-decoration: none; font-weight: bold;">
+                    MO 🔗
+                </a>
+            </td>
+            <td class="text-center text-success"><strong>3 回</strong></td>
+            <td>$71.95</td>
+            <td>$74.15</td>
+        </tr>
+        
+        <tr>
+            <td>
+                <a href="https://jp.tradingview.com/symbols/ABNB/" target="_blank" class="ticker-link" style="color: #007bff; text-decoration: none; font-weight: bold;">
+                    ABNB 🔗
+                </a>
+            </td>
+            <td class="text-center text-success"><strong>3 回</strong></td>
+            <td>$143.1</td>
+            <td>$150.19</td>
+        </tr>
+        
+        <tr>
+            <td>
+                <a href="https://jp.tradingview.com/symbols/AMD/" target="_blank" class="ticker-link" style="color: #007bff; text-decoration: none; font-weight: bold;">
+                    AMD 🔗
+                </a>
+            </td>
+            <td class="text-center text-success"><strong>3 回</strong></td>
+            <td>$580.91</td>
+            <td>$584.73</td>
+        </tr>
+        
+        <tr>
+            <td>
+                <a href="https://jp.tradingview.com/symbols/KO/" target="_blank" class="ticker-link" style="color: #007bff; text-decoration: none; font-weight: bold;">
+                    KO 🔗
+                </a>
+            </td>
+            <td class="text-center text-success"><strong>3 回</strong></td>
+            <td>$81.27</td>
+            <td>$83.62</td>
+        </tr>
+        
+        <tr>
+            <td>
+                <a href="https://jp.tradingview.com/symbols/EA/" target="_blank" class="ticker-link" style="color: #007bff; text-decoration: none; font-weight: bold;">
+                    EA 🔗
+                </a>
+            </td>
+            <td class="text-center text-success"><strong>3 回</strong></td>
+            <td>$205.04</td>
+            <td>$205.69</td>
+        </tr>
+        
+        <tr>
+            <td>
+                <a href="https://jp.tradingview.com/symbols/APH/" target="_blank" class="ticker-link" style="color: #007bff; text-decoration: none; font-weight: bold;">
+                    APH 🔗
+                </a>
+            </td>
+            <td class="text-center text-success"><strong>3 回</strong></td>
+            <td>$176.32</td>
+            <td>$178.52</td>
+        </tr>
+        
+        <tr>
+            <td>
+                <a href="https://jp.tradingview.com/symbols/ESS/" target="_blank" class="ticker-link" style="color: #007bff; text-decoration: none; font-weight: bold;">
+                    ESS 🔗
+                </a>
+            </td>
+            <td class="text-center text-success"><strong>3 回</strong></td>
+            <td>$291.59</td>
+            <td>$293.86</td>
+        </tr>
+        
+        <tr>
+            <td>
+                <a href="https://jp.tradingview.com/symbols/EXPD/" target="_blank" class="ticker-link" style="color: #007bff; text-decoration: none; font-weight: bold;">
+                    EXPD 🔗
+                </a>
+            </td>
+            <td class="text-center text-success"><strong>3 回</strong></td>
+            <td>$162.98</td>
+            <td>$168.52</td>
+        </tr>
+        
+        <tr>
+            <td>
+                <a href="https://jp.tradingview.com/symbols/UDR/" target="_blank" class="ticker-link" style="color: #007bff; text-decoration: none; font-weight: bold;">
+                    UDR 🔗
+                </a>
+            </td>
+            <td class="text-center text-success"><strong>3 回</strong></td>
+            <td>$39.92</td>
+            <td>$40.28</td>
+        </tr>
+        
+        <tr>
+            <td>
+                <a href="https://jp.tradingview.com/symbols/STX/" target="_blank" class="ticker-link" style="color: #007bff; text-decoration: none; font-weight: bold;">
+                    STX 🔗
+                </a>
+            </td>
+            <td class="text-center text-success"><strong>3 回</strong></td>
+            <td>$965.0</td>
+            <td>$1,144.18</td>
+        </tr>
+        
+        <tr>
+            <td>
+                <a href="https://jp.tradingview.com/symbols/SWK/" target="_blank" class="ticker-link" style="color: #007bff; text-decoration: none; font-weight: bold;">
+                    SWK 🔗
+                </a>
+            </td>
+            <td class="text-center text-success"><strong>3 回</strong></td>
+            <td>$94.12</td>
+            <td>$95.01</td>
+        </tr>
+        
+        <tr>
+            <td>
+                <a href="https://jp.tradingview.com/symbols/MAR/" target="_blank" class="ticker-link" style="color: #007bff; text-decoration: none; font-weight: bold;">
+                    MAR 🔗
+                </a>
+            </td>
+            <td class="text-center text-success"><strong>3 回</strong></td>
+            <td>$370.59</td>
+            <td>$410.98</td>
+        </tr>
+        
+        <tr>
+            <td>
+                <a href="https://jp.tradingview.com/symbols/PANW/" target="_blank" class="ticker-link" style="color: #007bff; text-decoration: none; font-weight: bold;">
+                    PANW 🔗
+                </a>
+            </td>
+            <td class="text-center text-success"><strong>3 回</strong></td>
+            <td>$341.02</td>
+            <td>$342.48</td>
+        </tr>
+        
+        <tr>
+            <td>
+                <a href="https://jp.tradingview.com/symbols/STLD/" target="_blank" class="ticker-link" style="color: #007bff; text-decoration: none; font-weight: bold;">
+                    STLD 🔗
+                </a>
+            </td>
+            <td class="text-center text-success"><strong>3 回</strong></td>
+            <td>$229.46</td>
+            <td>$288.09</td>
+        </tr>
+        
+        <tr>
+            <td>
+                <a href="https://jp.tradingview.com/symbols/JPM/" target="_blank" class="ticker-link" style="color: #007bff; text-decoration: none; font-weight: bold;">
+                    JPM 🔗
+                </a>
+            </td>
+            <td class="text-center text-success"><strong>3 回</strong></td>
+            <td>$327.33</td>
+            <td>$343.45</td>
+        </tr>
+        
+        <tr>
+            <td>
+                <a href="https://jp.tradingview.com/symbols/MTB/" target="_blank" class="ticker-link" style="color: #007bff; text-decoration: none; font-weight: bold;">
+                    MTB 🔗
+                </a>
+            </td>
+            <td class="text-center text-success"><strong>3 回</strong></td>
+            <td>$238.01</td>
+            <td>$239.83</td>
+        </tr>
+        
+        <tr>
+            <td>
+                <a href="https://jp.tradingview.com/symbols/INTC/" target="_blank" class="ticker-link" style="color: #007bff; text-decoration: none; font-weight: bold;">
+                    INTC 🔗
+                </a>
+            </td>
+            <td class="text-center text-success"><strong>3 回</strong></td>
+            <td>$139.63</td>
+            <td>$142.35</td>
+        </tr>
+        
+        <tr>
+            <td>
+                <a href="https://jp.tradingview.com/symbols/FTNT/" target="_blank" class="ticker-link" style="color: #007bff; text-decoration: none; font-weight: bold;">
+                    FTNT 🔗
+                </a>
+            </td>
+            <td class="text-center text-success"><strong>3 回</strong></td>
+            <td>$153.62</td>
+            <td>$159.07</td>
+        </tr>
+        
+        <tr>
+            <td>
+                <a href="https://jp.tradingview.com/symbols/HWM/" target="_blank" class="ticker-link" style="color: #007bff; text-decoration: none; font-weight: bold;">
+                    HWM 🔗
+                </a>
+            </td>
+            <td class="text-center text-success"><strong>3 回</strong></td>
+            <td>$268.86</td>
+            <td>$290.63</td>
+        </tr>
+        
+        <tr>
+            <td>
+                <a href="https://jp.tradingview.com/symbols/HST/" target="_blank" class="ticker-link" style="color: #007bff; text-decoration: none; font-weight: bold;">
+                    HST 🔗
+                </a>
+            </td>
+            <td class="text-center text-success"><strong>3 回</strong></td>
+            <td>$23.71</td>
+            <td>$24.47</td>
+        </tr>
+        
+        <tr>
+            <td>
+                <a href="https://jp.tradingview.com/symbols/JNJ/" target="_blank" class="ticker-link" style="color: #007bff; text-decoration: none; font-weight: bold;">
+                    JNJ 🔗
+                </a>
+            </td>
+            <td class="text-center text-success"><strong>3 回</strong></td>
+            <td>$253.97</td>
+            <td>$259.9</td>
+        </tr>
+        
+        <tr>
+            <td>
+                <a href="https://jp.tradingview.com/symbols/JBL/" target="_blank" class="ticker-link" style="color: #007bff; text-decoration: none; font-weight: bold;">
+                    JBL 🔗
+                </a>
+            </td>
+            <td class="text-center text-success"><strong>3 回</strong></td>
+            <td>$385.48</td>
+            <td>$428.93</td>
+        </tr>
+        
+        <tr>
+            <td>
+                <a href="https://jp.tradingview.com/symbols/BIIB/" target="_blank" class="ticker-link" style="color: #007bff; text-decoration: none; font-weight: bold;">
+                    BIIB 🔗
+                </a>
+            </td>
+            <td class="text-center text-success"><strong>3 回</strong></td>
+            <td>$216.06</td>
+            <td>$219.72</td>
+        </tr>
+        
+        <tr>
+            <td>
+                <a href="https://jp.tradingview.com/symbols/CNP/" target="_blank" class="ticker-link" style="color: #007bff; text-decoration: none; font-weight: bold;">
+                    CNP 🔗
+                </a>
+            </td>
+            <td class="text-center text-success"><strong>3 回</strong></td>
+            <td>$44.04</td>
+            <td>$45.22</td>
+        </tr>
+        
+        <tr>
+            <td>
+                <a href="https://jp.tradingview.com/symbols/AEE/" target="_blank" class="ticker-link" style="color: #007bff; text-decoration: none; font-weight: bold;">
+                    AEE 🔗
+                </a>
+            </td>
+            <td class="text-center text-success"><strong>2 回</strong></td>
+            <td>$113.04</td>
+            <td>$118.32</td>
+        </tr>
+        
+        <tr>
+            <td>
+                <a href="https://jp.tradingview.com/symbols/LNT/" target="_blank" class="ticker-link" style="color: #007bff; text-decoration: none; font-weight: bold;">
+                    LNT 🔗
+                </a>
+            </td>
+            <td class="text-center text-success"><strong>2 回</strong></td>
+            <td>$76.29</td>
+            <td>$77.36</td>
+        </tr>
+        
+        <tr>
+            <td>
+                <a href="https://jp.tradingview.com/symbols/FTV/" target="_blank" class="ticker-link" style="color: #007bff; text-decoration: none; font-weight: bold;">
+                    FTV 🔗
+                </a>
+            </td>
+            <td class="text-center text-success"><strong>2 回</strong></td>
+            <td>$61.09</td>
+            <td>$63.34</td>
+        </tr>
+        
+        <tr>
+            <td>
+                <a href="https://jp.tradingview.com/symbols/AEP/" target="_blank" class="ticker-link" style="color: #007bff; text-decoration: none; font-weight: bold;">
+                    AEP 🔗
+                </a>
+            </td>
+            <td class="text-center text-success"><strong>2 回</strong></td>
+            <td>$136.81</td>
+            <td>$139.33</td>
+        </tr>
+        
+        <tr>
+            <td>
+                <a href="https://jp.tradingview.com/symbols/ELV/" target="_blank" class="ticker-link" style="color: #007bff; text-decoration: none; font-weight: bold;">
+                    ELV 🔗
+                </a>
+            </td>
+            <td class="text-center text-success"><strong>2 回</strong></td>
+            <td>$386.73</td>
+            <td>$426.98</td>
+        </tr>
+        
+        <tr>
+            <td>
+                <a href="https://jp.tradingview.com/symbols/CB/" target="_blank" class="ticker-link" style="color: #007bff; text-decoration: none; font-weight: bold;">
+                    CB 🔗
+                </a>
+            </td>
+            <td class="text-center text-success"><strong>2 回</strong></td>
+            <td>$340.74</td>
+            <td>$344.85</td>
+        </tr>
+        
+        <tr>
+            <td>
+                <a href="https://jp.tradingview.com/symbols/CASY/" target="_blank" class="ticker-link" style="color: #007bff; text-decoration: none; font-weight: bold;">
+                    CASY 🔗
+                </a>
+            </td>
+            <td class="text-center text-success"><strong>2 回</strong></td>
+            <td>$794.79</td>
+            <td>$927.85</td>
+        </tr>
+        
+        <tr>
+            <td>
+                <a href="https://jp.tradingview.com/symbols/CMI/" target="_blank" class="ticker-link" style="color: #007bff; text-decoration: none; font-weight: bold;">
+                    CMI 🔗
+                </a>
+            </td>
+            <td class="text-center text-success"><strong>2 回</strong></td>
+            <td>$713.21</td>
+            <td>$737.76</td>
+        </tr>
+        
+        <tr>
+            <td>
+                <a href="https://jp.tradingview.com/symbols/EQR/" target="_blank" class="ticker-link" style="color: #007bff; text-decoration: none; font-weight: bold;">
+                    EQR 🔗
+                </a>
+            </td>
+            <td class="text-center text-success"><strong>2 回</strong></td>
+            <td>$67.93</td>
+            <td>$68.46</td>
+        </tr>
+        
+        <tr>
+            <td>
+                <a href="https://jp.tradingview.com/symbols/FFIV/" target="_blank" class="ticker-link" style="color: #007bff; text-decoration: none; font-weight: bold;">
+                    FFIV 🔗
+                </a>
+            </td>
+            <td class="text-center text-success"><strong>2 回</strong></td>
+            <td>$415.96</td>
+            <td>$427.54</td>
+        </tr>
+        
+        <tr>
+            <td>
+                <a href="https://jp.tradingview.com/symbols/GNRC/" target="_blank" class="ticker-link" style="color: #007bff; text-decoration: none; font-weight: bold;">
+                    GNRC 🔗
+                </a>
+            </td>
+            <td class="text-center text-success"><strong>2 回</strong></td>
+            <td>$292.81</td>
+            <td>$296.44</td>
+        </tr>
+        
+        <tr>
+            <td>
+                <a href="https://jp.tradingview.com/symbols/FDX/" target="_blank" class="ticker-link" style="color: #007bff; text-decoration: none; font-weight: bold;">
+                    FDX 🔗
+                </a>
+            </td>
+            <td class="text-center text-success"><strong>2 回</strong></td>
+            <td>$313.13</td>
+            <td>$344.08</td>
+        </tr>
+        
+        <tr>
+            <td>
+                <a href="https://jp.tradingview.com/symbols/GS/" target="_blank" class="ticker-link" style="color: #007bff; text-decoration: none; font-weight: bold;">
+                    GS 🔗
+                </a>
+            </td>
+            <td class="text-center text-success"><strong>2 回</strong></td>
+            <td>$1,011.37</td>
+            <td>$1,125.0</td>
+        </tr>
+        
+        <tr>
+            <td>
+                <a href="https://jp.tradingview.com/symbols/IRM/" target="_blank" class="ticker-link" style="color: #007bff; text-decoration: none; font-weight: bold;">
+                    IRM 🔗
+                </a>
+            </td>
+            <td class="text-center text-success"><strong>2 回</strong></td>
+            <td>$126.31</td>
+            <td>$134.68</td>
+        </tr>
+        
+        <tr>
+            <td>
+                <a href="https://jp.tradingview.com/symbols/WEC/" target="_blank" class="ticker-link" style="color: #007bff; text-decoration: none; font-weight: bold;">
+                    WEC 🔗
+                </a>
+            </td>
+            <td class="text-center text-success"><strong>2 回</strong></td>
+            <td>$116.77</td>
+            <td>$119.06</td>
+        </tr>
+        
+        <tr>
+            <td>
+                <a href="https://jp.tradingview.com/symbols/TJX/" target="_blank" class="ticker-link" style="color: #007bff; text-decoration: none; font-weight: bold;">
+                    TJX 🔗
+                </a>
+            </td>
+            <td class="text-center text-success"><strong>2 回</strong></td>
+            <td>$151.5</td>
+            <td>$170.0</td>
+        </tr>
+        
+        <tr>
+            <td>
+                <a href="https://jp.tradingview.com/symbols/TROW/" target="_blank" class="ticker-link" style="color: #007bff; text-decoration: none; font-weight: bold;">
+                    TROW 🔗
+                </a>
+            </td>
+            <td class="text-center text-success"><strong>2 回</strong></td>
+            <td>$113.69</td>
+            <td>$116.59</td>
+        </tr>
+        
+        <tr>
+            <td>
+                <a href="https://jp.tradingview.com/symbols/URI/" target="_blank" class="ticker-link" style="color: #007bff; text-decoration: none; font-weight: bold;">
+                    URI 🔗
+                </a>
+            </td>
+            <td class="text-center text-success"><strong>2 回</strong></td>
+            <td>$1,132.89</td>
+            <td>$1,143.69</td>
+        </tr>
+        
+        <tr>
+            <td>
+                <a href="https://jp.tradingview.com/symbols/ROST/" target="_blank" class="ticker-link" style="color: #007bff; text-decoration: none; font-weight: bold;">
+                    ROST 🔗
+                </a>
+            </td>
+            <td class="text-center text-success"><strong>2 回</strong></td>
+            <td>$212.85</td>
+            <td>$242.81</td>
+        </tr>
+        
+        <tr>
+            <td>
+                <a href="https://jp.tradingview.com/symbols/REG/" target="_blank" class="ticker-link" style="color: #007bff; text-decoration: none; font-weight: bold;">
+                    REG 🔗
+                </a>
+            </td>
+            <td class="text-center text-success"><strong>2 回</strong></td>
+            <td>$79.74</td>
+            <td>$81.93</td>
+        </tr>
+        
+        <tr>
+            <td>
+                <a href="https://jp.tradingview.com/symbols/SNA/" target="_blank" class="ticker-link" style="color: #007bff; text-decoration: none; font-weight: bold;">
+                    SNA 🔗
+                </a>
+            </td>
+            <td class="text-center text-success"><strong>2 回</strong></td>
+            <td>$402.4</td>
+            <td>$404.46</td>
+        </tr>
+        
+        <tr>
+            <td>
+                <a href="https://jp.tradingview.com/symbols/DGX/" target="_blank" class="ticker-link" style="color: #007bff; text-decoration: none; font-weight: bold;">
+                    DGX 🔗
+                </a>
+            </td>
+            <td class="text-center text-success"><strong>2 回</strong></td>
+            <td>$211.95</td>
+            <td>$214.21</td>
+        </tr>
+        
+        <tr>
+            <td>
+                <a href="https://jp.tradingview.com/symbols/MAS/" target="_blank" class="ticker-link" style="color: #007bff; text-decoration: none; font-weight: bold;">
+                    MAS 🔗
+                </a>
+            </td>
+            <td class="text-center text-success"><strong>2 回</strong></td>
+            <td>$81.37</td>
+            <td>$81.82</td>
+        </tr>
+        
+        <tr>
+            <td>
+                <a href="https://jp.tradingview.com/symbols/NI/" target="_blank" class="ticker-link" style="color: #007bff; text-decoration: none; font-weight: bold;">
+                    NI 🔗
+                </a>
+            </td>
+            <td class="text-center text-success"><strong>2 回</strong></td>
+            <td>$47.55</td>
+            <td>$49.21</td>
+        </tr>
+        
+        <tr>
+            <td>
+                <a href="https://jp.tradingview.com/symbols/PSA/" target="_blank" class="ticker-link" style="color: #007bff; text-decoration: none; font-weight: bold;">
+                    PSA 🔗
+                </a>
+            </td>
+            <td class="text-center text-success"><strong>2 回</strong></td>
+            <td>$318.31</td>
+            <td>$328.74</td>
+        </tr>
+        
+        <tr>
+            <td>
+                <a href="https://jp.tradingview.com/symbols/LLY/" target="_blank" class="ticker-link" style="color: #007bff; text-decoration: none; font-weight: bold;">
+                    LLY 🔗
+                </a>
+            </td>
+            <td class="text-center text-success"><strong>2 回</strong></td>
+            <td>$1,199.43</td>
+            <td>$1,238.0</td>
+        </tr>
+        
+        <tr>
+            <td>
+                <a href="https://jp.tradingview.com/symbols/NUE/" target="_blank" class="ticker-link" style="color: #007bff; text-decoration: none; font-weight: bold;">
+                    NUE 🔗
+                </a>
+            </td>
+            <td class="text-center text-success"><strong>2 回</strong></td>
+            <td>$222.75</td>
+            <td>$270.24</td>
+        </tr>
+        
+        <tr>
+            <td>
+                <a href="https://jp.tradingview.com/symbols/AME/" target="_blank" class="ticker-link" style="color: #007bff; text-decoration: none; font-weight: bold;">
+                    AME 🔗
+                </a>
+            </td>
+            <td class="text-center text-success"><strong>1 回</strong></td>
+            <td>$241.94</td>
+            <td>$244.71</td>
+        </tr>
+        
+        <tr>
+            <td>
+                <a href="https://jp.tradingview.com/symbols/CNC/" target="_blank" class="ticker-link" style="color: #007bff; text-decoration: none; font-weight: bold;">
+                    CNC 🔗
+                </a>
+            </td>
+            <td class="text-center text-success"><strong>1 回</strong></td>
+            <td>$64.19</td>
+            <td>$66.55</td>
+        </tr>
+        
+        <tr>
+            <td>
+                <a href="https://jp.tradingview.com/symbols/ETN/" target="_blank" class="ticker-link" style="color: #007bff; text-decoration: none; font-weight: bold;">
+                    ETN 🔗
+                </a>
+            </td>
+            <td class="text-center text-success"><strong>1 回</strong></td>
+            <td>$426.12</td>
+            <td>$436.74</td>
+        </tr>
+        
+        <tr>
+            <td>
+                <a href="https://jp.tradingview.com/symbols/JBHT/" target="_blank" class="ticker-link" style="color: #007bff; text-decoration: none; font-weight: bold;">
+                    JBHT 🔗
+                </a>
+            </td>
+            <td class="text-center text-success"><strong>1 回</strong></td>
+            <td>$289.43</td>
+            <td>$293.54</td>
+        </tr>
+        
+        <tr>
+            <td>
+                <a href="https://jp.tradingview.com/symbols/IVZ/" target="_blank" class="ticker-link" style="color: #007bff; text-decoration: none; font-weight: bold;">
+                    IVZ 🔗
+                </a>
+            </td>
+            <td class="text-center text-success"><strong>1 回</strong></td>
+            <td>$26.39</td>
+            <td>$29.82</td>
+        </tr>
+        
+        <tr>
+            <td>
+                <a href="https://jp.tradingview.com/symbols/INCY/" target="_blank" class="ticker-link" style="color: #007bff; text-decoration: none; font-weight: bold;">
+                    INCY 🔗
+                </a>
+            </td>
+            <td class="text-center text-success"><strong>1 回</strong></td>
+            <td>$113.36</td>
+            <td>$115.56</td>
+        </tr>
+        
+        <tr>
+            <td>
+                <a href="https://jp.tradingview.com/symbols/HON/" target="_blank" class="ticker-link" style="color: #007bff; text-decoration: none; font-weight: bold;">
+                    HON 🔗
+                </a>
+            </td>
+            <td class="text-center text-success"><strong>1 回</strong></td>
+            <td>$223.9</td>
+            <td>$252.0</td>
+        </tr>
+        
+        <tr>
+            <td>
+                <a href="https://jp.tradingview.com/symbols/EQIX/" target="_blank" class="ticker-link" style="color: #007bff; text-decoration: none; font-weight: bold;">
+                    EQIX 🔗
+                </a>
+            </td>
+            <td class="text-center text-success"><strong>1 回</strong></td>
+            <td>$1,042.39</td>
+            <td>$1,124.0</td>
+        </tr>
+        
+        <tr>
+            <td>
+                <a href="https://jp.tradingview.com/symbols/FCX/" target="_blank" class="ticker-link" style="color: #007bff; text-decoration: none; font-weight: bold;">
+                    FCX 🔗
+                </a>
+            </td>
+            <td class="text-center text-success"><strong>1 回</strong></td>
+            <td>$62.89</td>
+            <td>$72.28</td>
+        </tr>
+        
+        <tr>
+            <td>
+                <a href="https://jp.tradingview.com/symbols/ADI/" target="_blank" class="ticker-link" style="color: #007bff; text-decoration: none; font-weight: bold;">
+                    ADI 🔗
+                </a>
+            </td>
+            <td class="text-center text-success"><strong>1 回</strong></td>
+            <td>$397.17</td>
+            <td>$445.91</td>
+        </tr>
+        
+        <tr>
+            <td>
+                <a href="https://jp.tradingview.com/symbols/KEYS/" target="_blank" class="ticker-link" style="color: #007bff; text-decoration: none; font-weight: bold;">
+                    KEYS 🔗
+                </a>
+            </td>
+            <td class="text-center text-success"><strong>1 回</strong></td>
+            <td>$350.07</td>
+            <td>$374.96</td>
+        </tr>
+        
+        <tr>
+            <td>
+                <a href="https://jp.tradingview.com/symbols/ODFL/" target="_blank" class="ticker-link" style="color: #007bff; text-decoration: none; font-weight: bold;">
+                    ODFL 🔗
+                </a>
+            </td>
+            <td class="text-center text-success"><strong>1 回</strong></td>
+            <td>$216.6</td>
+            <td>$252.03</td>
+        </tr>
+        
+        <tr>
+            <td>
+                <a href="https://jp.tradingview.com/symbols/PNC/" target="_blank" class="ticker-link" style="color: #007bff; text-decoration: none; font-weight: bold;">
+                    PNC 🔗
+                </a>
+            </td>
+            <td class="text-center text-success"><strong>1 回</strong></td>
+            <td>$246.22</td>
+            <td>$249.01</td>
+        </tr>
+        
+        <tr>
+            <td>
+                <a href="https://jp.tradingview.com/symbols/NDSN/" target="_blank" class="ticker-link" style="color: #007bff; text-decoration: none; font-weight: bold;">
+                    NDSN 🔗
+                </a>
+            </td>
+            <td class="text-center text-success"><strong>1 回</strong></td>
+            <td>$301.69</td>
+            <td>$307.74</td>
+        </tr>
+        
+        <tr>
+            <td>
+                <a href="https://jp.tradingview.com/symbols/MRVL/" target="_blank" class="ticker-link" style="color: #007bff; text-decoration: none; font-weight: bold;">
+                    MRVL 🔗
+                </a>
+            </td>
+            <td class="text-center text-success"><strong>1 回</strong></td>
+            <td>$297.89</td>
+            <td>$329.88</td>
+        </tr>
+        
+        <tr>
+            <td>
+                <a href="https://jp.tradingview.com/symbols/TXN/" target="_blank" class="ticker-link" style="color: #007bff; text-decoration: none; font-weight: bold;">
+                    TXN 🔗
+                </a>
+            </td>
+            <td class="text-center text-success"><strong>1 回</strong></td>
+            <td>$298.07</td>
+            <td>$334.03</td>
+        </tr>
+        
+        <tr>
+            <td>
+                <a href="https://jp.tradingview.com/symbols/VLO/" target="_blank" class="ticker-link" style="color: #007bff; text-decoration: none; font-weight: bold;">
+                    VLO 🔗
+                </a>
+            </td>
+            <td class="text-center text-success"><strong>1 回</strong></td>
+            <td>$260.44</td>
+            <td>$272.17</td>
+        </tr>
+        
+        <tr>
+            <td>
+                <a href="https://jp.tradingview.com/symbols/TT/" target="_blank" class="ticker-link" style="color: #007bff; text-decoration: none; font-weight: bold;">
+                    TT 🔗
+                </a>
+            </td>
+            <td class="text-center text-success"><strong>1 回</strong></td>
+            <td>$491.16</td>
+            <td>$505.87</td>
+        </tr>
+        
+        <tr>
+            <td>
+                <a href="https://jp.tradingview.com/symbols/USB/" target="_blank" class="ticker-link" style="color: #007bff; text-decoration: none; font-weight: bold;">
+                    USB 🔗
+                </a>
+            </td>
+            <td class="text-center text-success"><strong>1 回</strong></td>
+            <td>$60.4</td>
+            <td>$61.35</td>
         </tr>
         
                     </tbody>
@@ -1214,6 +1548,7 @@
     <script>
         $(document).ready(function() {
             $('#screenerTable').DataTable({
+                "order": [[ 1, "desc" ]], // 初期状態で回数の多い順に並び替え
                 "pageLength": 50,
                 "language": {
                     "search": "絞り込み検索:",
