@@ -255,7 +255,7 @@ if __name__ == "__main__":
 
     print(f"\n合計 {len(tickers)} 銘柄のスクリーニングを開始します...")
     
-    result_df = check_52week_high_and_trend(tickers, lookback_days=10)
+    result_df = check_52week_high_and_trend(tickers, lookback_days=60)
     html_name = "index.html"
     
     # 銘柄がゼロ件の場合は空のDataFrameを作ってレポート生成に回す
