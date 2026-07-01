@@ -3,29 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>⚡ 最新スクリーニング結果 [S&P 500] [TOPIX] </title>
+    <title>⚡ 52週新高値更新銘柄 [S&P 500] [TOPIX] </title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdn.datatables.net/1.10.21/css/dataTables.bootstrap4.min.css">
     <style>
         body { background-color: #f8f9fa; color: #333; font-family: 'Helvetica Neue', Arial, sans-serif; }
         .container { margin-top: 30px; margin-bottom: 50px; }
-        .header-section { background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%); color: white; padding: 30px; border-radius: 8px; margin-bottom: 30px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+        .header-section { background: linear-gradient(135deg, #1f4037 0%, #99f2c8 100%); color: white; padding: 30px; border-radius: 8px; margin-bottom: 30px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
         .card { border: none; box-shadow: 0 4px 6px rgba(0,0,0,0.05); border-radius: 8px; }
-        .table thead th { background-color: #343a40; color: white; border: none; }
-        .badge-success { background-color: #28a745; }
-        .badge-danger { background-color: #dc3545; }
-        .badge-warning { background-color: #ffc107; color: #212529; }
-        .highlight-count { background-color: #e8f5e9; color: #2e7d32; }
+        .table thead th { background-color: #2c3e50; color: white; border: none; }
+        .highlight-price { color: #27ae60; font-weight: bold; }
         footer { text-align: center; margin-top: 30px; color: #777; font-size: 0.9rem; }
     </style>
 </head>
 <body>
     <div class="container">
         <div class="header-section">
-            <h1 class="display-5">📈 最新株式スクリーニング状況 [S&P 500] [TOPIX] </h1>
-            <p class="lead mb-0">52週新高値更新日数（過去2週間） ＆ 移動平均線トレンド判定</p>
+            <h1 class="display-5">📈 52週新高値更新 銘柄一覧 [S&P 500] [TOPIX] </h1>
+            <p class="lead mb-0">直近で52週最高値を更新した銘柄を抽出しています</p>
             <hr class="my-2" style="border-color: rgba(255,255,255,0.2);">
-            <small>最終更新日時: <strong>2026-07-01 11:54:39</strong> | 対象銘柄数: 8</small>
+            <small>最終更新日時: <strong>2026-07-01 11:58:38</strong> | ヒット数: 0 銘柄</small>
         </div>
 
         <div class="card p-4">
@@ -34,83 +31,16 @@
                     <thead>
                         <tr>
                             <th>ティッカー (Ticker)</th>
-                            <th>トレンド (Trend)</th>
-                            <th>新高値日数 (52W High Count)</th>
                             <th>直近終値 (Current Price)</th>
                             <th>52週最高値 (52W High Price)</th>
                         </tr>
                     </thead>
                     <tbody>
                         
-        <tr>
-            <td>1306.T</td>
-            <td><span class="badge badge-success">上昇 (Perfect Order)</span></td>
-            <td class="highlight-count"><strong>4</strong></td>
-            <td>423.6</td>
-            <td>435.6</td>
-        </tr>
-        
-        <tr>
-            <td>AAPL</td>
-            <td><span class="badge badge-warning">レンジ / 不明</span></td>
-            <td class=""><strong>0</strong></td>
-            <td>289.36</td>
-            <td>317.4</td>
-        </tr>
-        
-        <tr>
-            <td>MSFT</td>
-            <td><span class="badge badge-warning">レンジ / 不明</span></td>
-            <td class=""><strong>0</strong></td>
-            <td>373.02</td>
-            <td>551.05</td>
-        </tr>
-        
-        <tr>
-            <td>GOOGL</td>
-            <td><span class="badge badge-warning">レンジ / 不明</span></td>
-            <td class=""><strong>0</strong></td>
-            <td>357.37</td>
-            <td>408.37</td>
-        </tr>
-        
-        <tr>
-            <td>AMZN</td>
-            <td><span class="badge badge-warning">レンジ / 不明</span></td>
-            <td class=""><strong>0</strong></td>
-            <td>238.34</td>
-            <td>278.56</td>
-        </tr>
-        
-        <tr>
-            <td>NVDA</td>
-            <td><span class="badge badge-warning">レンジ / 不明</span></td>
-            <td class=""><strong>0</strong></td>
-            <td>200.09</td>
-            <td>236.26</td>
-        </tr>
-        
-        <tr>
-            <td>9984.T</td>
-            <td><span class="badge badge-warning">レンジ / 不明</span></td>
-            <td class=""><strong>0</strong></td>
-            <td>5,963.0</td>
-            <td>9,074.0</td>
-        </tr>
-        
-        <tr>
-            <td>7203.T</td>
-            <td><span class="badge badge-danger">下降 (Reverse Order)</span></td>
-            <td class=""><strong>0</strong></td>
-            <td>2,725.0</td>
-            <td>3,941.31</td>
-        </tr>
-        
                     </tbody>
                 </table>
             </div>
         </div>
-        
         <footer>
             <p>Generated by 52-Week High Screener Tool</p>
         </footer>
@@ -122,16 +52,12 @@
     <script>
         $(document).ready(function() {
             $('#screenerTable').DataTable({
-                "order": [[ 2, "desc" ]],
                 "pageLength": 50,
                 "language": {
                     "search": "絞り込み検索:",
                     "lengthMenu": "表示 _MENU_ 件",
                     "info": "全 _TOTAL_ 銘柄中 _START_ から _END_ まで表示",
-                    "paginate": {
-                        "next": "次",
-                        "previous": "前"
-                    }
+                    "paginate": { "next": "次", "previous": "前" }
                 }
             });
         });
