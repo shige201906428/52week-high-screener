@@ -42,8 +42,8 @@ def load_tickers_from_file(file_path, is_japan=False):
             tickers.append(ticker)
     return tickers
 
-def check_52week_high(ticker_list):
-    """52週新高値（過去1年間の最高値）を更新した銘柄のみを抽出する"""
+def check_52week_high(ticker_list, lookback_days=10):
+    """過去10日間のうちに52週新高値を更新した銘柄を抽出する"""
     results = []
     end_date = datetime.date.today()
     start_date = end_date - datetime.timedelta(days=365 * 2)
@@ -64,15 +64,25 @@ def check_52week_high(ticker_list):
             if len(df) < 252:
                 continue
 
-            current_high = df["High"].iloc[-1]
-            current_price = df["Close"].iloc[-1]
-            past_52w_high = df["High"].iloc[-253:-1].max()
+            # 過去10日間の間に、その日の高値が「さらにその時点の過去52週最高値」を超えていたかをチェック
+            is_hit = False
+            for i in range(-lookback_days, 0):
+                if abs(i) > len(df):
+                    continue
+                target_day_high = df["High"].iloc[i]
+                past_52w_high = df["High"].iloc[i - 252 : i].max()
 
-            if current_high >= past_52w_high:
+                if target_day_high >= past_52w_high:
+                    is_hit = True
+                    break
+
+            if is_hit:
+                current_price = df["Close"].iloc[-1]
+                latest_52w_high = df["High"].iloc[-252:].max()
                 results.append({
                     "Ticker": ticker_symbol,
                     "Current_Price": round(current_price, 2),
-                    "52W_High_Price": round(max(current_high, past_52w_high), 2)
+                    "52W_High_Price": round(latest_52w_high, 2)
                 })
         except Exception:
             continue
