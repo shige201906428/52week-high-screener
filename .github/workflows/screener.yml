@@ -28,9 +28,10 @@ jobs:
     - name: Run screener
       run: echo "3" | python screener.py
 
+    # 【変更後：末尾の git add 部分を変更】
     - name: Commit and Push results
       run: |
         git config --local user.email "github-actions[bot]@users.noreply.github.com"
         git config --local user.name "github-actions[bot]"
-        git add data/
+        git add .
         git diff --quiet && git diff --staged --quiet || (git commit -m "Update screened data" && git push)
