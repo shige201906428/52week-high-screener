@@ -1,1 +1,4 @@
-
+AAPL
+MSFT
+AMZN
+NVDA
