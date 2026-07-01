@@ -9,10 +9,8 @@ def get_sp500_tickers():
     """S&P 500の全500銘柄のティッカーリストを確実に入手する"""
     print("S&P 500の最新銘柄リストを取得中...")
     try:
-        # Wikipediaがエラーを起こしやすいため、より安定したデータソースから取得
         url = "https://raw.githubusercontent.com/datasets/s-and-p-500-companies/master/data/constituents.csv"
         df = pd.read_csv(url)
-        # yfinance用にドット（.）をハイフン（-）に変換（例: BRK.B -> BRK-B）
         tickers = df["Symbol"].str.replace(".", "-", regex=False).tolist()
         print(f"-> S&P 500の {len(tickers)} 銘柄を正常に取得しました。")
         return tickers
@@ -48,7 +46,7 @@ def check_52week_high(ticker_list, lookback_days=10):
     end_date = datetime.date.today()
     start_date = end_date - datetime.timedelta(days=365 * 2)
 
-    print(f"\nYahoo Financeから全株価データを一括ダウンロード中...（数秒かかります）")
+    print(f"\nYahoo Financeから全株価データを一括ダウンロード中...")
     try:
         all_data = yf.download(ticker_list, start=start_date, end=end_date, group_by='ticker', progress=False)
     except Exception as e:
@@ -64,7 +62,6 @@ def check_52week_high(ticker_list, lookback_days=10):
             if len(df) < 252:
                 continue
 
-            # 過去10日間の間に、その日の高値が「さらにその時点の過去52週最高値」を超えていたかをチェック
             is_hit = False
             for i in range(-lookback_days, 0):
                 if abs(i) > len(df):
@@ -93,16 +90,32 @@ def check_52week_high(ticker_list, lookback_days=10):
     return res_df
 
 def generate_html_report(df, output_path, title_suffix=""):
-    """index.htmlとしてシンプルなレポートを出力する"""
+    """index.htmlとしてTradingViewリンク付きのレポートを出力する"""
     now_str = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
 
     table_rows = ""
     for idx, row in df.iterrows():
+        ticker = row['Ticker']
+        # TradingViewのURL生成ロジック
+        if ".T" in ticker:
+            # 日本株: 7203.T -> TSE-7203
+            code = ticker.split('.')[0]
+            tv_url = f"https://jp.tradingview.com/symbols/TSE-{code}/"
+            currency_prefix = "¥"
+        else:
+            # 米国株: AMD -> AMD
+            tv_url = f"https://jp.tradingview.com/symbols/{ticker}/"
+            currency_prefix = "$"
+
         table_rows += f"""
         <tr>
-            <td><strong>{row['Ticker']}</strong></td>
-            <td class="highlight-price">${row['Current_Price']:,}</td>
-            <td>${row['52W_High_Price']:,}</td>
+            <td>
+                <a href="{tv_url}" target="_blank" class="ticker-link">
+                    <strong>{ticker}</strong> <small>🔗</small>
+                </a>
+            </td>
+            <td class="highlight-price">{currency_prefix}{row['Current_Price']:,}</td>
+            <td>{currency_prefix}{row['52W_High_Price']:,}</td>
         </tr>
         """
 
@@ -121,6 +134,8 @@ def generate_html_report(df, output_path, title_suffix=""):
         .card {{ border: none; box-shadow: 0 4px 6px rgba(0,0,0,0.05); border-radius: 8px; }}
         .table thead th {{ background-color: #2c3e50; color: white; border: none; }}
         .highlight-price {{ color: #27ae60; font-weight: bold; }}
+        .ticker-link {{ color: #007bff; text-decoration: none; }}
+        .ticker-link:hover {{ text-decoration: underline; color: #0056b3; }}
         footer {{ text-align: center; margin-top: 30px; color: #777; font-size: 0.9rem; }}
     </style>
 </head>
@@ -128,7 +143,7 @@ def generate_html_report(df, output_path, title_suffix=""):
     <div class="container">
         <div class="header-section">
             <h1 class="display-5">📈 52週新高値更新 銘柄一覧 {title_suffix}</h1>
-            <p class="lead mb-0">直近で52週最高値を更新した銘柄を抽出しています</p>
+            <p class="lead mb-0">直近10日間で52週最高値を更新した銘柄（TradingViewリンク付）</p>
             <hr class="my-2" style="border-color: rgba(255,255,255,0.2);">
             <small>最終更新日時: <strong>{now_str}</strong> | ヒット数: {len(df)} 銘柄</small>
         </div>
@@ -209,7 +224,7 @@ if __name__ == "__main__":
 
     print(f"\n合計 {len(tickers)} 銘柄のスクリーニングを開始します...")
     
-    result_df = check_52week_high(tickers)
+    result_df = check_52week_high(tickers, lookback_days=10)
     html_name = "index.html"
     
     if result_df is None or result_df.empty:
