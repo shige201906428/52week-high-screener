@@ -6,19 +6,26 @@ import yfinance as yf
 from tqdm import tqdm
 
 def get_sp500_tickers():
-    """Wikipediaから現在のS&P 500構成銘柄のティッカーリストを自動取得する"""
-    print("S&P 500の最新銘柄リストをオンラインから取得中...")
+    """S&P 500の全500銘柄のティッカーリストを確実に入手する"""
+    print("S&P 500の最新銘柄リストを取得中...")
     try:
-        url = "https://en.wikipedia.org/wiki/List_of_S%26P_500_companies"
-        tables = pd.read_html(url)
-        df = tables[0]
-        # ドット（.）が含まれるティッカー（BRK.Bなど）をyfinance用にハイフン（-）に変換
+        # Wikipediaがエラーを起こしやすいため、より安定したデータソースから取得
+        url = "https://raw.githubusercontent.com/datasets/s-and-p-500-companies/master/data/constituents.csv"
+        df = pd.read_csv(url)
+        # yfinance用にドット（.）をハイフン（-）に変換（例: BRK.B -> BRK-B）
         tickers = df["Symbol"].str.replace(".", "-", regex=False).tolist()
-        print(f"-> S&P 500の {len(tickers)} 銘柄を取得しました。")
+        print(f"-> S&P 500の {len(tickers)} 銘柄を正常に取得しました。")
         return tickers
     except Exception as e:
-        print(f"エラー: S&P 500のオンライン取得に失敗しました。代替銘柄を使用します。({e})")
-        return ["AAPL", "MSFT", "GOOGL", "AMZN", "NVDA"]
+        print(f"一次ソースのエラーのため、代替ルートで取得を試みます... ({e})")
+        try:
+            url_fallback = "https://en.wikipedia.org/wiki/List_of_S%26P_500_companies"
+            tables = pd.read_html(url_fallback)
+            df = tables[0]
+            tickers = df["Symbol"].str.replace(".", "-", regex=False).tolist()
+            return tickers
+        except Exception:
+            return ["AAPL", "MSFT", "GOOGL", "AMZN", "NVDA"]
 
 def load_tickers_from_file(file_path, is_japan=False):
     """テキストファイルからティッカーを読み込む（日本株用）"""
@@ -36,22 +43,20 @@ def load_tickers_from_file(file_path, is_japan=False):
     return tickers
 
 def check_52week_high(ticker_list):
-    """52週新高値（過去1年間の最高値）を更新した銘柄のみを抽出する（一括取得・エラー対策版）"""
+    """52週新高値（過去1年間の最高値）を更新した銘柄のみを抽出する"""
     results = []
     end_date = datetime.date.today()
     start_date = end_date - datetime.timedelta(days=365 * 2)
 
     print(f"\nYahoo Financeから全株価データを一括ダウンロード中...（数秒かかります）")
     try:
-        # 500銘柄を一括ダウンロードすることでサーバーからの拒否（ブロック）を回避
         all_data = yf.download(ticker_list, start=start_date, end=end_date, group_by='ticker', progress=False)
     except Exception as e:
-        print(f"データのダウンロード中に致命的なエラーが発生しました: {e}")
+        print(f"データのダウンロード中にエラーが発生しました: {e}")
         return pd.DataFrame()
 
     for ticker_symbol in tqdm(ticker_list, desc="スクリーニング中"):
         try:
-            # 一括取得データから対象銘柄のみを取り出して欠損値を削除
             if ticker_symbol not in all_data.columns.levels[0]:
                 continue
             df = all_data[ticker_symbol].dropna()
@@ -59,14 +64,10 @@ def check_52week_high(ticker_list):
             if len(df) < 252:
                 continue
 
-            # 直近の最高値と終値
             current_high = df["High"].iloc[-1]
             current_price = df["Close"].iloc[-1]
-            
-            # 直近の日を除く、過去52週間（約252営業日）の最高値を計算
             past_52w_high = df["High"].iloc[-253:-1].max()
 
-            # 今日の高値が過去52週の最高値以上であれば新高値と判定
             if current_high >= past_52w_high:
                 results.append({
                     "Ticker": ticker_symbol,
@@ -172,13 +173,7 @@ if __name__ == "__main__":
     if not choice and len(sys.argv) > 1:
         choice = sys.argv[1]
     if not choice:
-        if sys.stdin.isatty():
-            print("1: S&P 500")
-            print("2: TOPIX")
-            print("3: 両方実行")
-            choice = input("番号を選択してください: ")
-        else:
-            choice = "3"
+        choice = "3"
 
     tickers = []
     title_suffix = ""
