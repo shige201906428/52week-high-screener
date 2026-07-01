@@ -254,11 +254,14 @@ if __name__ == "__main__":
         exit()
 
     print(f"\n合計 {len(tickers)} 銘柄のスクリーニングを開始します...")
+    
     result_df = check_52week_high_and_trend(tickers, lookback_days=10)
-
-    if not result_df.empty:
-        html_name = "index.html"
-        generate_html_report(result_df, html_name, title_suffix)
-        print(f"\n[成功] スクリーニング結果を '{html_name}' に上書き保存しました。")
-    else:
-        print("該当データがありませんでした。")
+    html_name = "index.html"
+    
+    # 銘柄がゼロ件の場合は空のDataFrameを作ってレポート生成に回す
+    if result_df is None or result_df.empty:
+        result_df = pd.DataFrame(columns=["Ticker", "Trend", "52W_High_Count", "Current_Price", "52W_High_Price"])
+        print("\n該当データがありませんでした。空のレポートを作成します。")
+        
+    generate_html_report(result_df, html_name, title_suffix)
+    print(f"\n[成功] スクリーニング結果を '{html_name}' に上書き保存しました。")
