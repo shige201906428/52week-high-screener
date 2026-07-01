@@ -12,6 +12,7 @@ def get_sp500_tickers():
         url = "https://en.wikipedia.org/wiki/List_of_S%26P_500_companies"
         tables = pd.read_html(url)
         df = tables[0]
+        # ドット（.）が含まれるティッカー（BRK.Bなど）をyfinance用にハイフン（-）に変換
         tickers = df["Symbol"].str.replace(".", "-", regex=False).tolist()
         print(f"-> S&P 500の {len(tickers)} 銘柄を取得しました。")
         return tickers
@@ -35,38 +36,37 @@ def load_tickers_from_file(file_path, is_japan=False):
     return tickers
 
 def check_52week_high(ticker_list):
-    """直近で52週新高値を更新した銘柄のみを抽出する"""
+    """52週新高値（過去1年間の最高値）を更新した銘柄のみを抽出する（一括取得・エラー対策版）"""
     results = []
     end_date = datetime.date.today()
     start_date = end_date - datetime.timedelta(days=365 * 2)
 
-    print(f"\nYahoo Financeから株価データを一括ダウンロード中...")
+    print(f"\nYahoo Financeから全株価データを一括ダウンロード中...（数秒かかります）")
     try:
+        # 500銘柄を一括ダウンロードすることでサーバーからの拒否（ブロック）を回避
         all_data = yf.download(ticker_list, start=start_date, end=end_date, group_by='ticker', progress=False)
     except Exception as e:
-        print(f"データのダウンロード中にエラーが発生しました: {e}")
+        print(f"データのダウンロード中に致命的なエラーが発生しました: {e}")
         return pd.DataFrame()
 
     for ticker_symbol in tqdm(ticker_list, desc="スクリーニング中"):
         try:
-            if len(ticker_list) == 1:
-                df = all_data.dropna()
-            else:
-                if ticker_symbol not in all_data.columns.levels[0]:
-                    continue
-                df = all_data[ticker_symbol].dropna()
+            # 一括取得データから対象銘柄のみを取り出して欠損値を削除
+            if ticker_symbol not in all_data.columns.levels[0]:
+                continue
+            df = all_data[ticker_symbol].dropna()
 
             if len(df) < 252:
                 continue
 
-            # 直近（今日）の高値と終値
+            # 直近の最高値と終値
             current_high = df["High"].iloc[-1]
             current_price = df["Close"].iloc[-1]
             
-            # 過去52週間（約252営業日）の最高値（直近の日は除く）
+            # 直近の日を除く、過去52週間（約252営業日）の最高値を計算
             past_52w_high = df["High"].iloc[-253:-1].max()
 
-            # 今日の高値が過去52週の最高値を超えている場合のみヒット
+            # 今日の高値が過去52週の最高値以上であれば新高値と判定
             if current_high >= past_52w_high:
                 results.append({
                     "Ticker": ticker_symbol,
@@ -90,8 +90,8 @@ def generate_html_report(df, output_path, title_suffix=""):
         table_rows += f"""
         <tr>
             <td><strong>{row['Ticker']}</strong></td>
-            <td class="highlight-price">{row['Current_Price']:,}</td>
-            <td>{row['52W_High_Price']:,}</td>
+            <td class="highlight-price">${row['Current_Price']:,}</td>
+            <td>${row['52W_High_Price']:,}</td>
         </tr>
         """
 
@@ -173,4 +173,43 @@ if __name__ == "__main__":
         choice = sys.argv[1]
     if not choice:
         if sys.stdin.isatty():
-            print
+            print("1: S&P 500")
+            print("2: TOPIX")
+            print("3: 両方実行")
+            choice = input("番号を選択してください: ")
+        else:
+            choice = "3"
+
+    tickers = []
+    title_suffix = ""
+    os.makedirs("data", exist_ok=True)
+
+    if choice in ["1", "3"]:
+        sp500_tickers = get_sp500_tickers()
+        tickers.extend(sp500_tickers)
+        title_suffix += "[S&P 500] "
+
+    if choice in ["2", "3"]:
+        topix_file = os.path.join("data", "tickers_topix.txt")
+        if not os.path.exists(topix_file):
+            with open(topix_file, "w") as f:
+                f.write("# 日本株コード\n1306\n7203\n6758\n9984\n")
+        topix_tickers = load_tickers_from_file(topix_file, is_japan=True)
+        tickers.extend(topix_tickers)
+        title_suffix += "[TOPIX] "
+
+    if not tickers:
+        print("対象ティッカーがありません。")
+        exit()
+
+    print(f"\n合計 {len(tickers)} 銘柄のスクリーニングを開始します...")
+    
+    result_df = check_52week_high(tickers)
+    html_name = "index.html"
+    
+    if result_df is None or result_df.empty:
+        result_df = pd.DataFrame(columns=["Ticker", "Current_Price", "52W_High_Price"])
+        print("\n該当データがありませんでした。")
+        
+    generate_html_report(result_df, html_name, title_suffix)
+    print(f"\n[成功] スクリーニング結果を '{html_name}' に上書き保存しました。")
