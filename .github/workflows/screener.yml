@@ -34,4 +34,5 @@ jobs:
         git config --local user.email "github-actions[bot]@users.noreply.github.com"
         git config --local user.name "github-actions[bot]"
         git add .
-        git diff --quiet && git diff --staged --quiet || (git commit -m "Update screened data" && git push)
+        git commit -a -m "Update screened index.html" || echo "No changes to commit"
+        git push
