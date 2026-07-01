@@ -41,15 +41,28 @@ def load_tickers_from_file(file_path, is_japan=False):
 
 
 def check_52week_high_and_trend(ticker_list, lookback_days=10):
-    """52週新高値のカウントと移動平均線によるトレンド判定"""
+    """52週新高値のカウントと移動平均線によるトレンド判定（一括取得対応版）"""
     results = []
     end_date = datetime.date.today()
     start_date = end_date - datetime.timedelta(days=365 * 2)
 
+    print(f"\nYahoo Financeから株価データを一括ダウンロード中...")
+    try:
+        # 全銘柄をまとめて一瞬で取得（これでサーバーブロックを回避します）
+        all_data = yf.download(ticker_list, start=start_date, end=end_date, group_by='ticker', progress=False)
+    except Exception as e:
+        print(f"データのダウンロード中にエラーが発生しました: {e}")
+        return pd.DataFrame()
+
     for ticker_symbol in tqdm(ticker_list, desc="スクリーニング中"):
         try:
-            ticker = yf.Ticker(ticker_symbol)
-            df = ticker.history(start=start_date, end=end_date, progress=False)
+            # 一括取得したデータから対象銘柄のデータを抽出
+            if len(ticker_list) == 1:
+                df = all_data.dropna()
+            else:
+                if ticker_symbol not in all_data.columns.levels[0]:
+                    continue
+                df = all_data[ticker_symbol].dropna()
 
             if len(df) < 252:
                 continue
@@ -255,7 +268,8 @@ if __name__ == "__main__":
 
     print(f"\n合計 {len(tickers)} 銘柄のスクリーニングを開始します...")
     
-    result_df = check_52week_high_and_trend(tickers, lookback_days=60)
+    # lookback_daysを10に戻して、直近10日間の新高値日数をカウントします
+    result_df = check_52week_high_and_trend(tickers, lookback_days=10)
     html_name = "index.html"
     
     # 銘柄がゼロ件の場合は空のDataFrameを作ってレポート生成に回す
