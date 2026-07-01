@@ -40,8 +40,8 @@ def load_tickers_from_file(file_path, is_japan=False):
             tickers.append(ticker)
     return tickers
 
-def check_52week_high(ticker_list, lookback_days=10):
-    """過去10日間のうちに52週新高値を更新した銘柄を抽出する"""
+def check_52week_high(ticker_list, lookback_days=15):
+    """過去3週間（15営業日）の間に52週新高値を更新した回数をカウントする"""
     results = []
     end_date = datetime.date.today()
     start_date = end_date - datetime.timedelta(days=365 * 2)
@@ -62,7 +62,8 @@ def check_52week_high(ticker_list, lookback_days=10):
             if len(df) < 252:
                 continue
 
-            is_hit = False
+            high_count = 0
+            # 過去15営業日（約3週間）の中で新高値を記録した日数を数える
             for i in range(-lookback_days, 0):
                 if abs(i) > len(df):
                     continue
@@ -70,14 +71,15 @@ def check_52week_high(ticker_list, lookback_days=10):
                 past_52w_high = df["High"].iloc[i - 252 : i].max()
 
                 if target_day_high >= past_52w_high:
-                    is_hit = True
-                    break
+                    high_count += 1
 
-            if is_hit:
+            # 1回以上新高値を記録していればリストに残す
+            if high_count > 0:
                 current_price = df["Close"].iloc[-1]
                 latest_52w_high = df["High"].iloc[-252:].max()
                 results.append({
                     "Ticker": ticker_symbol,
+                    "High_Count": high_count,
                     "Current_Price": round(current_price, 2),
                     "52W_High_Price": round(latest_52w_high, 2)
                 })
@@ -86,35 +88,34 @@ def check_52week_high(ticker_list, lookback_days=10):
 
     res_df = pd.DataFrame(results)
     if not res_df.empty:
-        res_df = res_df.sort_values(by="Ticker").reset_index(drop=True)
+        # 新高値の記録回数（多い順）で並び替える
+        res_df = res_df.sort_values(by="High_Count", ascending=False).reset_index(drop=True)
     return res_df
 
 def generate_html_report(df, output_path, title_suffix=""):
-    """index.htmlとしてTradingViewリンク付きのレポートを出力する"""
+    """index.htmlとして新高値回数入りのレポートを出lyする"""
     now_str = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
 
     table_rows = ""
     for idx, row in df.iterrows():
         ticker = row['Ticker']
-        # TradingViewのURL生成ロジック
         if ".T" in ticker:
-            # 日本株: 7203.T -> TSE-7203
             code = ticker.split('.')[0]
             tv_url = f"https://jp.tradingview.com/symbols/TSE-{code}/"
             currency_prefix = "¥"
         else:
-            # 米国株: AMD -> AMD
             tv_url = f"https://jp.tradingview.com/symbols/{ticker}/"
             currency_prefix = "$"
 
         table_rows += f"""
         <tr>
             <td>
-                <a href="{tv_url}" target="_blank" class="ticker-link">
-                    <strong>{ticker}</strong> <small>🔗</small>
+                <a href="{tv_url}" target="_blank" class="ticker-link" style="color: #007bff; text-decoration: none; font-weight: bold;">
+                    {ticker} 🔗
                 </a>
             </td>
-            <td class="highlight-price">{currency_prefix}{row['Current_Price']:,}</td>
+            <td class="text-center text-success"><strong>{row['High_Count']} 回</strong></td>
+            <td>{currency_prefix}{row['Current_Price']:,}</td>
             <td>{currency_prefix}{row['52W_High_Price']:,}</td>
         </tr>
         """
@@ -124,7 +125,7 @@ def generate_html_report(df, output_path, title_suffix=""):
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>⚡ 52週新高値更新銘柄 {title_suffix}</title>
+    <title>⚡ 52週新高値更新回数 {title_suffix}</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdn.datatables.net/1.10.21/css/dataTables.bootstrap4.min.css">
     <style>
@@ -132,18 +133,15 @@ def generate_html_report(df, output_path, title_suffix=""):
         .container {{ margin-top: 30px; margin-bottom: 50px; }}
         .header-section {{ background: linear-gradient(135deg, #1f4037 0%, #99f2c8 100%); color: white; padding: 30px; border-radius: 8px; margin-bottom: 30px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }}
         .card {{ border: none; box-shadow: 0 4px 6px rgba(0,0,0,0.05); border-radius: 8px; }}
-        .table thead th {{ background-color: #2c3e50; color: white; border: none; }}
-        .highlight-price {{ color: #27ae60; font-weight: bold; }}
-        .ticker-link {{ color: #007bff; text-decoration: none; }}
-        .ticker-link:hover {{ text-decoration: underline; color: #0056b3; }}
+        .table thead th {{ background-color: #2c3e50; color: white; border: none; vertical-align: middle; }}
         footer {{ text-align: center; margin-top: 30px; color: #777; font-size: 0.9rem; }}
     </style>
 </head>
 <body>
     <div class="container">
         <div class="header-section">
-            <h1 class="display-5">📈 52週新高値更新 銘柄一覧 {title_suffix}</h1>
-            <p class="lead mb-0">直近10日間で52週最高値を更新した銘柄（TradingViewリンク付）</p>
+            <h1 class="display-5">📈 52週高値 更新回数ランキング {title_suffix}</h1>
+            <p class="lead mb-0">過去3週間（15営業日）の中で、何回52週最高値を更新したかを表示しています</p>
             <hr class="my-2" style="border-color: rgba(255,255,255,0.2);">
             <small>最終更新日時: <strong>{now_str}</strong> | ヒット数: {len(df)} 銘柄</small>
         </div>
@@ -154,6 +152,7 @@ def generate_html_report(df, output_path, title_suffix=""):
                     <thead>
                         <tr>
                             <th>ティッカー (Ticker)</th>
+                            <th class="text-center">新高値カウント (過去3週間)</th>
                             <th>直近終値 (Current Price)</th>
                             <th>52週最高値 (52W High Price)</th>
                         </tr>
@@ -175,6 +174,7 @@ def generate_html_report(df, output_path, title_suffix=""):
     <script>
         $(document).ready(function() {{
             $('#screenerTable').DataTable({{
+                "order": [[ 1, "desc" ]], // 初期状態で回数の多い順に並び替え
                 "pageLength": 50,
                 "language": {{
                     "search": "絞り込み検索:",
@@ -224,11 +224,12 @@ if __name__ == "__main__":
 
     print(f"\n合計 {len(tickers)} 銘柄のスクリーニングを開始します...")
     
-    result_df = check_52week_high(tickers, lookback_days=10)
+    # lookback_days=15 で過去3週間（15営業日）をターゲットにします
+    result_df = check_52week_high(tickers, lookback_days=15)
     html_name = "index.html"
     
     if result_df is None or result_df.empty:
-        result_df = pd.DataFrame(columns=["Ticker", "Current_Price", "52W_High_Price"])
+        result_df = pd.DataFrame(columns=["Ticker", "High_Count", "Current_Price", "52W_High_Price"])
         print("\n該当データがありませんでした。")
         
     generate_html_report(result_df, html_name, title_suffix)
