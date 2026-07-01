@@ -63,7 +63,6 @@ def check_52week_high(ticker_list, lookback_days=15):
                 continue
 
             high_count = 0
-            # 過去15営業日（約3週間）の中で新高値を記録した日数を数える
             for i in range(-lookback_days, 0):
                 if abs(i) > len(df):
                     continue
@@ -73,7 +72,6 @@ def check_52week_high(ticker_list, lookback_days=15):
                 if target_day_high >= past_52w_high:
                     high_count += 1
 
-            # 1回以上新高値を記録していればリストに残す
             if high_count > 0:
                 current_price = df["Close"].iloc[-1]
                 latest_52w_high = df["High"].iloc[-252:].max()
@@ -88,12 +86,11 @@ def check_52week_high(ticker_list, lookback_days=15):
 
     res_df = pd.DataFrame(results)
     if not res_df.empty:
-        # 新高値の記録回数（多い順）で並び替える
         res_df = res_df.sort_values(by="High_Count", ascending=False).reset_index(drop=True)
     return res_df
 
 def generate_html_report(df, output_path, title_suffix=""):
-    """index.htmlとして新高値回数入りのレポートを出lyする"""
+    """index.htmlとして概要・チャート両方のリンク付きレポートを出力する"""
     now_str = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
 
     table_rows = ""
@@ -101,22 +98,28 @@ def generate_html_report(df, output_path, title_suffix=""):
         ticker = row['Ticker']
         if ".T" in ticker:
             code = ticker.split('.')[0]
-            tv_url = f"https://jp.tradingview.com/symbols/TSE-{code}/"
+            # 日本株のTradingViewリンク（概要と詳細チャート）
+            symbols_url = f"https://jp.tradingview.com/symbols/TSE-{code}/"
+            chart_url = f"https://jp.tradingview.com/chart/?symbol=TSE:{code}"
             currency_prefix = "¥"
         else:
-            tv_url = f"https://jp.tradingview.com/symbols/{ticker}/"
+            # 米国株のTradingViewリンク（概要と詳細チャート）
+            symbols_url = f"https://jp.tradingview.com/symbols/{ticker}/"
+            chart_url = f"https://jp.tradingview.com/chart/?symbol={ticker}"
             currency_prefix = "$"
 
         table_rows += f"""
         <tr>
             <td>
-                <a href="{tv_url}" target="_blank" class="ticker-link" style="color: #007bff; text-decoration: none; font-weight: bold;">
-                    {ticker} 🔗
-                </a>
+                <span class="ticker-text">{ticker}</span>
+                <div class="tv-links mt-1">
+                    <a href="{symbols_url}" target="_blank" class="badge badge-info mr-1">概要 📄</a>
+                    <a href="{chart_url}" target="_blank" class="badge badge-primary">チャート 📈</a>
+                </div>
             </td>
-            <td class="text-center text-success"><strong>{row['High_Count']} 回</strong></td>
-            <td>{currency_prefix}{row['Current_Price']:,}</td>
-            <td>{currency_prefix}{row['52W_High_Price']:,}</td>
+            <td class="text-center text-success vertical-middle"><strong>{row['High_Count']} 回</strong></td>
+            <td class="vertical-middle">{currency_prefix}{row['Current_Price']:,}</td>
+            <td class="vertical-middle">{currency_prefix}{row['52W_High_Price']:,}</td>
         </tr>
         """
 
@@ -134,6 +137,9 @@ def generate_html_report(df, output_path, title_suffix=""):
         .header-section {{ background: linear-gradient(135deg, #1f4037 0%, #99f2c8 100%); color: white; padding: 30px; border-radius: 8px; margin-bottom: 30px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }}
         .card {{ border: none; box-shadow: 0 4px 6px rgba(0,0,0,0.05); border-radius: 8px; }}
         .table thead th {{ background-color: #2c3e50; color: white; border: none; vertical-align: middle; }}
+        .vertical-middle {{ vertical-align: middle !important; }}
+        .ticker-text {{ font-size: 1.1rem; font-weight: bold; color: #2c3e50; }}
+        .badge {{ padding: 5px 8px; font-size: 0.75rem; }}
         footer {{ text-align: center; margin-top: 30px; color: #777; font-size: 0.9rem; }}
     </style>
 </head>
@@ -174,7 +180,7 @@ def generate_html_report(df, output_path, title_suffix=""):
     <script>
         $(document).ready(function() {{
             $('#screenerTable').DataTable({{
-                "order": [[ 1, "desc" ]], // 初期状態で回数の多い順に並び替え
+                "order": [[ 1, "desc" ]],
                 "pageLength": 50,
                 "language": {{
                     "search": "絞り込み検索:",
@@ -192,14 +198,7 @@ def generate_html_report(df, output_path, title_suffix=""):
         f.write(html_content)
 
 if __name__ == "__main__":
-    print("=== 52週新高値専用スクリーナー ===")
-
-    choice = os.environ.get("SCREENER_CHOICE")
-    if not choice and len(sys.argv) > 1:
-        choice = sys.argv[1]
-    if not choice:
-        choice = "3"
-
+    choice = os.environ.get("SCREENER_CHOICE", "3")
     tickers = []
     title_suffix = ""
     os.makedirs("data", exist_ok=True)
@@ -222,15 +221,11 @@ if __name__ == "__main__":
         print("対象ティッカーがありません。")
         exit()
 
-    print(f"\n合計 {len(tickers)} 銘柄のスクリーニングを開始します...")
-    
-    # lookback_days=15 で過去3週間（15営業日）をターゲットにします
     result_df = check_52week_high(tickers, lookback_days=15)
     html_name = "index.html"
     
     if result_df is None or result_df.empty:
         result_df = pd.DataFrame(columns=["Ticker", "High_Count", "Current_Price", "52W_High_Price"])
-        print("\n該当データがありませんでした。")
         
     generate_html_report(result_df, html_name, title_suffix)
     print(f"\n[成功] スクリーニング結果を '{html_name}' に上書き保存しました。")
