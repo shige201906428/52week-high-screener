@@ -26,7 +26,7 @@ jobs:
         pip install yfinance pandas tqdm
         
     - name: Run screener
-      run: python screener.py
+      run: echo "3" | python screener.py
 
     - name: Commit and Push results
       run: |
