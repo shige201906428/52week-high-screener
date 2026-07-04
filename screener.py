@@ -77,8 +77,8 @@ def check_52week_high(ticker_list, lookback_days=15):
                 current_price = df["Close"].iloc[-1]
                 latest_52w_high = df["High"].iloc[-252:].max()
                 
-                # 直近2週間（10営業日分）のOHLCデータを抽出
-                candles_df = df.tail(10)
+                # 直近2週間（15営業日分）のOHLCデータを抽出
+                candles_df = df.tail(15)
                 candles_data = []
                 for _, r in candles_df.iterrows():
                     candles_data.append([
