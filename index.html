@@ -25,7 +25,7 @@
             <h1 class="display-5">📈 52週高値 更新回数ランキング [S&P 500] [TOPIX] </h1>
             <p class="lead mb-0">過去3週間（15営業日）の中で、何回52週最高値を更新したかを表示しています</p>
             <hr class="my-2" style="border-color: rgba(255,255,255,0.2);">
-            <small>最終更新日時: <strong>2026-07-04 07:05:08</strong> | ヒット数: 146 銘柄</small>
+            <small>最終更新日時: <strong>2026-07-04 10:36:41</strong> | ヒット数: 146 銘柄</small>
         </div>
 
         <div class="card p-4">
@@ -33,11 +33,11 @@
                 <table id="screenerTable" class="table table-hover table-striped table-bordered" style="width:100%">
                     <thead>
                         <tr>
-                            <th>ティッカー (Ticker)</th>
+                            <th>ティッカー / 業種 (Ticker / Sector)</th>
                             <th class="text-center">新高値カウント (過去3週間)</th>
                             <th>直近終値 (Current Price)</th>
                             <th>52週最高値 (52W High Price)</th>
-                            <th class="text-center">直近2週間トレンド (日足)</th>
+                            <th class="text-center">直近3週間トレンド (日足)</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -2829,7 +2829,6 @@
     <script src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js"></script>
     <script src="https://cdn.datatables.net/1.10.21/js/dataTables.bootstrap4.min.js"></script>
     <script>
-        // ローソク足を描画する関数
         function drawCandles() {
             document.querySelectorAll('.spark-candle').forEach(canvas => {
                 if (canvas.getContext) {
@@ -2837,13 +2836,11 @@
                     const rawData = canvas.getAttribute('data-candles');
                     if (!rawData) return;
                     
-                    const candles = JSON.parse(rawData); // [[O, H, L, C], ...]
+                    const candles = JSON.parse(rawData);
                     if (candles.length === 0) return;
 
-                    // 描画エリアの初期化
                     ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-                    // 2週間分の中での最高値と最安値を計算し、縦幅の基準にする
                     let maxVal = -Infinity;
                     let minVal = Infinity;
                     candles.forEach(c => {
@@ -2852,7 +2849,6 @@
                     });
                     const valRange = maxVal - minVal || 1;
 
-                    // レイアウト計算用変数
                     const padding = 3;
                     const chartHeight = canvas.height - (padding * 2);
                     const numCandles = candles.length;
@@ -2862,7 +2858,6 @@
                         const [open, high, low, close] = candle;
                         const isUp = close >= open;
 
-                        // 値をCanvasのY座標に変換するヘルパー関数
                         const getY = (val) => canvas.height - padding - ((val - minVal) / valRange) * chartHeight;
 
                         const x = index * (candleWidth + 2) + 1;
@@ -2871,21 +2866,18 @@
                         const yOpen = getY(open);
                         const yClose = getY(close);
 
-                        // 色の設定（陽線は緑、陰線は赤）
                         const color = isUp ? '#2ec4b6' : '#e71d36';
                         ctx.strokeStyle = color;
                         ctx.fillStyle = color;
                         ctx.lineWidth = 1;
 
-                        // 1. 髭（ひげ）を描画
                         ctx.beginPath();
                         ctx.moveTo(x + candleWidth / 2, yHigh);
                         ctx.lineTo(x + candleWidth / 2, yLow);
                         ctx.stroke();
 
-                        // 2. 実体を描画
                         const bodyY = Math.min(yOpen, yClose);
-                        const bodyHeight = Math.max(Math.abs(yOpen - yClose), 1); // 最低1px確保
+                        const bodyHeight = Math.max(Math.abs(yOpen - yClose), 1);
                         ctx.fillRect(x, bodyY, candleWidth, bodyHeight);
                     });
                 }
@@ -2904,7 +2896,6 @@
                 }
             });
 
-            // 初回表示時およびページ切り替え・検索時にローソク足を再描画
             drawCandles();
             table.on('draw', function() {
                 drawCandles();
