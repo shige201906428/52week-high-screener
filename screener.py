@@ -133,7 +133,7 @@ def generate_html_report(df, output_path, title_suffix=""):
             <td class="vertical-middle">{currency_prefix}{row['Current_Price']:,}</td>
             <td class="vertical-middle">{currency_prefix}{row['52W_High_Price']:,}</td>
             <td class="text-center vertical-middle">
-                <canvas class="spark-candle" width="120" height="35" data-candles='{row['Candles']}'></canvas>
+                <canvas class="spark-candle" width="160" height="35" data-candles='{row['Candles']}'></canvas>
             </td>
         </tr>
         """
