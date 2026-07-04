@@ -15,6 +15,7 @@
         .vertical-middle { vertical-align: middle !important; }
         .ticker-text { font-size: 1.1rem; font-weight: bold; color: #2c3e50; }
         .badge { padding: 5px 8px; font-size: 0.75rem; }
+        .spark-candle { display: block; margin: 0 auto; }
         footer { text-align: center; margin-top: 30px; color: #777; font-size: 0.9rem; }
     </style>
 </head>
@@ -24,7 +25,7 @@
             <h1 class="display-5">📈 52週高値 更新回数ランキング [S&P 500] [TOPIX] </h1>
             <p class="lead mb-0">過去3週間（15営業日）の中で、何回52週最高値を更新したかを表示しています</p>
             <hr class="my-2" style="border-color: rgba(255,255,255,0.2);">
-            <small>最終更新日時: <strong>2026-07-03 23:00:19</strong> | ヒット数: 147 銘柄</small>
+            <small>最終更新日時: <strong>2026-07-04 06:29:12</strong> | ヒット数: 146 銘柄</small>
         </div>
 
         <div class="card p-4">
@@ -36,6 +37,7 @@
                             <th class="text-center">新高値カウント (過去3週間)</th>
                             <th>直近終値 (Current Price)</th>
                             <th>52週最高値 (52W High Price)</th>
+                            <th class="text-center">直近2週間トレンド (日足)</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -51,19 +53,9 @@
             <td class="text-center text-success vertical-middle"><strong>11 回</strong></td>
             <td class="vertical-middle">$180.49</td>
             <td class="vertical-middle">$182.32</td>
-        </tr>
-        
-        <tr>
-            <td>
-                <span class="ticker-text">CINF</span>
-                <div class="tv-links mt-1">
-                    <a href="https://jp.tradingview.com/symbols/CINF/" target="_blank" class="badge badge-info mr-1">概要 📄</a>
-                    <a href="https://jp.tradingview.com/chart/?symbol=CINF" target="_blank" class="badge badge-primary">チャート 📈</a>
-                </div>
+            <td class="text-center vertical-middle">
+                <canvas class="spark-candle" width="120" height="35" data-candles='[[172.28, 172.74, 169.55, 170.76], [172.02, 175.63, 171.4, 172.05], [173.83, 176.17, 172.95, 175.58], [175.87, 177.05, 173.62, 175.64], [177.28, 181.15, 176.37, 176.4], [177.72, 179.55, 175.99, 179.31], [178.1, 180.75, 176.5, 179.25], [179.18, 180.58, 178.55, 178.68], [178.98, 182.32, 178.98, 180.07], [181.39, 181.39, 177.81, 180.49]]'></canvas>
             </td>
-            <td class="text-center text-success vertical-middle"><strong>10 回</strong></td>
-            <td class="vertical-middle">$192.03</td>
-            <td class="vertical-middle">$192.09</td>
         </tr>
         
         <tr>
@@ -77,6 +69,9 @@
             <td class="text-center text-success vertical-middle"><strong>10 回</strong></td>
             <td class="vertical-middle">$603.04</td>
             <td class="vertical-middle">$739.67</td>
+            <td class="text-center vertical-middle">
+                <canvas class="spark-candle" width="120" height="35" data-candles='[[622.52, 638.9, 612.5, 617.11], [626.22, 641.18, 620.69, 640.18], [581.93, 592.5, 573.51, 585.88], [585.24, 594.27, 569.49, 588.97], [637.74, 669.22, 609.7, 668.0], [642.76, 660.19, 622.0, 626.84], [635.43, 708.99, 632.11, 694.64], [697.5, 739.67, 696.0, 723.0], [668.41, 693.78, 639.06, 650.91], [656.69, 657.0, 581.9, 603.04]]'></canvas>
+            </td>
         </tr>
         
         <tr>
@@ -90,6 +85,9 @@
             <td class="text-center text-success vertical-middle"><strong>10 回</strong></td>
             <td class="vertical-middle">$97.6</td>
             <td class="vertical-middle">$98.93</td>
+            <td class="text-center vertical-middle">
+                <canvas class="spark-candle" width="120" height="35" data-candles='[[92.02, 92.35, 90.96, 91.34], [91.75, 93.42, 91.5, 93.02], [94.88, 94.88, 92.62, 93.69], [93.96, 95.75, 93.47, 94.7], [94.36, 96.06, 94.23, 95.83], [96.58, 97.87, 96.05, 96.38], [96.47, 97.73, 96.22, 97.64], [96.67, 97.76, 95.1, 96.12], [97.06, 98.31, 96.63, 97.35], [98.1, 98.93, 97.47, 97.6]]'></canvas>
+            </td>
         </tr>
         
         <tr>
@@ -103,6 +101,25 @@
             <td class="text-center text-success vertical-middle"><strong>10 回</strong></td>
             <td class="vertical-middle">$234.91</td>
             <td class="vertical-middle">$236.51</td>
+            <td class="text-center vertical-middle">
+                <canvas class="spark-candle" width="120" height="35" data-candles='[[211.99, 213.07, 206.85, 207.91], [209.07, 215.33, 208.62, 209.68], [210.57, 213.82, 209.95, 210.93], [211.6, 214.0, 210.83, 213.04], [208.0, 215.03, 207.1, 213.36], [212.23, 217.04, 212.22, 217.04], [217.59, 221.59, 216.02, 219.7], [219.31, 224.19, 217.21, 222.48], [221.62, 229.8, 220.5, 228.03], [230.95, 236.51, 230.58, 234.91]]'></canvas>
+            </td>
+        </tr>
+        
+        <tr>
+            <td>
+                <span class="ticker-text">CINF</span>
+                <div class="tv-links mt-1">
+                    <a href="https://jp.tradingview.com/symbols/CINF/" target="_blank" class="badge badge-info mr-1">概要 📄</a>
+                    <a href="https://jp.tradingview.com/chart/?symbol=CINF" target="_blank" class="badge badge-primary">チャート 📈</a>
+                </div>
+            </td>
+            <td class="text-center text-success vertical-middle"><strong>10 回</strong></td>
+            <td class="vertical-middle">$192.03</td>
+            <td class="vertical-middle">$192.09</td>
+            <td class="text-center vertical-middle">
+                <canvas class="spark-candle" width="120" height="35" data-candles='[[170.93, 171.17, 168.73, 169.27], [169.63, 174.38, 169.63, 171.52], [173.21, 175.98, 171.62, 175.81], [176.74, 180.21, 175.73, 178.45], [178.26, 180.96, 177.05, 177.73], [179.14, 185.2, 178.16, 184.08], [183.39, 186.36, 182.52, 186.16], [186.16, 187.4, 184.2, 185.14], [185.86, 187.79, 185.39, 187.21], [188.65, 192.09, 186.88, 192.03]]'></canvas>
+            </td>
         </tr>
         
         <tr>
@@ -116,6 +133,9 @@
             <td class="text-center text-success vertical-middle"><strong>10 回</strong></td>
             <td class="vertical-middle">$342.31</td>
             <td class="vertical-middle">$342.31</td>
+            <td class="text-center vertical-middle">
+                <canvas class="spark-candle" width="120" height="35" data-candles='[[308.69, 309.85, 301.65, 307.81], [308.13, 313.66, 307.67, 310.61], [313.24, 317.58, 309.59, 316.96], [317.59, 323.0, 316.41, 320.74], [320.92, 325.89, 318.16, 318.29], [319.99, 327.64, 319.39, 327.37], [327.0, 332.01, 325.52, 331.88], [332.41, 334.14, 328.0, 330.12], [331.89, 337.46, 331.0, 334.62], [336.03, 342.31, 331.8, 342.31]]'></canvas>
+            </td>
         </tr>
         
         <tr>
@@ -129,6 +149,9 @@
             <td class="text-center text-success vertical-middle"><strong>9 回</strong></td>
             <td class="vertical-middle">$396.75</td>
             <td class="vertical-middle">$415.0</td>
+            <td class="text-center vertical-middle">
+                <canvas class="spark-candle" width="120" height="35" data-candles='[[362.67, 369.02, 356.58, 359.8], [362.38, 369.09, 355.54, 359.87], [361.05, 365.13, 357.89, 358.28], [361.08, 364.77, 352.23, 360.79], [357.71, 378.76, 357.71, 375.11], [374.33, 385.49, 372.61, 383.84], [381.38, 390.02, 377.54, 388.9], [389.36, 398.8, 385.84, 397.22], [395.67, 414.82, 391.97, 409.42], [412.22, 415.0, 391.64, 396.75]]'></canvas>
+            </td>
         </tr>
         
         <tr>
@@ -142,19 +165,9 @@
             <td class="text-center text-success vertical-middle"><strong>9 回</strong></td>
             <td class="vertical-middle">$279.48</td>
             <td class="vertical-middle">$279.5</td>
-        </tr>
-        
-        <tr>
-            <td>
-                <span class="ticker-text">LRCX</span>
-                <div class="tv-links mt-1">
-                    <a href="https://jp.tradingview.com/symbols/LRCX/" target="_blank" class="badge badge-info mr-1">概要 📄</a>
-                    <a href="https://jp.tradingview.com/chart/?symbol=LRCX" target="_blank" class="badge badge-primary">チャート 📈</a>
-                </div>
+            <td class="text-center vertical-middle">
+                <canvas class="spark-candle" width="120" height="35" data-candles='[[265.26, 265.26, 258.44, 259.86], [260.28, 265.51, 260.28, 261.58], [263.71, 266.9, 262.44, 265.3], [266.4, 268.67, 263.17, 263.82], [264.53, 267.96, 260.69, 260.77], [263.2, 265.57, 262.89, 264.43], [263.28, 268.0, 263.24, 267.98], [267.54, 270.78, 266.92, 268.53], [269.43, 276.06, 269.43, 274.14], [275.98, 279.5, 271.47, 279.48]]'></canvas>
             </td>
-            <td class="text-center text-success vertical-middle"><strong>8 回</strong></td>
-            <td class="vertical-middle">$351.41</td>
-            <td class="vertical-middle">$438.5</td>
         </tr>
         
         <tr>
@@ -168,6 +181,25 @@
             <td class="text-center text-success vertical-middle"><strong>8 回</strong></td>
             <td class="vertical-middle">$250.33</td>
             <td class="vertical-middle">$250.38</td>
+            <td class="text-center vertical-middle">
+                <canvas class="spark-candle" width="120" height="35" data-candles='[[221.65, 222.21, 218.29, 221.17], [222.53, 226.26, 221.11, 222.56], [226.47, 232.39, 224.65, 231.55], [232.48, 236.39, 230.0, 233.54], [234.86, 237.1, 230.98, 231.6], [234.46, 240.16, 233.38, 239.61], [237.74, 241.78, 236.82, 241.38], [241.47, 242.67, 237.46, 237.94], [237.66, 243.75, 236.5, 243.12], [243.4, 250.38, 242.28, 250.33]]'></canvas>
+            </td>
+        </tr>
+        
+        <tr>
+            <td>
+                <span class="ticker-text">LRCX</span>
+                <div class="tv-links mt-1">
+                    <a href="https://jp.tradingview.com/symbols/LRCX/" target="_blank" class="badge badge-info mr-1">概要 📄</a>
+                    <a href="https://jp.tradingview.com/chart/?symbol=LRCX" target="_blank" class="badge badge-primary">チャート 📈</a>
+                </div>
+            </td>
+            <td class="text-center text-success vertical-middle"><strong>8 回</strong></td>
+            <td class="vertical-middle">$351.41</td>
+            <td class="vertical-middle">$438.5</td>
+            <td class="text-center vertical-middle">
+                <canvas class="spark-candle" width="120" height="35" data-candles='[[397.22, 401.0, 386.9, 389.04], [398.39, 409.75, 392.08, 409.54], [369.71, 377.1, 365.26, 371.33], [366.87, 376.98, 361.41, 374.8], [407.99, 407.99, 372.3, 401.82], [385.5, 389.88, 374.31, 379.09], [383.01, 414.98, 379.1, 410.91], [416.29, 438.5, 414.01, 433.33], [404.97, 415.49, 381.0, 391.26], [391.06, 392.5, 342.48, 351.41]]'></canvas>
+            </td>
         </tr>
         
         <tr>
@@ -181,19 +213,9 @@
             <td class="text-center text-success vertical-middle"><strong>7 回</strong></td>
             <td class="vertical-middle">$57.16</td>
             <td class="vertical-middle">$58.15</td>
-        </tr>
-        
-        <tr>
-            <td>
-                <span class="ticker-text">STT</span>
-                <div class="tv-links mt-1">
-                    <a href="https://jp.tradingview.com/symbols/STT/" target="_blank" class="badge badge-info mr-1">概要 📄</a>
-                    <a href="https://jp.tradingview.com/chart/?symbol=STT" target="_blank" class="badge badge-primary">チャート 📈</a>
-                </div>
+            <td class="text-center vertical-middle">
+                <canvas class="spark-candle" width="120" height="35" data-candles='[[52.72, 52.84, 52.19, 52.37], [52.58, 53.76, 52.58, 53.23], [53.01, 54.46, 52.84, 54.28], [54.48, 54.95, 54.19, 54.57], [54.87, 56.19, 54.68, 56.01], [56.1, 56.37, 55.58, 55.91], [55.82, 56.54, 55.68, 56.38], [56.41, 56.74, 55.62, 56.37], [56.22, 58.15, 56.0, 57.49], [57.73, 57.87, 56.69, 57.16]]'></canvas>
             </td>
-            <td class="text-center text-success vertical-middle"><strong>7 回</strong></td>
-            <td class="vertical-middle">$170.69</td>
-            <td class="vertical-middle">$174.59</td>
         </tr>
         
         <tr>
@@ -207,6 +229,9 @@
             <td class="text-center text-success vertical-middle"><strong>7 回</strong></td>
             <td class="vertical-middle">$176.5</td>
             <td class="vertical-middle">$178.7</td>
+            <td class="text-center vertical-middle">
+                <canvas class="spark-candle" width="120" height="35" data-candles='[[176.46, 176.99, 171.01, 172.11], [173.96, 175.62, 172.63, 175.56], [174.91, 177.78, 173.95, 176.26], [176.21, 176.21, 173.75, 173.93], [175.45, 178.7, 175.16, 175.97], [175.87, 176.0, 172.25, 173.87], [174.62, 177.43, 173.14, 174.91], [175.94, 176.46, 173.74, 173.84], [173.84, 177.66, 173.0, 175.6], [176.68, 177.55, 174.54, 176.5]]'></canvas>
+            </td>
         </tr>
         
         <tr>
@@ -220,6 +245,9 @@
             <td class="text-center text-success vertical-middle"><strong>7 回</strong></td>
             <td class="vertical-middle">$21.89</td>
             <td class="vertical-middle">$21.98</td>
+            <td class="text-center vertical-middle">
+                <canvas class="spark-candle" width="120" height="35" data-candles='[[19.67, 19.73, 19.44, 19.56], [19.79, 20.05, 19.58, 19.98], [20.01, 20.68, 19.99, 20.56], [20.46, 20.89, 20.41, 20.82], [20.96, 21.24, 20.8, 21.23], [21.33, 21.56, 21.3, 21.55], [21.45, 21.91, 21.35, 21.87], [21.61, 21.72, 21.37, 21.4], [21.3, 21.77, 21.28, 21.64], [21.74, 21.98, 21.58, 21.89]]'></canvas>
+            </td>
         </tr>
         
         <tr>
@@ -233,19 +261,25 @@
             <td class="text-center text-success vertical-middle"><strong>7 回</strong></td>
             <td class="vertical-middle">$34.11</td>
             <td class="vertical-middle">$34.55</td>
+            <td class="text-center vertical-middle">
+                <canvas class="spark-candle" width="120" height="35" data-candles='[[33.64, 33.7, 32.56, 32.72], [33.17, 34.08, 32.81, 33.59], [33.33, 34.08, 32.94, 33.45], [33.44, 33.6, 31.97, 32.15], [32.54, 33.29, 32.24, 32.33], [32.61, 33.12, 32.34, 32.88], [32.84, 33.21, 32.42, 33.17], [33.12, 33.79, 33.05, 33.27], [33.96, 34.52, 33.27, 34.06], [34.46, 34.55, 33.59, 34.11]]'></canvas>
+            </td>
         </tr>
         
         <tr>
             <td>
-                <span class="ticker-text">GE</span>
+                <span class="ticker-text">STT</span>
                 <div class="tv-links mt-1">
-                    <a href="https://jp.tradingview.com/symbols/GE/" target="_blank" class="badge badge-info mr-1">概要 📄</a>
-                    <a href="https://jp.tradingview.com/chart/?symbol=GE" target="_blank" class="badge badge-primary">チャート 📈</a>
+                    <a href="https://jp.tradingview.com/symbols/STT/" target="_blank" class="badge badge-info mr-1">概要 📄</a>
+                    <a href="https://jp.tradingview.com/chart/?symbol=STT" target="_blank" class="badge badge-primary">チャート 📈</a>
                 </div>
             </td>
             <td class="text-center text-success vertical-middle"><strong>7 回</strong></td>
-            <td class="vertical-middle">$377.52</td>
-            <td class="vertical-middle">$382.97</td>
+            <td class="vertical-middle">$170.69</td>
+            <td class="vertical-middle">$174.59</td>
+            <td class="text-center vertical-middle">
+                <canvas class="spark-candle" width="120" height="35" data-candles='[[172.06, 173.79, 167.11, 167.48], [169.74, 172.97, 169.28, 172.85], [172.12, 174.59, 170.57, 172.87], [172.33, 173.63, 167.16, 168.03], [170.6, 171.79, 167.88, 168.67], [168.95, 170.31, 163.92, 167.28], [167.85, 171.09, 167.42, 169.34], [170.87, 170.87, 168.17, 168.76], [168.76, 172.32, 168.02, 169.67], [171.06, 171.78, 168.02, 170.69]]'></canvas>
+            </td>
         </tr>
         
         <tr>
@@ -259,6 +293,25 @@
             <td class="text-center text-success vertical-middle"><strong>7 回</strong></td>
             <td class="vertical-middle">$79.76</td>
             <td class="vertical-middle">$81.4</td>
+            <td class="text-center vertical-middle">
+                <canvas class="spark-candle" width="120" height="35" data-candles='[[63.96, 67.74, 60.73, 63.96], [64.07, 65.51, 57.5, 59.35], [59.05, 63.98, 58.34, 61.0], [61.17, 62.75, 59.85, 60.42], [60.33, 61.86, 57.91, 59.75], [59.47, 69.29, 59.23, 67.27], [67.94, 69.9, 66.3, 69.7], [69.83, 73.28, 69.22, 70.03], [70.04, 73.91, 68.87, 72.5], [73.71, 81.4, 73.68, 79.76]]'></canvas>
+            </td>
+        </tr>
+        
+        <tr>
+            <td>
+                <span class="ticker-text">GE</span>
+                <div class="tv-links mt-1">
+                    <a href="https://jp.tradingview.com/symbols/GE/" target="_blank" class="badge badge-info mr-1">概要 📄</a>
+                    <a href="https://jp.tradingview.com/chart/?symbol=GE" target="_blank" class="badge badge-primary">チャート 📈</a>
+                </div>
+            </td>
+            <td class="text-center text-success vertical-middle"><strong>7 回</strong></td>
+            <td class="vertical-middle">$377.52</td>
+            <td class="vertical-middle">$382.97</td>
+            <td class="text-center vertical-middle">
+                <canvas class="spark-candle" width="120" height="35" data-candles='[[362.85, 364.7, 357.1, 357.64], [357.64, 361.28, 354.54, 355.12], [349.28, 359.92, 347.77, 356.47], [356.84, 369.25, 355.66, 365.88], [367.65, 379.67, 366.51, 371.36], [368.4, 371.44, 363.82, 369.0], [367.82, 376.0, 367.47, 373.71], [374.61, 376.82, 368.74, 373.73], [375.03, 376.69, 371.38, 374.94], [379.79, 382.97, 374.37, 377.52]]'></canvas>
+            </td>
         </tr>
         
         <tr>
@@ -272,19 +325,9 @@
             <td class="text-center text-success vertical-middle"><strong>6 回</strong></td>
             <td class="vertical-middle">$58.73</td>
             <td class="vertical-middle">$59.2</td>
-        </tr>
-        
-        <tr>
-            <td>
-                <span class="ticker-text">EW</span>
-                <div class="tv-links mt-1">
-                    <a href="https://jp.tradingview.com/symbols/EW/" target="_blank" class="badge badge-info mr-1">概要 📄</a>
-                    <a href="https://jp.tradingview.com/chart/?symbol=EW" target="_blank" class="badge badge-primary">チャート 📈</a>
-                </div>
+            <td class="text-center vertical-middle">
+                <canvas class="spark-candle" width="120" height="35" data-candles='[[57.23, 57.33, 56.03, 56.2], [56.85, 57.73, 56.81, 57.37], [57.52, 58.01, 57.2, 57.91], [58.21, 58.33, 57.39, 57.73], [57.85, 59.2, 57.85, 58.19], [58.54, 58.63, 57.44, 57.88], [57.76, 58.34, 57.61, 57.88], [57.47, 57.75, 56.84, 56.98], [57.13, 58.48, 56.85, 58.36], [58.94, 59.0, 57.94, 58.73]]'></canvas>
             </td>
-            <td class="text-center text-success vertical-middle"><strong>6 回</strong></td>
-            <td class="vertical-middle">$94.37</td>
-            <td class="vertical-middle">$94.47</td>
         </tr>
         
         <tr>
@@ -298,6 +341,9 @@
             <td class="text-center text-success vertical-middle"><strong>6 回</strong></td>
             <td class="vertical-middle">$471.7</td>
             <td class="vertical-middle">$497.36</td>
+            <td class="text-center vertical-middle">
+                <canvas class="spark-candle" width="120" height="35" data-candles='[[471.13, 475.92, 466.61, 473.79], [475.95, 479.59, 474.0, 478.08], [464.24, 467.06, 455.71, 456.36], [457.04, 464.65, 455.7, 460.37], [470.76, 486.47, 469.39, 479.39], [474.95, 479.0, 468.02, 476.82], [477.16, 485.28, 472.9, 482.33], [487.1, 497.36, 484.1, 495.08], [488.06, 493.97, 481.89, 482.82], [481.97, 482.81, 462.09, 471.7]]'></canvas>
+            </td>
         </tr>
         
         <tr>
@@ -311,6 +357,9 @@
             <td class="text-center text-success vertical-middle"><strong>6 回</strong></td>
             <td class="vertical-middle">$186.59</td>
             <td class="vertical-middle">$187.64</td>
+            <td class="text-center vertical-middle">
+                <canvas class="spark-candle" width="120" height="35" data-candles='[[173.22, 174.1, 169.64, 171.24], [171.02, 172.34, 168.14, 170.56], [169.59, 171.72, 167.48, 168.6], [168.11, 173.22, 166.15, 171.47], [172.63, 176.3, 171.27, 175.11], [175.57, 180.92, 173.73, 179.46], [179.39, 183.51, 177.18, 182.56], [181.99, 184.86, 181.78, 183.11], [184.24, 187.64, 180.88, 183.98], [183.15, 186.84, 180.02, 186.59]]'></canvas>
+            </td>
         </tr>
         
         <tr>
@@ -324,6 +373,9 @@
             <td class="text-center text-success vertical-middle"><strong>6 回</strong></td>
             <td class="vertical-middle">$235.55</td>
             <td class="vertical-middle">$307.37</td>
+            <td class="text-center vertical-middle">
+                <canvas class="spark-candle" width="120" height="35" data-candles='[[251.77, 263.95, 250.5, 259.56], [265.61, 269.9, 262.38, 269.16], [248.06, 251.22, 240.56, 244.49], [242.11, 245.3, 235.0, 240.48], [255.15, 260.84, 243.51, 258.8], [246.77, 253.0, 243.09, 248.64], [250.03, 279.34, 249.32, 278.39], [280.28, 307.37, 279.03, 301.71], [285.52, 290.84, 259.8, 266.19], [266.0, 267.33, 228.01, 235.55]]'></canvas>
+            </td>
         </tr>
         
         <tr>
@@ -337,6 +389,9 @@
             <td class="text-center text-success vertical-middle"><strong>6 回</strong></td>
             <td class="vertical-middle">$109.37</td>
             <td class="vertical-middle">$109.52</td>
+            <td class="text-center vertical-middle">
+                <canvas class="spark-candle" width="120" height="35" data-candles='[[102.76, 103.65, 101.9, 102.32], [102.28, 103.8, 102.28, 102.43], [103.24, 104.46, 102.66, 104.05], [105.11, 105.62, 104.3, 105.37], [105.82, 107.29, 105.53, 107.28], [107.77, 108.37, 107.26, 108.08], [107.63, 108.23, 107.44, 107.86], [107.43, 108.41, 106.5, 107.0], [108.25, 108.25, 105.99, 106.3], [106.97, 109.52, 106.58, 109.37]]'></canvas>
+            </td>
         </tr>
         
         <tr>
@@ -350,6 +405,9 @@
             <td class="text-center text-success vertical-middle"><strong>6 回</strong></td>
             <td class="vertical-middle">$227.53</td>
             <td class="vertical-middle">$244.65</td>
+            <td class="text-center vertical-middle">
+                <canvas class="spark-candle" width="120" height="35" data-candles='[[226.0, 230.65, 223.99, 226.92], [223.71, 228.85, 223.41, 226.06], [222.6, 227.35, 222.6, 226.14], [227.89, 239.95, 227.89, 235.66], [238.94, 244.65, 238.17, 240.06], [239.1, 240.41, 236.05, 239.19], [237.22, 240.82, 234.98, 240.17], [241.81, 241.81, 232.74, 233.1], [235.47, 235.47, 227.98, 228.15], [228.0, 229.57, 223.35, 227.53]]'></canvas>
+            </td>
         </tr>
         
         <tr>
@@ -363,6 +421,9 @@
             <td class="text-center text-success vertical-middle"><strong>6 回</strong></td>
             <td class="vertical-middle">$236.06</td>
             <td class="vertical-middle">$236.06</td>
+            <td class="text-center vertical-middle">
+                <canvas class="spark-candle" width="120" height="35" data-candles='[[208.52, 208.52, 202.9, 206.65], [207.8, 212.49, 206.21, 211.45], [213.06, 219.0, 211.66, 217.67], [218.85, 223.94, 217.1, 221.43], [221.68, 224.47, 219.33, 223.73], [227.03, 228.53, 223.04, 227.33], [227.24, 228.03, 223.92, 227.73], [226.31, 230.07, 225.16, 226.97], [227.6, 231.85, 226.97, 230.19], [231.15, 236.06, 229.22, 236.06]]'></canvas>
+            </td>
         </tr>
         
         <tr>
@@ -376,6 +437,9 @@
             <td class="text-center text-success vertical-middle"><strong>6 回</strong></td>
             <td class="vertical-middle">$1,745.0</td>
             <td class="vertical-middle">$2,354.39</td>
+            <td class="text-center vertical-middle">
+                <canvas class="spark-candle" width="120" height="35" data-candles='[[2044.74, 2191.69, 2029.0, 2184.75], [2293.31, 2354.39, 2251.28, 2273.73], [2007.7, 2060.0, 1949.96, 1963.6], [1987.53, 2021.5, 1861.01, 1914.46], [2238.3, 2348.0, 2092.08, 2335.0], [2170.0, 2256.11, 2063.04, 2090.71], [2090.71, 2090.71, 1895.0, 2050.39], [2109.73, 2280.8, 2070.0, 2273.73], [2085.17, 2129.98, 2002.05, 2032.22], [2043.8, 2052.54, 1693.0, 1745.0]]'></canvas>
+            </td>
         </tr>
         
         <tr>
@@ -389,6 +453,9 @@
             <td class="text-center text-success vertical-middle"><strong>6 回</strong></td>
             <td class="vertical-middle">$365.74</td>
             <td class="vertical-middle">$367.66</td>
+            <td class="text-center vertical-middle">
+                <canvas class="spark-candle" width="120" height="35" data-candles='[[326.35, 329.11, 323.2, 327.95], [329.55, 329.86, 324.68, 329.71], [328.45, 336.5, 327.61, 336.39], [335.72, 345.99, 335.72, 340.41], [345.0, 352.31, 345.0, 346.56], [345.36, 351.35, 342.7, 350.85], [349.87, 355.12, 347.09, 354.68], [355.0, 359.74, 350.66, 359.0], [359.06, 365.49, 354.85, 365.0], [366.08, 367.66, 362.83, 365.74]]'></canvas>
+            </td>
         </tr>
         
         <tr>
@@ -402,6 +469,9 @@
             <td class="text-center text-success vertical-middle"><strong>6 回</strong></td>
             <td class="vertical-middle">$70.98</td>
             <td class="vertical-middle">$72.46</td>
+            <td class="text-center vertical-middle">
+                <canvas class="spark-candle" width="120" height="35" data-candles='[[67.15, 67.76, 66.78, 67.08], [67.49, 68.58, 67.16, 67.99], [67.75, 69.08, 67.46, 68.99], [69.1, 69.95, 69.0, 69.46], [69.8, 71.21, 69.8, 70.66], [70.99, 71.03, 69.75, 70.4], [70.09, 70.79, 69.96, 70.43], [70.18, 70.29, 69.49, 70.07], [69.58, 72.15, 69.51, 71.82], [72.46, 72.46, 70.46, 70.98]]'></canvas>
+            </td>
         </tr>
         
         <tr>
@@ -415,19 +485,25 @@
             <td class="text-center text-success vertical-middle"><strong>6 回</strong></td>
             <td class="vertical-middle">$963.53</td>
             <td class="vertical-middle">$1,073.46</td>
+            <td class="text-center vertical-middle">
+                <canvas class="spark-candle" width="120" height="35" data-candles='[[979.0, 994.49, 976.33, 985.82], [999.28, 1023.29, 999.0, 1022.28], [985.25, 994.6, 972.65, 984.24], [981.61, 1004.87, 970.05, 994.45], [1024.64, 1057.07, 1015.0, 1057.01], [1031.85, 1031.85, 989.64, 997.47], [998.41, 1039.07, 992.11, 1033.19], [1045.0, 1073.46, 1037.21, 1064.9], [1033.92, 1041.26, 985.05, 991.41], [1001.28, 1001.28, 948.78, 963.53]]'></canvas>
+            </td>
         </tr>
         
         <tr>
             <td>
-                <span class="ticker-text">TGT</span>
+                <span class="ticker-text">EW</span>
                 <div class="tv-links mt-1">
-                    <a href="https://jp.tradingview.com/symbols/TGT/" target="_blank" class="badge badge-info mr-1">概要 📄</a>
-                    <a href="https://jp.tradingview.com/chart/?symbol=TGT" target="_blank" class="badge badge-primary">チャート 📈</a>
+                    <a href="https://jp.tradingview.com/symbols/EW/" target="_blank" class="badge badge-info mr-1">概要 📄</a>
+                    <a href="https://jp.tradingview.com/chart/?symbol=EW" target="_blank" class="badge badge-primary">チャート 📈</a>
                 </div>
             </td>
-            <td class="text-center text-success vertical-middle"><strong>5 回</strong></td>
-            <td class="vertical-middle">$130.21</td>
-            <td class="vertical-middle">$142.82</td>
+            <td class="text-center text-success vertical-middle"><strong>6 回</strong></td>
+            <td class="vertical-middle">$94.37</td>
+            <td class="vertical-middle">$94.47</td>
+            <td class="text-center vertical-middle">
+                <canvas class="spark-candle" width="120" height="35" data-candles='[[86.96, 87.83, 86.52, 87.36], [87.34, 87.41, 85.32, 85.88], [86.19, 87.22, 85.46, 86.95], [87.35, 90.99, 87.0, 89.66], [90.12, 91.65, 89.66, 89.72], [90.31, 92.46, 89.33, 90.78], [91.02, 92.88, 91.01, 91.18], [91.53, 92.0, 89.69, 90.46], [91.01, 92.39, 90.28, 91.99], [92.07, 94.47, 91.82, 94.37]]'></canvas>
+            </td>
         </tr>
         
         <tr>
@@ -441,6 +517,9 @@
             <td class="text-center text-success vertical-middle"><strong>5 回</strong></td>
             <td class="vertical-middle">$41.09</td>
             <td class="vertical-middle">$41.12</td>
+            <td class="text-center vertical-middle">
+                <canvas class="spark-candle" width="120" height="35" data-candles='[[38.19, 38.19, 37.39, 37.56], [37.54, 37.74, 37.14, 37.74], [37.95, 38.45, 37.86, 38.28], [38.66, 38.73, 38.19, 38.39], [38.52, 39.27, 38.52, 39.1], [39.33, 40.03, 39.33, 39.98], [39.82, 40.16, 39.77, 40.13], [39.67, 40.28, 39.57, 39.92], [40.06, 41.09, 40.06, 40.62], [40.81, 41.12, 40.41, 41.09]]'></canvas>
+            </td>
         </tr>
         
         <tr>
@@ -454,19 +533,9 @@
             <td class="text-center text-success vertical-middle"><strong>5 回</strong></td>
             <td class="vertical-middle">$546.64</td>
             <td class="vertical-middle">$547.22</td>
-        </tr>
-        
-        <tr>
-            <td>
-                <span class="ticker-text">GLW</span>
-                <div class="tv-links mt-1">
-                    <a href="https://jp.tradingview.com/symbols/GLW/" target="_blank" class="badge badge-info mr-1">概要 📄</a>
-                    <a href="https://jp.tradingview.com/chart/?symbol=GLW" target="_blank" class="badge badge-primary">チャート 📈</a>
-                </div>
+            <td class="text-center vertical-middle">
+                <canvas class="spark-candle" width="120" height="35" data-candles='[[516.05, 518.84, 511.16, 512.15], [507.97, 517.99, 507.12, 516.71], [523.88, 523.88, 508.73, 512.26], [514.76, 522.69, 514.4, 515.73], [515.29, 527.94, 513.8, 522.28], [521.0, 525.0, 518.36, 519.62], [519.12, 519.68, 506.78, 511.06], [512.36, 522.59, 511.57, 518.94], [525.31, 538.95, 517.0, 533.55], [535.45, 547.22, 532.96, 546.64]]'></canvas>
             </td>
-            <td class="text-center text-success vertical-middle"><strong>5 回</strong></td>
-            <td class="vertical-middle">$196.79</td>
-            <td class="vertical-middle">$271.78</td>
         </tr>
         
         <tr>
@@ -480,6 +549,25 @@
             <td class="text-center text-success vertical-middle"><strong>5 回</strong></td>
             <td class="vertical-middle">$146.62</td>
             <td class="vertical-middle">$148.5</td>
+            <td class="text-center vertical-middle">
+                <canvas class="spark-candle" width="120" height="35" data-candles='[[147.66, 148.13, 142.68, 143.63], [145.03, 146.57, 144.67, 146.44], [146.72, 148.5, 145.3, 147.29], [146.62, 147.84, 143.51, 143.56], [145.7, 148.05, 144.37, 145.43], [146.25, 146.25, 141.78, 143.56], [144.49, 146.26, 143.5, 143.8], [144.57, 145.85, 143.5, 144.61], [144.75, 147.45, 144.19, 146.02], [147.41, 148.0, 145.16, 146.62]]'></canvas>
+            </td>
+        </tr>
+        
+        <tr>
+            <td>
+                <span class="ticker-text">TGT</span>
+                <div class="tv-links mt-1">
+                    <a href="https://jp.tradingview.com/symbols/TGT/" target="_blank" class="badge badge-info mr-1">概要 📄</a>
+                    <a href="https://jp.tradingview.com/chart/?symbol=TGT" target="_blank" class="badge badge-primary">チャート 📈</a>
+                </div>
+            </td>
+            <td class="text-center text-success vertical-middle"><strong>5 回</strong></td>
+            <td class="vertical-middle">$130.21</td>
+            <td class="vertical-middle">$142.82</td>
+            <td class="text-center vertical-middle">
+                <canvas class="spark-candle" width="120" height="35" data-candles='[[129.0, 131.8, 128.95, 130.74], [131.52, 134.02, 129.39, 129.73], [131.91, 134.9, 131.22, 134.11], [135.69, 141.25, 134.81, 141.2], [140.75, 142.82, 139.07, 139.57], [140.46, 141.62, 139.33, 140.39], [139.15, 139.56, 133.78, 133.92], [133.62, 133.86, 129.68, 130.61], [129.8, 130.88, 126.46, 130.29], [130.74, 132.28, 129.58, 130.21]]'></canvas>
+            </td>
         </tr>
         
         <tr>
@@ -491,8 +579,11 @@
                 </div>
             </td>
             <td class="text-center text-success vertical-middle"><strong>5 回</strong></td>
-            <td class="vertical-middle">¥426.4</td>
+            <td class="vertical-middle">¥431.7</td>
             <td class="vertical-middle">¥435.6</td>
+            <td class="text-center vertical-middle">
+                <canvas class="spark-candle" width="120" height="35" data-candles='[[428.7, 435.6, 428.2, 434.5], [434.8, 435.0, 422.8, 422.8], [423.2, 425.1, 417.7, 419.9], [427.4, 427.9, 422.8, 425.9], [422.8, 425.2, 417.0, 420.4], [423.2, 424.4, 418.5, 421.7], [425.5, 426.9, 421.7, 423.6], [427.5, 430.0, 424.3, 425.8], [425.9, 430.4, 423.8, 426.4], [427.6, 431.7, 424.9, 431.7]]'></canvas>
+            </td>
         </tr>
         
         <tr>
@@ -506,6 +597,9 @@
             <td class="text-center text-success vertical-middle"><strong>5 回</strong></td>
             <td class="vertical-middle">$975.56</td>
             <td class="vertical-middle">$1,255.0</td>
+            <td class="text-center vertical-middle">
+                <canvas class="spark-candle" width="120" height="35" data-candles='[[1108.07, 1149.43, 1092.79, 1133.99], [1196.22, 1213.56, 1168.57, 1211.38], [1080.0, 1125.0, 1038.5, 1051.77], [1082.22, 1083.32, 991.1, 1048.51], [1233.0, 1255.0, 1136.31, 1213.56], [1139.08, 1198.71, 1121.36, 1132.33], [1128.7, 1148.79, 1023.65, 1145.28], [1144.73, 1168.68, 1124.66, 1154.29], [1082.01, 1097.0, 1032.2, 1032.28], [1041.5, 1064.64, 950.28, 975.56]]'></canvas>
+            </td>
         </tr>
         
         <tr>
@@ -519,19 +613,9 @@
             <td class="text-center text-success vertical-middle"><strong>5 回</strong></td>
             <td class="vertical-middle">$110.87</td>
             <td class="vertical-middle">$112.45</td>
-        </tr>
-        
-        <tr>
-            <td>
-                <span class="ticker-text">EVRG</span>
-                <div class="tv-links mt-1">
-                    <a href="https://jp.tradingview.com/symbols/EVRG/" target="_blank" class="badge badge-info mr-1">概要 📄</a>
-                    <a href="https://jp.tradingview.com/chart/?symbol=EVRG" target="_blank" class="badge badge-primary">チャート 📈</a>
-                </div>
+            <td class="text-center vertical-middle">
+                <canvas class="spark-candle" width="120" height="35" data-candles='[[111.01, 111.29, 108.95, 109.57], [110.08, 112.23, 108.64, 111.23], [111.07, 112.45, 110.72, 112.36], [108.78, 110.51, 105.19, 106.7], [107.57, 108.34, 104.66, 105.44], [105.88, 107.99, 105.05, 107.75], [107.39, 108.57, 106.76, 108.51], [108.36, 109.4, 107.68, 107.78], [107.55, 109.67, 107.07, 108.93], [109.16, 110.94, 109.05, 110.87]]'></canvas>
             </td>
-            <td class="text-center text-success vertical-middle"><strong>5 回</strong></td>
-            <td class="vertical-middle">$88.13</td>
-            <td class="vertical-middle">$88.18</td>
         </tr>
         
         <tr>
@@ -545,136 +629,25 @@
             <td class="text-center text-success vertical-middle"><strong>5 回</strong></td>
             <td class="vertical-middle">$205.21</td>
             <td class="vertical-middle">$206.0</td>
+            <td class="text-center vertical-middle">
+                <canvas class="spark-candle" width="120" height="35" data-candles='[[202.72, 203.5, 201.8, 202.15], [202.33, 203.0, 202.25, 202.97], [203.56, 203.65, 203.02, 203.52], [204.7, 204.89, 204.36, 204.52], [204.5, 205.22, 204.12, 204.73], [204.99, 205.69, 204.84, 205.25], [205.25, 205.39, 204.93, 205.05], [205.48, 205.51, 204.95, 205.04], [205.76, 206.0, 205.15, 205.45], [205.95, 206.0, 205.0, 205.21]]'></canvas>
+            </td>
         </tr>
         
         <tr>
             <td>
-                <span class="ticker-text">C</span>
+                <span class="ticker-text">EVRG</span>
                 <div class="tv-links mt-1">
-                    <a href="https://jp.tradingview.com/symbols/C/" target="_blank" class="badge badge-info mr-1">概要 📄</a>
-                    <a href="https://jp.tradingview.com/chart/?symbol=C" target="_blank" class="badge badge-primary">チャート 📈</a>
+                    <a href="https://jp.tradingview.com/symbols/EVRG/" target="_blank" class="badge badge-info mr-1">概要 📄</a>
+                    <a href="https://jp.tradingview.com/chart/?symbol=EVRG" target="_blank" class="badge badge-primary">チャート 📈</a>
                 </div>
             </td>
             <td class="text-center text-success vertical-middle"><strong>5 回</strong></td>
-            <td class="vertical-middle">$139.97</td>
-            <td class="vertical-middle">$147.96</td>
-        </tr>
-        
-        <tr>
-            <td>
-                <span class="ticker-text">MTB</span>
-                <div class="tv-links mt-1">
-                    <a href="https://jp.tradingview.com/symbols/MTB/" target="_blank" class="badge badge-info mr-1">概要 📄</a>
-                    <a href="https://jp.tradingview.com/chart/?symbol=MTB" target="_blank" class="badge badge-primary">チャート 📈</a>
-                </div>
+            <td class="vertical-middle">$88.13</td>
+            <td class="vertical-middle">$88.18</td>
+            <td class="text-center vertical-middle">
+                <canvas class="spark-candle" width="120" height="35" data-candles='[[82.85, 83.34, 82.0, 82.5], [82.42, 84.0, 82.42, 83.25], [83.73, 85.0, 83.13, 84.84], [85.15, 86.08, 84.84, 85.82], [86.18, 86.82, 85.78, 86.66], [86.92, 87.57, 86.76, 87.21], [87.23, 87.37, 86.52, 87.01], [86.98, 87.56, 85.85, 86.43], [85.48, 86.49, 85.48, 86.19], [86.44, 88.18, 86.44, 88.13]]'></canvas>
             </td>
-            <td class="text-center text-success vertical-middle"><strong>5 回</strong></td>
-            <td class="vertical-middle">$238.88</td>
-            <td class="vertical-middle">$243.57</td>
-        </tr>
-        
-        <tr>
-            <td>
-                <span class="ticker-text">TER</span>
-                <div class="tv-links mt-1">
-                    <a href="https://jp.tradingview.com/symbols/TER/" target="_blank" class="badge badge-info mr-1">概要 📄</a>
-                    <a href="https://jp.tradingview.com/chart/?symbol=TER" target="_blank" class="badge badge-primary">チャート 📈</a>
-                </div>
-            </td>
-            <td class="text-center text-success vertical-middle"><strong>5 回</strong></td>
-            <td class="vertical-middle">$369.09</td>
-            <td class="vertical-middle">$487.91</td>
-        </tr>
-        
-        <tr>
-            <td>
-                <span class="ticker-text">SPG</span>
-                <div class="tv-links mt-1">
-                    <a href="https://jp.tradingview.com/symbols/SPG/" target="_blank" class="badge badge-info mr-1">概要 📄</a>
-                    <a href="https://jp.tradingview.com/chart/?symbol=SPG" target="_blank" class="badge badge-primary">チャート 📈</a>
-                </div>
-            </td>
-            <td class="text-center text-success vertical-middle"><strong>5 回</strong></td>
-            <td class="vertical-middle">$226.06</td>
-            <td class="vertical-middle">$228.58</td>
-        </tr>
-        
-        <tr>
-            <td>
-                <span class="ticker-text">UNH</span>
-                <div class="tv-links mt-1">
-                    <a href="https://jp.tradingview.com/symbols/UNH/" target="_blank" class="badge badge-info mr-1">概要 📄</a>
-                    <a href="https://jp.tradingview.com/chart/?symbol=UNH" target="_blank" class="badge badge-primary">チャート 📈</a>
-                </div>
-            </td>
-            <td class="text-center text-success vertical-middle"><strong>5 回</strong></td>
-            <td class="vertical-middle">$425.36</td>
-            <td class="vertical-middle">$430.2</td>
-        </tr>
-        
-        <tr>
-            <td>
-                <span class="ticker-text">IEX</span>
-                <div class="tv-links mt-1">
-                    <a href="https://jp.tradingview.com/symbols/IEX/" target="_blank" class="badge badge-info mr-1">概要 📄</a>
-                    <a href="https://jp.tradingview.com/chart/?symbol=IEX" target="_blank" class="badge badge-primary">チャート 📈</a>
-                </div>
-            </td>
-            <td class="text-center text-success vertical-middle"><strong>5 回</strong></td>
-            <td class="vertical-middle">$223.82</td>
-            <td class="vertical-middle">$230.18</td>
-        </tr>
-        
-        <tr>
-            <td>
-                <span class="ticker-text">IBKR</span>
-                <div class="tv-links mt-1">
-                    <a href="https://jp.tradingview.com/symbols/IBKR/" target="_blank" class="badge badge-info mr-1">概要 📄</a>
-                    <a href="https://jp.tradingview.com/chart/?symbol=IBKR" target="_blank" class="badge badge-primary">チャート 📈</a>
-                </div>
-            </td>
-            <td class="text-center text-success vertical-middle"><strong>5 回</strong></td>
-            <td class="vertical-middle">$91.33</td>
-            <td class="vertical-middle">$97.84</td>
-        </tr>
-        
-        <tr>
-            <td>
-                <span class="ticker-text">D</span>
-                <div class="tv-links mt-1">
-                    <a href="https://jp.tradingview.com/symbols/D/" target="_blank" class="badge badge-info mr-1">概要 📄</a>
-                    <a href="https://jp.tradingview.com/chart/?symbol=D" target="_blank" class="badge badge-primary">チャート 📈</a>
-                </div>
-            </td>
-            <td class="text-center text-success vertical-middle"><strong>5 回</strong></td>
-            <td class="vertical-middle">$69.75</td>
-            <td class="vertical-middle">$70.17</td>
-        </tr>
-        
-        <tr>
-            <td>
-                <span class="ticker-text">CVS</span>
-                <div class="tv-links mt-1">
-                    <a href="https://jp.tradingview.com/symbols/CVS/" target="_blank" class="badge badge-info mr-1">概要 📄</a>
-                    <a href="https://jp.tradingview.com/chart/?symbol=CVS" target="_blank" class="badge badge-primary">チャート 📈</a>
-                </div>
-            </td>
-            <td class="text-center text-success vertical-middle"><strong>5 回</strong></td>
-            <td class="vertical-middle">$104.72</td>
-            <td class="vertical-middle">$106.15</td>
-        </tr>
-        
-        <tr>
-            <td>
-                <span class="ticker-text">CAH</span>
-                <div class="tv-links mt-1">
-                    <a href="https://jp.tradingview.com/symbols/CAH/" target="_blank" class="badge badge-info mr-1">概要 📄</a>
-                    <a href="https://jp.tradingview.com/chart/?symbol=CAH" target="_blank" class="badge badge-primary">チャート 📈</a>
-                </div>
-            </td>
-            <td class="text-center text-success vertical-middle"><strong>5 回</strong></td>
-            <td class="vertical-middle">$238.94</td>
-            <td class="vertical-middle">$240.91</td>
         </tr>
         
         <tr>
@@ -688,19 +661,185 @@
             <td class="text-center text-success vertical-middle"><strong>5 回</strong></td>
             <td class="vertical-middle">$48.89</td>
             <td class="vertical-middle">$49.21</td>
+            <td class="text-center vertical-middle">
+                <canvas class="spark-candle" width="120" height="35" data-candles='[[45.91, 46.61, 45.43, 45.63], [45.67, 46.34, 45.51, 46.2], [46.24, 46.52, 46.02, 46.16], [46.16, 46.9, 45.93, 46.06], [46.26, 47.59, 46.01, 47.44], [47.8, 47.94, 47.19, 47.66], [47.82, 48.42, 47.62, 48.01], [47.92, 47.92, 47.17, 47.53], [47.87, 48.58, 47.49, 48.33], [48.59, 49.21, 48.53, 48.89]]'></canvas>
+            </td>
         </tr>
         
         <tr>
             <td>
-                <span class="ticker-text">ABBV</span>
+                <span class="ticker-text">MTB</span>
                 <div class="tv-links mt-1">
-                    <a href="https://jp.tradingview.com/symbols/ABBV/" target="_blank" class="badge badge-info mr-1">概要 📄</a>
-                    <a href="https://jp.tradingview.com/chart/?symbol=ABBV" target="_blank" class="badge badge-primary">チャート 📈</a>
+                    <a href="https://jp.tradingview.com/symbols/MTB/" target="_blank" class="badge badge-info mr-1">概要 📄</a>
+                    <a href="https://jp.tradingview.com/chart/?symbol=MTB" target="_blank" class="badge badge-primary">チャート 📈</a>
                 </div>
             </td>
-            <td class="text-center text-success vertical-middle"><strong>4 回</strong></td>
-            <td class="vertical-middle">$261.07</td>
-            <td class="vertical-middle">$261.64</td>
+            <td class="text-center text-success vertical-middle"><strong>5 回</strong></td>
+            <td class="vertical-middle">$238.88</td>
+            <td class="vertical-middle">$243.57</td>
+            <td class="text-center vertical-middle">
+                <canvas class="spark-candle" width="120" height="35" data-candles='[[228.06, 228.25, 224.76, 225.12], [226.69, 228.94, 226.49, 227.73], [228.33, 231.76, 226.9, 231.24], [231.07, 234.4, 231.07, 233.26], [233.58, 237.6, 233.58, 236.77], [237.08, 238.0, 235.24, 237.26], [235.74, 239.83, 235.67, 239.2], [237.92, 239.48, 236.94, 238.01], [237.78, 242.95, 236.62, 241.95], [243.57, 243.57, 237.49, 238.88]]'></canvas>
+            </td>
+        </tr>
+        
+        <tr>
+            <td>
+                <span class="ticker-text">TER</span>
+                <div class="tv-links mt-1">
+                    <a href="https://jp.tradingview.com/symbols/TER/" target="_blank" class="badge badge-info mr-1">概要 📄</a>
+                    <a href="https://jp.tradingview.com/chart/?symbol=TER" target="_blank" class="badge badge-primary">チャート 📈</a>
+                </div>
+            </td>
+            <td class="text-center text-success vertical-middle"><strong>5 回</strong></td>
+            <td class="vertical-middle">$369.09</td>
+            <td class="vertical-middle">$487.91</td>
+            <td class="text-center vertical-middle">
+                <canvas class="spark-candle" width="120" height="35" data-candles='[[421.83, 439.5, 421.83, 437.92], [456.14, 459.19, 439.61, 457.0], [410.17, 428.67, 408.77, 420.12], [423.07, 433.0, 413.77, 427.2], [454.0, 472.37, 427.09, 471.96], [453.74, 456.24, 423.07, 436.86], [440.62, 469.11, 414.93, 463.21], [467.5, 487.91, 460.0, 483.84], [461.0, 463.66, 425.11, 427.34], [427.41, 429.74, 362.01, 369.09]]'></canvas>
+            </td>
+        </tr>
+        
+        <tr>
+            <td>
+                <span class="ticker-text">SPG</span>
+                <div class="tv-links mt-1">
+                    <a href="https://jp.tradingview.com/symbols/SPG/" target="_blank" class="badge badge-info mr-1">概要 📄</a>
+                    <a href="https://jp.tradingview.com/chart/?symbol=SPG" target="_blank" class="badge badge-primary">チャート 📈</a>
+                </div>
+            </td>
+            <td class="text-center text-success vertical-middle"><strong>5 回</strong></td>
+            <td class="vertical-middle">$226.06</td>
+            <td class="vertical-middle">$228.58</td>
+            <td class="text-center vertical-middle">
+                <canvas class="spark-candle" width="120" height="35" data-candles='[[214.04, 214.3, 211.29, 211.33], [212.61, 214.67, 212.0, 214.57], [215.04, 217.71, 214.19, 216.74], [216.93, 222.4, 216.04, 222.15], [222.12, 226.44, 221.8, 225.49], [226.9, 228.58, 225.55, 226.89], [226.24, 228.09, 225.28, 227.56], [225.43, 226.28, 222.54, 223.65], [221.36, 223.17, 220.04, 223.0], [224.0, 226.12, 223.08, 226.06]]'></canvas>
+            </td>
+        </tr>
+        
+        <tr>
+            <td>
+                <span class="ticker-text">UNH</span>
+                <div class="tv-links mt-1">
+                    <a href="https://jp.tradingview.com/symbols/UNH/" target="_blank" class="badge badge-info mr-1">概要 📄</a>
+                    <a href="https://jp.tradingview.com/chart/?symbol=UNH" target="_blank" class="badge badge-primary">チャート 📈</a>
+                </div>
+            </td>
+            <td class="text-center text-success vertical-middle"><strong>5 回</strong></td>
+            <td class="vertical-middle">$425.36</td>
+            <td class="vertical-middle">$430.2</td>
+            <td class="text-center vertical-middle">
+                <canvas class="spark-candle" width="120" height="35" data-candles='[[402.77, 406.2, 399.15, 400.96], [402.14, 409.46, 402.14, 406.68], [409.52, 409.9, 402.84, 409.25], [410.54, 413.43, 400.0, 405.8], [406.65, 417.58, 406.65, 415.53], [416.16, 427.93, 416.16, 427.89], [426.53, 426.7, 415.81, 419.82], [422.72, 422.74, 413.25, 415.63], [417.11, 428.02, 413.73, 426.54], [428.13, 430.2, 420.54, 425.36]]'></canvas>
+            </td>
+        </tr>
+        
+        <tr>
+            <td>
+                <span class="ticker-text">IEX</span>
+                <div class="tv-links mt-1">
+                    <a href="https://jp.tradingview.com/symbols/IEX/" target="_blank" class="badge badge-info mr-1">概要 📄</a>
+                    <a href="https://jp.tradingview.com/chart/?symbol=IEX" target="_blank" class="badge badge-primary">チャート 📈</a>
+                </div>
+            </td>
+            <td class="text-center text-success vertical-middle"><strong>5 回</strong></td>
+            <td class="vertical-middle">$223.82</td>
+            <td class="vertical-middle">$230.18</td>
+            <td class="text-center vertical-middle">
+                <canvas class="spark-candle" width="120" height="35" data-candles='[[227.18, 228.26, 224.74, 224.93], [225.52, 227.02, 218.18, 225.36], [219.12, 224.17, 219.12, 221.17], [222.4, 225.36, 221.23, 222.16], [224.96, 230.18, 222.0, 228.07], [227.08, 228.26, 225.07, 227.19], [225.29, 226.14, 222.34, 225.96], [227.32, 228.61, 225.36, 226.95], [227.11, 229.24, 224.34, 224.96], [226.74, 226.83, 221.26, 223.82]]'></canvas>
+            </td>
+        </tr>
+        
+        <tr>
+            <td>
+                <span class="ticker-text">IBKR</span>
+                <div class="tv-links mt-1">
+                    <a href="https://jp.tradingview.com/symbols/IBKR/" target="_blank" class="badge badge-info mr-1">概要 📄</a>
+                    <a href="https://jp.tradingview.com/chart/?symbol=IBKR" target="_blank" class="badge badge-primary">チャート 📈</a>
+                </div>
+            </td>
+            <td class="text-center text-success vertical-middle"><strong>5 回</strong></td>
+            <td class="vertical-middle">$91.33</td>
+            <td class="vertical-middle">$97.84</td>
+            <td class="text-center vertical-middle">
+                <canvas class="spark-candle" width="120" height="35" data-candles='[[96.8, 97.81, 95.3, 96.0], [96.79, 97.84, 96.04, 96.82], [92.7, 96.59, 92.33, 94.7], [93.7, 95.26, 92.16, 92.79], [94.45, 95.28, 91.79, 92.16], [91.45, 91.73, 89.56, 89.82], [90.34, 90.51, 87.67, 88.2], [88.0, 90.12, 86.66, 87.04], [88.03, 95.57, 87.57, 93.25], [93.25, 96.71, 89.51, 91.33]]'></canvas>
+            </td>
+        </tr>
+        
+        <tr>
+            <td>
+                <span class="ticker-text">D</span>
+                <div class="tv-links mt-1">
+                    <a href="https://jp.tradingview.com/symbols/D/" target="_blank" class="badge badge-info mr-1">概要 📄</a>
+                    <a href="https://jp.tradingview.com/chart/?symbol=D" target="_blank" class="badge badge-primary">チャート 📈</a>
+                </div>
+            </td>
+            <td class="text-center text-success vertical-middle"><strong>5 回</strong></td>
+            <td class="vertical-middle">$69.75</td>
+            <td class="vertical-middle">$70.17</td>
+            <td class="text-center vertical-middle">
+                <canvas class="spark-candle" width="120" height="35" data-candles='[[68.11, 69.28, 68.08, 68.41], [68.8, 69.19, 67.87, 68.04], [68.21, 68.87, 68.07, 68.45], [68.6, 69.43, 68.41, 69.26], [69.63, 70.17, 68.78, 69.51], [69.59, 69.85, 68.89, 69.39], [69.39, 69.9, 68.77, 69.18], [68.92, 69.31, 68.24, 68.29], [68.36, 68.53, 67.38, 67.79], [68.15, 69.82, 68.04, 69.75]]'></canvas>
+            </td>
+        </tr>
+        
+        <tr>
+            <td>
+                <span class="ticker-text">CVS</span>
+                <div class="tv-links mt-1">
+                    <a href="https://jp.tradingview.com/symbols/CVS/" target="_blank" class="badge badge-info mr-1">概要 📄</a>
+                    <a href="https://jp.tradingview.com/chart/?symbol=CVS" target="_blank" class="badge badge-primary">チャート 📈</a>
+                </div>
+            </td>
+            <td class="text-center text-success vertical-middle"><strong>5 回</strong></td>
+            <td class="vertical-middle">$104.72</td>
+            <td class="vertical-middle">$106.15</td>
+            <td class="text-center vertical-middle">
+                <canvas class="spark-candle" width="120" height="35" data-candles='[[99.16, 99.22, 97.84, 98.32], [99.79, 103.12, 99.0, 101.3], [101.56, 102.05, 100.79, 101.57], [101.87, 102.41, 99.81, 101.87], [102.28, 104.94, 102.28, 104.66], [104.86, 106.15, 103.55, 104.34], [103.8, 104.34, 103.04, 103.58], [104.07, 104.67, 102.69, 103.45], [103.41, 104.87, 102.76, 104.81], [104.58, 105.23, 103.22, 104.72]]'></canvas>
+            </td>
+        </tr>
+        
+        <tr>
+            <td>
+                <span class="ticker-text">C</span>
+                <div class="tv-links mt-1">
+                    <a href="https://jp.tradingview.com/symbols/C/" target="_blank" class="badge badge-info mr-1">概要 📄</a>
+                    <a href="https://jp.tradingview.com/chart/?symbol=C" target="_blank" class="badge badge-primary">チャート 📈</a>
+                </div>
+            </td>
+            <td class="text-center text-success vertical-middle"><strong>5 回</strong></td>
+            <td class="vertical-middle">$139.97</td>
+            <td class="vertical-middle">$147.96</td>
+            <td class="text-center vertical-middle">
+                <canvas class="spark-candle" width="120" height="35" data-candles='[[146.49, 147.96, 143.04, 143.06], [144.71, 146.37, 144.48, 145.67], [144.13, 146.14, 143.14, 144.97], [144.99, 145.92, 143.18, 143.59], [144.89, 147.79, 144.82, 144.98], [144.63, 145.1, 140.76, 141.76], [141.85, 143.84, 141.43, 142.49], [141.0, 141.9, 139.38, 139.96], [140.24, 141.28, 138.26, 140.13], [141.88, 142.11, 138.22, 139.97]]'></canvas>
+            </td>
+        </tr>
+        
+        <tr>
+            <td>
+                <span class="ticker-text">GLW</span>
+                <div class="tv-links mt-1">
+                    <a href="https://jp.tradingview.com/symbols/GLW/" target="_blank" class="badge badge-info mr-1">概要 📄</a>
+                    <a href="https://jp.tradingview.com/chart/?symbol=GLW" target="_blank" class="badge badge-primary">チャート 📈</a>
+                </div>
+            </td>
+            <td class="text-center text-success vertical-middle"><strong>5 回</strong></td>
+            <td class="vertical-middle">$196.79</td>
+            <td class="vertical-middle">$271.78</td>
+            <td class="text-center vertical-middle">
+                <canvas class="spark-candle" width="120" height="35" data-candles='[[182.33, 196.02, 181.2, 194.92], [200.48, 212.39, 196.0, 209.83], [192.45, 194.81, 186.6, 194.07], [194.42, 217.09, 190.93, 205.83], [218.55, 230.5, 213.02, 228.01], [224.43, 226.0, 207.73, 221.05], [226.9, 258.8, 215.13, 255.69], [252.49, 271.78, 250.5, 255.43], [239.5, 240.87, 218.11, 220.63], [223.89, 224.01, 193.54, 196.79]]'></canvas>
+            </td>
+        </tr>
+        
+        <tr>
+            <td>
+                <span class="ticker-text">CAH</span>
+                <div class="tv-links mt-1">
+                    <a href="https://jp.tradingview.com/symbols/CAH/" target="_blank" class="badge badge-info mr-1">概要 📄</a>
+                    <a href="https://jp.tradingview.com/chart/?symbol=CAH" target="_blank" class="badge badge-primary">チャート 📈</a>
+                </div>
+            </td>
+            <td class="text-center text-success vertical-middle"><strong>5 回</strong></td>
+            <td class="vertical-middle">$238.94</td>
+            <td class="vertical-middle">$240.91</td>
+            <td class="text-center vertical-middle">
+                <canvas class="spark-candle" width="120" height="35" data-candles='[[225.68, 225.68, 218.99, 221.29], [223.24, 227.95, 221.8, 222.26], [224.72, 228.76, 222.02, 228.41], [229.39, 235.2, 228.93, 232.5], [232.01, 237.27, 231.88, 234.24], [237.26, 239.92, 235.49, 237.4], [239.41, 240.41, 234.64, 235.71], [236.49, 239.01, 235.89, 237.04], [238.87, 239.71, 233.0, 237.72], [239.79, 240.91, 237.53, 238.94]]'></canvas>
+            </td>
         </tr>
         
         <tr>
@@ -714,32 +853,9 @@
             <td class="text-center text-success vertical-middle"><strong>4 回</strong></td>
             <td class="vertical-middle">$412.09</td>
             <td class="vertical-middle">$412.33</td>
-        </tr>
-        
-        <tr>
-            <td>
-                <span class="ticker-text">MS</span>
-                <div class="tv-links mt-1">
-                    <a href="https://jp.tradingview.com/symbols/MS/" target="_blank" class="badge badge-info mr-1">概要 📄</a>
-                    <a href="https://jp.tradingview.com/chart/?symbol=MS" target="_blank" class="badge badge-primary">チャート 📈</a>
-                </div>
+            <td class="text-center vertical-middle">
+                <canvas class="spark-candle" width="120" height="35" data-candles='[[384.43, 390.36, 382.71, 387.25], [386.05, 391.92, 383.22, 390.7], [387.35, 391.14, 384.22, 385.85], [387.34, 395.3, 385.0, 392.14], [395.38, 403.35, 393.19, 400.95], [398.15, 400.95, 395.01, 397.1], [395.74, 398.54, 393.49, 398.36], [400.0, 404.46, 398.11, 402.4], [399.98, 406.3, 395.71, 403.28], [405.28, 412.33, 402.69, 412.09]]'></canvas>
             </td>
-            <td class="text-center text-success vertical-middle"><strong>4 回</strong></td>
-            <td class="vertical-middle">$213.93</td>
-            <td class="vertical-middle">$230.47</td>
-        </tr>
-        
-        <tr>
-            <td>
-                <span class="ticker-text">MET</span>
-                <div class="tv-links mt-1">
-                    <a href="https://jp.tradingview.com/symbols/MET/" target="_blank" class="badge badge-info mr-1">概要 📄</a>
-                    <a href="https://jp.tradingview.com/chart/?symbol=MET" target="_blank" class="badge badge-primary">チャート 📈</a>
-                </div>
-            </td>
-            <td class="text-center text-success vertical-middle"><strong>4 回</strong></td>
-            <td class="vertical-middle">$90.06</td>
-            <td class="vertical-middle">$90.06</td>
         </tr>
         
         <tr>
@@ -753,162 +869,25 @@
             <td class="text-center text-success vertical-middle"><strong>4 回</strong></td>
             <td class="vertical-middle">$129.56</td>
             <td class="vertical-middle">$130.29</td>
+            <td class="text-center vertical-middle">
+                <canvas class="spark-candle" width="120" height="35" data-candles='[[114.64, 114.94, 111.57, 113.87], [113.97, 115.63, 113.0, 115.48], [116.53, 119.8, 116.53, 119.6], [120.9, 121.81, 119.51, 120.6], [121.63, 125.96, 121.0, 125.45], [125.83, 128.78, 125.83, 128.66], [127.65, 129.97, 126.74, 129.38], [129.22, 130.29, 126.68, 128.5], [128.01, 128.42, 124.71, 125.37], [126.18, 129.61, 125.99, 129.56]]'></canvas>
+            </td>
         </tr>
         
         <tr>
             <td>
-                <span class="ticker-text">SWK</span>
+                <span class="ticker-text">MET</span>
                 <div class="tv-links mt-1">
-                    <a href="https://jp.tradingview.com/symbols/SWK/" target="_blank" class="badge badge-info mr-1">概要 📄</a>
-                    <a href="https://jp.tradingview.com/chart/?symbol=SWK" target="_blank" class="badge badge-primary">チャート 📈</a>
+                    <a href="https://jp.tradingview.com/symbols/MET/" target="_blank" class="badge badge-info mr-1">概要 📄</a>
+                    <a href="https://jp.tradingview.com/chart/?symbol=MET" target="_blank" class="badge badge-primary">チャート 📈</a>
                 </div>
             </td>
             <td class="text-center text-success vertical-middle"><strong>4 回</strong></td>
-            <td class="vertical-middle">$91.9</td>
-            <td class="vertical-middle">$95.16</td>
-        </tr>
-        
-        <tr>
-            <td>
-                <span class="ticker-text">FTNT</span>
-                <div class="tv-links mt-1">
-                    <a href="https://jp.tradingview.com/symbols/FTNT/" target="_blank" class="badge badge-info mr-1">概要 📄</a>
-                    <a href="https://jp.tradingview.com/chart/?symbol=FTNT" target="_blank" class="badge badge-primary">チャート 📈</a>
-                </div>
+            <td class="vertical-middle">$90.06</td>
+            <td class="vertical-middle">$90.06</td>
+            <td class="text-center vertical-middle">
+                <canvas class="spark-candle" width="120" height="35" data-candles='[[87.1, 87.69, 85.38, 85.58], [86.33, 87.84, 85.81, 87.56], [87.67, 88.34, 87.15, 88.03], [88.03, 88.22, 84.18, 84.6], [85.01, 86.93, 84.43, 84.63], [85.21, 86.67, 84.74, 85.95], [85.56, 86.57, 85.03, 85.99], [85.97, 86.54, 84.35, 84.61], [85.01, 87.53, 85.01, 87.2], [87.96, 90.06, 87.72, 90.06]]'></canvas>
             </td>
-            <td class="text-center text-success vertical-middle"><strong>4 回</strong></td>
-            <td class="vertical-middle">$156.25</td>
-            <td class="vertical-middle">$159.8</td>
-        </tr>
-        
-        <tr>
-            <td>
-                <span class="ticker-text">HLT</span>
-                <div class="tv-links mt-1">
-                    <a href="https://jp.tradingview.com/symbols/HLT/" target="_blank" class="badge badge-info mr-1">概要 📄</a>
-                    <a href="https://jp.tradingview.com/chart/?symbol=HLT" target="_blank" class="badge badge-primary">チャート 📈</a>
-                </div>
-            </td>
-            <td class="text-center text-success vertical-middle"><strong>4 回</strong></td>
-            <td class="vertical-middle">$338.12</td>
-            <td class="vertical-middle">$358.0</td>
-        </tr>
-        
-        <tr>
-            <td>
-                <span class="ticker-text">JNJ</span>
-                <div class="tv-links mt-1">
-                    <a href="https://jp.tradingview.com/symbols/JNJ/" target="_blank" class="badge badge-info mr-1">概要 📄</a>
-                    <a href="https://jp.tradingview.com/chart/?symbol=JNJ" target="_blank" class="badge badge-primary">チャート 📈</a>
-                </div>
-            </td>
-            <td class="text-center text-success vertical-middle"><strong>4 回</strong></td>
-            <td class="vertical-middle">$263.04</td>
-            <td class="vertical-middle">$263.1</td>
-        </tr>
-        
-        <tr>
-            <td>
-                <span class="ticker-text">EQR</span>
-                <div class="tv-links mt-1">
-                    <a href="https://jp.tradingview.com/symbols/EQR/" target="_blank" class="badge badge-info mr-1">概要 📄</a>
-                    <a href="https://jp.tradingview.com/chart/?symbol=EQR" target="_blank" class="badge badge-primary">チャート 📈</a>
-                </div>
-            </td>
-            <td class="text-center text-success vertical-middle"><strong>4 回</strong></td>
-            <td class="vertical-middle">$69.83</td>
-            <td class="vertical-middle">$69.83</td>
-        </tr>
-        
-        <tr>
-            <td>
-                <span class="ticker-text">ESS</span>
-                <div class="tv-links mt-1">
-                    <a href="https://jp.tradingview.com/symbols/ESS/" target="_blank" class="badge badge-info mr-1">概要 📄</a>
-                    <a href="https://jp.tradingview.com/chart/?symbol=ESS" target="_blank" class="badge badge-primary">チャート 📈</a>
-                </div>
-            </td>
-            <td class="text-center text-success vertical-middle"><strong>4 回</strong></td>
-            <td class="vertical-middle">$298.33</td>
-            <td class="vertical-middle">$299.29</td>
-        </tr>
-        
-        <tr>
-            <td>
-                <span class="ticker-text">DAL</span>
-                <div class="tv-links mt-1">
-                    <a href="https://jp.tradingview.com/symbols/DAL/" target="_blank" class="badge badge-info mr-1">概要 📄</a>
-                    <a href="https://jp.tradingview.com/chart/?symbol=DAL" target="_blank" class="badge badge-primary">チャート 📈</a>
-                </div>
-            </td>
-            <td class="text-center text-success vertical-middle"><strong>4 回</strong></td>
-            <td class="vertical-middle">$92.75</td>
-            <td class="vertical-middle">$95.68</td>
-        </tr>
-        
-        <tr>
-            <td>
-                <span class="ticker-text">CB</span>
-                <div class="tv-links mt-1">
-                    <a href="https://jp.tradingview.com/symbols/CB/" target="_blank" class="badge badge-info mr-1">概要 📄</a>
-                    <a href="https://jp.tradingview.com/chart/?symbol=CB" target="_blank" class="badge badge-primary">チャート 📈</a>
-                </div>
-            </td>
-            <td class="text-center text-success vertical-middle"><strong>4 回</strong></td>
-            <td class="vertical-middle">$361.17</td>
-            <td class="vertical-middle">$361.33</td>
-        </tr>
-        
-        <tr>
-            <td>
-                <span class="ticker-text">AFL</span>
-                <div class="tv-links mt-1">
-                    <a href="https://jp.tradingview.com/symbols/AFL/" target="_blank" class="badge badge-info mr-1">概要 📄</a>
-                    <a href="https://jp.tradingview.com/chart/?symbol=AFL" target="_blank" class="badge badge-primary">チャート 📈</a>
-                </div>
-            </td>
-            <td class="text-center text-success vertical-middle"><strong>4 回</strong></td>
-            <td class="vertical-middle">$120.88</td>
-            <td class="vertical-middle">$120.88</td>
-        </tr>
-        
-        <tr>
-            <td>
-                <span class="ticker-text">TROW</span>
-                <div class="tv-links mt-1">
-                    <a href="https://jp.tradingview.com/symbols/TROW/" target="_blank" class="badge badge-info mr-1">概要 📄</a>
-                    <a href="https://jp.tradingview.com/chart/?symbol=TROW" target="_blank" class="badge badge-primary">チャート 📈</a>
-                </div>
-            </td>
-            <td class="text-center text-success vertical-middle"><strong>4 回</strong></td>
-            <td class="vertical-middle">$118.55</td>
-            <td class="vertical-middle">$118.64</td>
-        </tr>
-        
-        <tr>
-            <td>
-                <span class="ticker-text">PANW</span>
-                <div class="tv-links mt-1">
-                    <a href="https://jp.tradingview.com/symbols/PANW/" target="_blank" class="badge badge-info mr-1">概要 📄</a>
-                    <a href="https://jp.tradingview.com/chart/?symbol=PANW" target="_blank" class="badge badge-primary">チャート 📈</a>
-                </div>
-            </td>
-            <td class="text-center text-success vertical-middle"><strong>4 回</strong></td>
-            <td class="vertical-middle">$348.06</td>
-            <td class="vertical-middle">$358.1</td>
-        </tr>
-        
-        <tr>
-            <td>
-                <span class="ticker-text">DGX</span>
-                <div class="tv-links mt-1">
-                    <a href="https://jp.tradingview.com/symbols/DGX/" target="_blank" class="badge badge-info mr-1">概要 📄</a>
-                    <a href="https://jp.tradingview.com/chart/?symbol=DGX" target="_blank" class="badge badge-primary">チャート 📈</a>
-                </div>
-            </td>
-            <td class="text-center text-success vertical-middle"><strong>4 回</strong></td>
-            <td class="vertical-middle">$215.72</td>
-            <td class="vertical-middle">$217.41</td>
         </tr>
         
         <tr>
@@ -922,6 +901,217 @@
             <td class="text-center text-success vertical-middle"><strong>4 回</strong></td>
             <td class="vertical-middle">$82.77</td>
             <td class="vertical-middle">$83.21</td>
+            <td class="text-center vertical-middle">
+                <canvas class="spark-candle" width="120" height="35" data-candles='[[73.6, 76.16, 73.6, 74.38], [74.2, 74.89, 73.34, 73.58], [73.29, 76.21, 73.18, 73.21], [74.12, 78.06, 74.12, 78.05], [78.5, 80.8, 78.36, 79.72], [79.28, 80.15, 78.36, 79.97], [79.84, 80.54, 78.79, 80.5], [80.79, 81.82, 80.09, 81.37], [81.07, 82.9, 80.35, 81.64], [82.22, 83.21, 81.5, 82.77]]'></canvas>
+            </td>
+        </tr>
+        
+        <tr>
+            <td>
+                <span class="ticker-text">SWK</span>
+                <div class="tv-links mt-1">
+                    <a href="https://jp.tradingview.com/symbols/SWK/" target="_blank" class="badge badge-info mr-1">概要 📄</a>
+                    <a href="https://jp.tradingview.com/chart/?symbol=SWK" target="_blank" class="badge badge-primary">チャート 📈</a>
+                </div>
+            </td>
+            <td class="text-center text-success vertical-middle"><strong>4 回</strong></td>
+            <td class="vertical-middle">$91.9</td>
+            <td class="vertical-middle">$95.16</td>
+            <td class="text-center vertical-middle">
+                <canvas class="spark-candle" width="120" height="35" data-candles='[[84.14, 87.39, 84.14, 86.75], [87.04, 88.25, 86.22, 86.31], [84.77, 85.94, 83.2, 83.81], [85.12, 89.68, 85.12, 89.66], [89.94, 93.5, 89.78, 92.31], [91.16, 93.17, 91.02, 91.98], [91.22, 93.75, 89.6, 93.65], [94.19, 95.01, 92.97, 94.12], [93.5, 95.16, 91.28, 91.34], [92.09, 93.02, 90.08, 91.9]]'></canvas>
+            </td>
+        </tr>
+        
+        <tr>
+            <td>
+                <span class="ticker-text">FTNT</span>
+                <div class="tv-links mt-1">
+                    <a href="https://jp.tradingview.com/symbols/FTNT/" target="_blank" class="badge badge-info mr-1">概要 📄</a>
+                    <a href="https://jp.tradingview.com/chart/?symbol=FTNT" target="_blank" class="badge badge-primary">チャート 📈</a>
+                </div>
+            </td>
+            <td class="text-center text-success vertical-middle"><strong>4 回</strong></td>
+            <td class="vertical-middle">$156.25</td>
+            <td class="vertical-middle">$159.8</td>
+            <td class="text-center vertical-middle">
+                <canvas class="spark-candle" width="120" height="35" data-candles='[[143.49, 147.2, 139.79, 144.73], [146.36, 149.19, 143.59, 145.39], [144.83, 148.36, 143.47, 148.0], [147.7, 148.82, 144.57, 145.28], [144.62, 151.97, 144.62, 149.93], [150.81, 152.77, 147.55, 151.35], [152.97, 159.07, 152.13, 155.42], [151.04, 154.47, 150.73, 153.62], [154.74, 159.8, 152.54, 158.98], [158.64, 158.96, 156.2, 156.25]]'></canvas>
+            </td>
+        </tr>
+        
+        <tr>
+            <td>
+                <span class="ticker-text">HLT</span>
+                <div class="tv-links mt-1">
+                    <a href="https://jp.tradingview.com/symbols/HLT/" target="_blank" class="badge badge-info mr-1">概要 📄</a>
+                    <a href="https://jp.tradingview.com/chart/?symbol=HLT" target="_blank" class="badge badge-primary">チャート 📈</a>
+                </div>
+            </td>
+            <td class="text-center text-success vertical-middle"><strong>4 回</strong></td>
+            <td class="vertical-middle">$338.12</td>
+            <td class="vertical-middle">$358.0</td>
+            <td class="text-center vertical-middle">
+                <canvas class="spark-candle" width="120" height="35" data-candles='[[350.17, 356.15, 346.97, 348.84], [347.0, 348.96, 341.72, 342.93], [341.55, 346.85, 339.01, 343.83], [343.81, 350.37, 342.67, 343.42], [342.22, 348.23, 339.88, 340.55], [341.29, 342.36, 331.12, 332.86], [337.85, 340.6, 332.53, 332.54], [332.49, 333.43, 329.66, 330.46], [329.78, 335.13, 329.03, 332.12], [333.84, 338.88, 331.63, 338.12]]'></canvas>
+            </td>
+        </tr>
+        
+        <tr>
+            <td>
+                <span class="ticker-text">JNJ</span>
+                <div class="tv-links mt-1">
+                    <a href="https://jp.tradingview.com/symbols/JNJ/" target="_blank" class="badge badge-info mr-1">概要 📄</a>
+                    <a href="https://jp.tradingview.com/chart/?symbol=JNJ" target="_blank" class="badge badge-primary">チャート 📈</a>
+                </div>
+            </td>
+            <td class="text-center text-success vertical-middle"><strong>4 回</strong></td>
+            <td class="vertical-middle">$263.04</td>
+            <td class="vertical-middle">$263.1</td>
+            <td class="text-center vertical-middle">
+                <canvas class="spark-candle" width="120" height="35" data-candles='[[231.78, 232.75, 227.6, 228.39], [228.95, 231.45, 227.5, 231.29], [235.64, 239.8, 234.35, 239.08], [239.89, 243.04, 238.75, 241.0], [241.27, 248.19, 240.89, 244.88], [248.27, 255.11, 247.87, 254.66], [253.19, 258.58, 252.03, 258.51], [259.0, 259.9, 253.17, 253.97], [253.25, 254.2, 251.08, 253.98], [255.78, 263.1, 254.0, 263.04]]'></canvas>
+            </td>
+        </tr>
+        
+        <tr>
+            <td>
+                <span class="ticker-text">EQR</span>
+                <div class="tv-links mt-1">
+                    <a href="https://jp.tradingview.com/symbols/EQR/" target="_blank" class="badge badge-info mr-1">概要 📄</a>
+                    <a href="https://jp.tradingview.com/chart/?symbol=EQR" target="_blank" class="badge badge-primary">チャート 📈</a>
+                </div>
+            </td>
+            <td class="text-center text-success vertical-middle"><strong>4 回</strong></td>
+            <td class="vertical-middle">$69.83</td>
+            <td class="vertical-middle">$69.83</td>
+            <td class="text-center vertical-middle">
+                <canvas class="spark-candle" width="120" height="35" data-candles='[[64.8, 64.8, 63.15, 63.43], [63.33, 64.45, 62.97, 64.06], [64.47, 65.16, 64.18, 65.02], [65.23, 65.75, 64.93, 65.54], [65.9, 66.92, 65.85, 66.48], [66.94, 67.83, 66.72, 67.68], [67.48, 68.35, 67.31, 68.34], [67.48, 68.46, 67.11, 67.93], [68.15, 69.49, 68.15, 68.63], [68.8, 69.83, 68.64, 69.83]]'></canvas>
+            </td>
+        </tr>
+        
+        <tr>
+            <td>
+                <span class="ticker-text">DAL</span>
+                <div class="tv-links mt-1">
+                    <a href="https://jp.tradingview.com/symbols/DAL/" target="_blank" class="badge badge-info mr-1">概要 📄</a>
+                    <a href="https://jp.tradingview.com/chart/?symbol=DAL" target="_blank" class="badge badge-primary">チャート 📈</a>
+                </div>
+            </td>
+            <td class="text-center text-success vertical-middle"><strong>4 回</strong></td>
+            <td class="vertical-middle">$92.75</td>
+            <td class="vertical-middle">$95.68</td>
+            <td class="text-center vertical-middle">
+                <canvas class="spark-candle" width="120" height="35" data-candles='[[84.13, 85.04, 83.67, 84.18], [84.5, 86.63, 84.19, 85.92], [84.53, 86.97, 84.25, 86.72], [88.43, 90.71, 87.64, 90.65], [91.46, 95.14, 91.05, 92.11], [92.25, 93.07, 91.94, 92.57], [91.84, 93.27, 91.65, 93.17], [93.08, 94.98, 92.39, 93.66], [94.47, 94.59, 92.95, 93.06], [94.92, 95.68, 91.98, 92.75]]'></canvas>
+            </td>
+        </tr>
+        
+        <tr>
+            <td>
+                <span class="ticker-text">ESS</span>
+                <div class="tv-links mt-1">
+                    <a href="https://jp.tradingview.com/symbols/ESS/" target="_blank" class="badge badge-info mr-1">概要 📄</a>
+                    <a href="https://jp.tradingview.com/chart/?symbol=ESS" target="_blank" class="badge badge-primary">チャート 📈</a>
+                </div>
+            </td>
+            <td class="text-center text-success vertical-middle"><strong>4 回</strong></td>
+            <td class="vertical-middle">$298.33</td>
+            <td class="vertical-middle">$299.29</td>
+            <td class="text-center vertical-middle">
+                <canvas class="spark-candle" width="120" height="35" data-candles='[[274.18, 275.24, 271.14, 271.31], [271.13, 274.99, 269.28, 273.86], [275.69, 277.45, 273.97, 276.86], [272.6, 280.14, 272.59, 279.18], [279.52, 283.78, 279.52, 283.07], [286.01, 293.26, 285.78, 292.76], [291.79, 293.48, 290.27, 293.34], [290.43, 293.86, 288.65, 291.59], [293.27, 299.29, 292.83, 295.18], [293.05, 298.36, 293.05, 298.33]]'></canvas>
+            </td>
+        </tr>
+        
+        <tr>
+            <td>
+                <span class="ticker-text">AFL</span>
+                <div class="tv-links mt-1">
+                    <a href="https://jp.tradingview.com/symbols/AFL/" target="_blank" class="badge badge-info mr-1">概要 📄</a>
+                    <a href="https://jp.tradingview.com/chart/?symbol=AFL" target="_blank" class="badge badge-primary">チャート 📈</a>
+                </div>
+            </td>
+            <td class="text-center text-success vertical-middle"><strong>4 回</strong></td>
+            <td class="vertical-middle">$120.88</td>
+            <td class="vertical-middle">$120.88</td>
+            <td class="text-center vertical-middle">
+                <canvas class="spark-candle" width="120" height="35" data-candles='[[117.25, 117.25, 114.47, 115.47], [115.5, 117.72, 115.43, 116.55], [117.8, 118.98, 116.57, 118.79], [119.09, 119.29, 117.11, 117.75], [118.0, 120.27, 116.9, 118.23], [119.31, 120.2, 118.49, 120.15], [119.9, 120.29, 119.31, 120.08], [119.48, 119.63, 117.16, 117.25], [117.98, 119.71, 117.48, 118.49], [118.73, 120.88, 117.61, 120.88]]'></canvas>
+            </td>
+        </tr>
+        
+        <tr>
+            <td>
+                <span class="ticker-text">ABBV</span>
+                <div class="tv-links mt-1">
+                    <a href="https://jp.tradingview.com/symbols/ABBV/" target="_blank" class="badge badge-info mr-1">概要 📄</a>
+                    <a href="https://jp.tradingview.com/chart/?symbol=ABBV" target="_blank" class="badge badge-primary">チャート 📈</a>
+                </div>
+            </td>
+            <td class="text-center text-success vertical-middle"><strong>4 回</strong></td>
+            <td class="vertical-middle">$261.07</td>
+            <td class="vertical-middle">$261.64</td>
+            <td class="text-center vertical-middle">
+                <canvas class="spark-candle" width="120" height="35" data-candles='[[221.37, 222.35, 215.37, 216.49], [221.94, 232.32, 221.94, 230.01], [232.97, 235.31, 231.3, 234.76], [236.35, 237.36, 232.85, 234.89], [233.66, 244.61, 233.66, 243.14], [245.26, 253.35, 244.66, 253.35], [253.05, 255.99, 249.2, 254.31], [255.0, 255.5, 250.1, 251.64], [250.75, 251.8, 247.56, 251.06], [252.3, 261.64, 250.51, 261.07]]'></canvas>
+            </td>
+        </tr>
+        
+        <tr>
+            <td>
+                <span class="ticker-text">TROW</span>
+                <div class="tv-links mt-1">
+                    <a href="https://jp.tradingview.com/symbols/TROW/" target="_blank" class="badge badge-info mr-1">概要 📄</a>
+                    <a href="https://jp.tradingview.com/chart/?symbol=TROW" target="_blank" class="badge badge-primary">チャート 📈</a>
+                </div>
+            </td>
+            <td class="text-center text-success vertical-middle"><strong>4 回</strong></td>
+            <td class="vertical-middle">$118.55</td>
+            <td class="vertical-middle">$118.64</td>
+            <td class="text-center vertical-middle">
+                <canvas class="spark-candle" width="120" height="35" data-candles='[[109.09, 109.33, 106.76, 107.65], [108.0, 109.58, 107.71, 107.99], [107.2, 107.9, 105.9, 106.0], [106.05, 106.53, 104.4, 105.2], [106.14, 108.48, 105.85, 106.34], [106.46, 110.73, 106.15, 110.27], [110.11, 114.55, 109.86, 114.38], [114.37, 116.59, 113.14, 113.69], [112.97, 117.54, 112.97, 116.11], [116.39, 118.64, 116.39, 118.55]]'></canvas>
+            </td>
+        </tr>
+        
+        <tr>
+            <td>
+                <span class="ticker-text">DGX</span>
+                <div class="tv-links mt-1">
+                    <a href="https://jp.tradingview.com/symbols/DGX/" target="_blank" class="badge badge-info mr-1">概要 📄</a>
+                    <a href="https://jp.tradingview.com/chart/?symbol=DGX" target="_blank" class="badge badge-primary">チャート 📈</a>
+                </div>
+            </td>
+            <td class="text-center text-success vertical-middle"><strong>4 回</strong></td>
+            <td class="vertical-middle">$215.72</td>
+            <td class="vertical-middle">$217.41</td>
+            <td class="text-center vertical-middle">
+                <canvas class="spark-candle" width="120" height="35" data-candles='[[196.69, 197.44, 192.83, 195.0], [194.13, 195.16, 192.9, 193.58], [195.78, 197.79, 194.15, 197.18], [198.41, 205.76, 198.41, 203.11], [203.14, 207.85, 203.14, 206.24], [207.97, 209.89, 206.55, 209.88], [207.97, 212.76, 206.98, 212.64], [212.89, 214.21, 210.67, 211.95], [213.67, 216.87, 211.4, 216.02], [217.07, 217.41, 214.94, 215.72]]'></canvas>
+            </td>
+        </tr>
+        
+        <tr>
+            <td>
+                <span class="ticker-text">MS</span>
+                <div class="tv-links mt-1">
+                    <a href="https://jp.tradingview.com/symbols/MS/" target="_blank" class="badge badge-info mr-1">概要 📄</a>
+                    <a href="https://jp.tradingview.com/chart/?symbol=MS" target="_blank" class="badge badge-primary">チャート 📈</a>
+                </div>
+            </td>
+            <td class="text-center text-success vertical-middle"><strong>4 回</strong></td>
+            <td class="vertical-middle">$213.93</td>
+            <td class="vertical-middle">$230.47</td>
+            <td class="text-center vertical-middle">
+                <canvas class="spark-candle" width="120" height="35" data-candles='[[229.09, 230.47, 222.89, 223.17], [226.71, 228.23, 224.99, 227.09], [222.51, 227.95, 222.12, 226.03], [224.6, 226.5, 219.81, 219.86], [222.99, 227.48, 220.85, 221.04], [219.7, 219.75, 211.36, 212.03], [214.33, 217.0, 211.69, 211.72], [210.17, 211.71, 208.18, 209.04], [208.96, 213.19, 206.72, 211.86], [214.71, 215.86, 211.55, 213.93]]'></canvas>
+            </td>
+        </tr>
+        
+        <tr>
+            <td>
+                <span class="ticker-text">PANW</span>
+                <div class="tv-links mt-1">
+                    <a href="https://jp.tradingview.com/symbols/PANW/" target="_blank" class="badge badge-info mr-1">概要 📄</a>
+                    <a href="https://jp.tradingview.com/chart/?symbol=PANW" target="_blank" class="badge badge-primary">チャート 📈</a>
+                </div>
+            </td>
+            <td class="text-center text-success vertical-middle"><strong>4 回</strong></td>
+            <td class="vertical-middle">$348.06</td>
+            <td class="vertical-middle">$358.1</td>
+            <td class="text-center vertical-middle">
+                <canvas class="spark-candle" width="120" height="35" data-candles='[[285.6, 288.88, 276.46, 287.78], [287.99, 295.75, 284.26, 286.4], [285.72, 292.14, 282.52, 290.92], [289.62, 291.0, 284.28, 285.26], [289.01, 295.54, 285.27, 293.09], [295.15, 306.24, 290.0, 304.2], [309.83, 332.88, 305.33, 332.0], [327.55, 342.48, 327.35, 341.02], [345.55, 358.1, 341.0, 352.04], [351.49, 357.38, 346.9, 348.06]]'></canvas>
+            </td>
         </tr>
         
         <tr>
@@ -935,6 +1125,9 @@
             <td class="text-center text-success vertical-middle"><strong>4 回</strong></td>
             <td class="vertical-middle">$133.32</td>
             <td class="vertical-middle">$138.77</td>
+            <td class="text-center vertical-middle">
+                <canvas class="spark-candle" width="120" height="35" data-candles='[[118.81, 120.68, 117.26, 118.32], [118.25, 119.94, 117.64, 118.68], [116.77, 121.85, 116.77, 121.55], [124.21, 130.6, 123.14, 130.54], [132.25, 138.44, 132.0, 134.61], [134.62, 137.84, 134.05, 136.11], [135.77, 137.22, 134.2, 135.19], [135.8, 138.77, 135.0, 135.99], [136.12, 136.65, 134.12, 135.13], [137.98, 138.51, 132.06, 133.32]]'></canvas>
+            </td>
         </tr>
         
         <tr>
@@ -948,19 +1141,25 @@
             <td class="text-center text-success vertical-middle"><strong>4 回</strong></td>
             <td class="vertical-middle">$262.19</td>
             <td class="vertical-middle">$284.91</td>
+            <td class="text-center vertical-middle">
+                <canvas class="spark-candle" width="120" height="35" data-candles='[[274.43, 278.39, 273.59, 273.83], [274.63, 278.98, 271.13, 276.75], [271.15, 276.04, 267.3, 270.26], [269.88, 275.16, 269.68, 272.48], [275.94, 284.91, 275.0, 282.45], [280.76, 280.76, 268.38, 269.53], [268.35, 273.18, 265.71, 268.3], [270.59, 272.82, 268.16, 269.6], [268.31, 269.78, 263.72, 264.0], [265.56, 266.59, 260.02, 262.19]]'></canvas>
+            </td>
         </tr>
         
         <tr>
             <td>
-                <span class="ticker-text">WDC</span>
+                <span class="ticker-text">CB</span>
                 <div class="tv-links mt-1">
-                    <a href="https://jp.tradingview.com/symbols/WDC/" target="_blank" class="badge badge-info mr-1">概要 📄</a>
-                    <a href="https://jp.tradingview.com/chart/?symbol=WDC" target="_blank" class="badge badge-primary">チャート 📈</a>
+                    <a href="https://jp.tradingview.com/symbols/CB/" target="_blank" class="badge badge-info mr-1">概要 📄</a>
+                    <a href="https://jp.tradingview.com/chart/?symbol=CB" target="_blank" class="badge badge-primary">チャート 📈</a>
                 </div>
             </td>
             <td class="text-center text-success vertical-middle"><strong>4 回</strong></td>
-            <td class="vertical-middle">$539.0</td>
-            <td class="vertical-middle">$799.87</td>
+            <td class="vertical-middle">$361.17</td>
+            <td class="vertical-middle">$361.33</td>
+            <td class="text-center vertical-middle">
+                <canvas class="spark-candle" width="120" height="35" data-candles='[[327.99, 329.95, 322.0, 323.4], [325.37, 330.03, 324.57, 325.2], [330.88, 333.17, 326.39, 332.11], [334.0, 337.44, 330.44, 335.15], [334.19, 337.87, 330.02, 330.82], [335.02, 342.71, 331.42, 341.44], [340.0, 343.67, 339.19, 343.29], [343.37, 344.85, 339.81, 340.74], [343.71, 352.95, 342.42, 351.73], [351.54, 361.33, 349.6, 361.17]]'></canvas>
+            </td>
         </tr>
         
         <tr>
@@ -974,19 +1173,25 @@
             <td class="text-center text-success vertical-middle"><strong>4 回</strong></td>
             <td class="vertical-middle">$23.02</td>
             <td class="vertical-middle">$23.72</td>
+            <td class="text-center vertical-middle">
+                <canvas class="spark-candle" width="120" height="35" data-candles='[[22.84, 22.9, 22.51, 22.59], [22.5, 23.0, 22.5, 22.83], [22.78, 23.06, 22.71, 23.02], [23.1, 23.33, 23.07, 23.12], [23.27, 23.72, 23.25, 23.41], [23.47, 23.48, 23.07, 23.26], [23.13, 23.35, 23.07, 23.15], [23.16, 23.2, 22.92, 23.05], [23.06, 23.51, 22.93, 23.25], [23.5, 23.5, 22.86, 23.02]]'></canvas>
+            </td>
         </tr>
         
         <tr>
             <td>
-                <span class="ticker-text">KO</span>
+                <span class="ticker-text">WDC</span>
                 <div class="tv-links mt-1">
-                    <a href="https://jp.tradingview.com/symbols/KO/" target="_blank" class="badge badge-info mr-1">概要 📄</a>
-                    <a href="https://jp.tradingview.com/chart/?symbol=KO" target="_blank" class="badge badge-primary">チャート 📈</a>
+                    <a href="https://jp.tradingview.com/symbols/WDC/" target="_blank" class="badge badge-info mr-1">概要 📄</a>
+                    <a href="https://jp.tradingview.com/chart/?symbol=WDC" target="_blank" class="badge badge-primary">チャート 📈</a>
                 </div>
             </td>
-            <td class="text-center text-success vertical-middle"><strong>3 回</strong></td>
-            <td class="vertical-middle">$84.14</td>
-            <td class="vertical-middle">$84.14</td>
+            <td class="text-center text-success vertical-middle"><strong>4 回</strong></td>
+            <td class="vertical-middle">$539.0</td>
+            <td class="vertical-middle">$799.87</td>
+            <td class="text-center vertical-middle">
+                <canvas class="spark-candle" width="120" height="35" data-candles='[[764.15, 799.87, 739.11, 746.23], [772.75, 779.8, 726.6, 732.62], [665.21, 682.53, 653.0, 670.75], [658.46, 665.0, 612.41, 643.83], [729.0, 729.0, 658.5, 675.39], [643.15, 647.42, 579.51, 586.45], [600.56, 652.98, 590.0, 651.88], [632.44, 663.98, 630.3, 638.72], [604.56, 617.39, 585.8, 598.37], [595.5, 609.47, 525.84, 539.0]]'></canvas>
+            </td>
         </tr>
         
         <tr>
@@ -1000,84 +1205,9 @@
             <td class="text-center text-success vertical-middle"><strong>3 回</strong></td>
             <td class="vertical-middle">$154.06</td>
             <td class="vertical-middle">$155.06</td>
-        </tr>
-        
-        <tr>
-            <td>
-                <span class="ticker-text">CNP</span>
-                <div class="tv-links mt-1">
-                    <a href="https://jp.tradingview.com/symbols/CNP/" target="_blank" class="badge badge-info mr-1">概要 📄</a>
-                    <a href="https://jp.tradingview.com/chart/?symbol=CNP" target="_blank" class="badge badge-primary">チャート 📈</a>
-                </div>
+            <td class="text-center vertical-middle">
+                <canvas class="spark-candle" width="120" height="35" data-candles='[[146.75, 147.74, 145.33, 146.39], [146.0, 148.11, 145.98, 146.83], [147.75, 149.52, 146.68, 149.19], [150.0, 151.36, 149.2, 151.1], [151.5, 153.57, 151.37, 152.81], [153.7, 154.9, 153.16, 154.43], [153.92, 155.06, 153.4, 154.02], [153.39, 153.68, 151.74, 152.37], [152.56, 152.89, 150.57, 150.57], [151.59, 154.29, 151.28, 154.06]]'></canvas>
             </td>
-            <td class="text-center text-success vertical-middle"><strong>3 回</strong></td>
-            <td class="vertical-middle">$44.61</td>
-            <td class="vertical-middle">$45.22</td>
-        </tr>
-        
-        <tr>
-            <td>
-                <span class="ticker-text">MO</span>
-                <div class="tv-links mt-1">
-                    <a href="https://jp.tradingview.com/symbols/MO/" target="_blank" class="badge badge-info mr-1">概要 📄</a>
-                    <a href="https://jp.tradingview.com/chart/?symbol=MO" target="_blank" class="badge badge-primary">チャート 📈</a>
-                </div>
-            </td>
-            <td class="text-center text-success vertical-middle"><strong>3 回</strong></td>
-            <td class="vertical-middle">$72.71</td>
-            <td class="vertical-middle">$74.15</td>
-        </tr>
-        
-        <tr>
-            <td>
-                <span class="ticker-text">LNT</span>
-                <div class="tv-links mt-1">
-                    <a href="https://jp.tradingview.com/symbols/LNT/" target="_blank" class="badge badge-info mr-1">概要 📄</a>
-                    <a href="https://jp.tradingview.com/chart/?symbol=LNT" target="_blank" class="badge badge-primary">チャート 📈</a>
-                </div>
-            </td>
-            <td class="text-center text-success vertical-middle"><strong>3 回</strong></td>
-            <td class="vertical-middle">$78.03</td>
-            <td class="vertical-middle">$78.21</td>
-        </tr>
-        
-        <tr>
-            <td>
-                <span class="ticker-text">ABNB</span>
-                <div class="tv-links mt-1">
-                    <a href="https://jp.tradingview.com/symbols/ABNB/" target="_blank" class="badge badge-info mr-1">概要 📄</a>
-                    <a href="https://jp.tradingview.com/chart/?symbol=ABNB" target="_blank" class="badge badge-primary">チャート 📈</a>
-                </div>
-            </td>
-            <td class="text-center text-success vertical-middle"><strong>3 回</strong></td>
-            <td class="vertical-middle">$148.93</td>
-            <td class="vertical-middle">$150.19</td>
-        </tr>
-        
-        <tr>
-            <td>
-                <span class="ticker-text">AMD</span>
-                <div class="tv-links mt-1">
-                    <a href="https://jp.tradingview.com/symbols/AMD/" target="_blank" class="badge badge-info mr-1">概要 📄</a>
-                    <a href="https://jp.tradingview.com/chart/?symbol=AMD" target="_blank" class="badge badge-primary">チャート 📈</a>
-                </div>
-            </td>
-            <td class="text-center text-success vertical-middle"><strong>3 回</strong></td>
-            <td class="vertical-middle">$517.82</td>
-            <td class="vertical-middle">$584.73</td>
-        </tr>
-        
-        <tr>
-            <td>
-                <span class="ticker-text">STX</span>
-                <div class="tv-links mt-1">
-                    <a href="https://jp.tradingview.com/symbols/STX/" target="_blank" class="badge badge-info mr-1">概要 📄</a>
-                    <a href="https://jp.tradingview.com/chart/?symbol=STX" target="_blank" class="badge badge-primary">チャート 📈</a>
-                </div>
-            </td>
-            <td class="text-center text-success vertical-middle"><strong>3 回</strong></td>
-            <td class="vertical-middle">$820.16</td>
-            <td class="vertical-middle">$1,144.18</td>
         </tr>
         
         <tr>
@@ -1091,19 +1221,105 @@
             <td class="text-center text-success vertical-middle"><strong>3 回</strong></td>
             <td class="vertical-middle">$117.25</td>
             <td class="vertical-middle">$117.56</td>
+            <td class="text-center vertical-middle">
+                <canvas class="spark-candle" width="120" height="35" data-candles='[[110.25, 110.25, 107.91, 108.0], [108.98, 108.98, 106.99, 107.99], [108.76, 109.62, 108.15, 109.5], [109.54, 110.93, 109.27, 110.25], [110.48, 112.8, 110.48, 112.56], [113.27, 115.31, 113.19, 115.25], [114.91, 115.69, 114.33, 115.68], [114.76, 115.63, 113.88, 114.49], [114.9, 117.56, 114.9, 115.66], [115.97, 117.33, 115.29, 117.25]]'></canvas>
+            </td>
         </tr>
         
         <tr>
             <td>
-                <span class="ticker-text">APH</span>
+                <span class="ticker-text">ABNB</span>
                 <div class="tv-links mt-1">
-                    <a href="https://jp.tradingview.com/symbols/APH/" target="_blank" class="badge badge-info mr-1">概要 📄</a>
-                    <a href="https://jp.tradingview.com/chart/?symbol=APH" target="_blank" class="badge badge-primary">チャート 📈</a>
+                    <a href="https://jp.tradingview.com/symbols/ABNB/" target="_blank" class="badge badge-info mr-1">概要 📄</a>
+                    <a href="https://jp.tradingview.com/chart/?symbol=ABNB" target="_blank" class="badge badge-primary">チャート 📈</a>
                 </div>
             </td>
             <td class="text-center text-success vertical-middle"><strong>3 回</strong></td>
-            <td class="vertical-middle">$164.59</td>
-            <td class="vertical-middle">$178.52</td>
+            <td class="vertical-middle">$148.93</td>
+            <td class="vertical-middle">$150.19</td>
+            <td class="text-center vertical-middle">
+                <canvas class="spark-candle" width="120" height="35" data-candles='[[141.39, 143.62, 140.14, 142.41], [140.98, 142.57, 137.91, 139.19], [139.31, 141.23, 138.56, 138.85], [139.06, 147.27, 138.75, 144.4], [144.5, 145.34, 141.45, 141.88], [142.35, 147.58, 141.75, 145.56], [146.15, 150.19, 145.71, 147.17], [147.29, 147.81, 142.37, 143.1], [145.0, 148.74, 143.92, 147.31], [146.5, 150.07, 146.5, 148.93]]'></canvas>
+            </td>
+        </tr>
+        
+        <tr>
+            <td>
+                <span class="ticker-text">LNT</span>
+                <div class="tv-links mt-1">
+                    <a href="https://jp.tradingview.com/symbols/LNT/" target="_blank" class="badge badge-info mr-1">概要 📄</a>
+                    <a href="https://jp.tradingview.com/chart/?symbol=LNT" target="_blank" class="badge badge-primary">チャート 📈</a>
+                </div>
+            </td>
+            <td class="text-center text-success vertical-middle"><strong>3 回</strong></td>
+            <td class="vertical-middle">$78.03</td>
+            <td class="vertical-middle">$78.21</td>
+            <td class="text-center vertical-middle">
+                <canvas class="spark-candle" width="120" height="35" data-candles='[[73.62, 73.71, 72.53, 73.0], [72.93, 74.0, 72.81, 73.21], [73.65, 74.66, 73.15, 74.57], [74.99, 75.69, 74.52, 75.59], [75.82, 76.6, 75.33, 76.19], [76.53, 77.36, 76.33, 77.25], [77.17, 77.35, 76.68, 77.18], [77.01, 77.13, 76.15, 76.29], [76.0, 76.24, 75.53, 75.79], [76.23, 78.21, 76.03, 78.03]]'></canvas>
+            </td>
+        </tr>
+        
+        <tr>
+            <td>
+                <span class="ticker-text">AMD</span>
+                <div class="tv-links mt-1">
+                    <a href="https://jp.tradingview.com/symbols/AMD/" target="_blank" class="badge badge-info mr-1">概要 📄</a>
+                    <a href="https://jp.tradingview.com/chart/?symbol=AMD" target="_blank" class="badge badge-primary">チャート 📈</a>
+                </div>
+            </td>
+            <td class="text-center text-success vertical-middle"><strong>3 回</strong></td>
+            <td class="vertical-middle">$517.82</td>
+            <td class="vertical-middle">$584.73</td>
+            <td class="text-center vertical-middle">
+                <canvas class="spark-candle" width="120" height="35" data-candles='[[531.58, 539.69, 526.32, 537.37], [545.5, 562.99, 535.71, 551.63], [509.08, 528.49, 506.81, 519.85], [520.82, 524.96, 503.5, 519.74], [543.93, 550.88, 507.0, 532.57], [519.8, 525.11, 502.61, 521.58], [522.84, 542.19, 495.35, 539.49], [545.57, 584.73, 545.57, 580.91], [557.53, 564.09, 538.74, 540.88], [538.16, 547.65, 506.0, 517.82]]'></canvas>
+            </td>
+        </tr>
+        
+        <tr>
+            <td>
+                <span class="ticker-text">KO</span>
+                <div class="tv-links mt-1">
+                    <a href="https://jp.tradingview.com/symbols/KO/" target="_blank" class="badge badge-info mr-1">概要 📄</a>
+                    <a href="https://jp.tradingview.com/chart/?symbol=KO" target="_blank" class="badge badge-primary">チャート 📈</a>
+                </div>
+            </td>
+            <td class="text-center text-success vertical-middle"><strong>3 回</strong></td>
+            <td class="vertical-middle">$84.14</td>
+            <td class="vertical-middle">$84.14</td>
+            <td class="text-center vertical-middle">
+                <canvas class="spark-candle" width="120" height="35" data-candles='[[79.87, 80.01, 78.74, 79.39], [79.25, 80.06, 79.06, 79.53], [81.33, 81.33, 79.83, 80.31], [80.89, 81.58, 80.56, 80.6], [80.53, 81.38, 79.97, 80.42], [80.96, 82.81, 80.7, 82.63], [82.83, 83.62, 82.21, 82.65], [82.5, 82.54, 81.01, 81.27], [81.7, 81.98, 80.96, 81.29], [81.63, 84.14, 81.4, 84.14]]'></canvas>
+            </td>
+        </tr>
+        
+        <tr>
+            <td>
+                <span class="ticker-text">STX</span>
+                <div class="tv-links mt-1">
+                    <a href="https://jp.tradingview.com/symbols/STX/" target="_blank" class="badge badge-info mr-1">概要 📄</a>
+                    <a href="https://jp.tradingview.com/chart/?symbol=STX" target="_blank" class="badge badge-primary">チャート 📈</a>
+                </div>
+            </td>
+            <td class="text-center text-success vertical-middle"><strong>3 回</strong></td>
+            <td class="vertical-middle">$820.16</td>
+            <td class="vertical-middle">$1,144.18</td>
+            <td class="text-center vertical-middle">
+                <canvas class="spark-candle" width="120" height="35" data-candles='[[1132.55, 1144.18, 1052.78, 1069.47], [1088.22, 1127.19, 1068.2, 1093.26], [983.56, 1044.14, 982.3, 1037.85], [1027.72, 1035.86, 953.06, 993.25], [1111.0, 1111.0, 1001.33, 1025.36], [994.59, 996.48, 880.49, 899.9], [915.99, 987.57, 880.01, 968.53], [967.96, 998.49, 939.47, 965.0], [896.74, 936.65, 886.2, 915.19], [900.75, 923.06, 795.66, 820.16]]'></canvas>
+            </td>
+        </tr>
+        
+        <tr>
+            <td>
+                <span class="ticker-text">MO</span>
+                <div class="tv-links mt-1">
+                    <a href="https://jp.tradingview.com/symbols/MO/" target="_blank" class="badge badge-info mr-1">概要 📄</a>
+                    <a href="https://jp.tradingview.com/chart/?symbol=MO" target="_blank" class="badge badge-primary">チャート 📈</a>
+                </div>
+            </td>
+            <td class="text-center text-success vertical-middle"><strong>3 回</strong></td>
+            <td class="vertical-middle">$72.71</td>
+            <td class="vertical-middle">$74.15</td>
+            <td class="text-center vertical-middle">
+                <canvas class="spark-candle" width="120" height="35" data-candles='[[68.98, 69.3, 68.07, 69.12], [69.17, 70.38, 69.01, 69.51], [70.93, 71.74, 70.33, 71.61], [71.65, 72.37, 71.13, 72.07], [71.39, 73.57, 71.17, 73.21], [73.49, 73.92, 72.85, 73.79], [73.9, 74.15, 73.14, 74.05], [73.59, 73.77, 71.72, 71.95], [72.49, 72.5, 71.09, 71.54], [72.24, 73.19, 71.95, 72.71]]'></canvas>
+            </td>
         </tr>
         
         <tr>
@@ -1117,58 +1333,25 @@
             <td class="text-center text-success vertical-middle"><strong>3 回</strong></td>
             <td class="vertical-middle">$216.12</td>
             <td class="vertical-middle">$219.72</td>
+            <td class="text-center vertical-middle">
+                <canvas class="spark-candle" width="120" height="35" data-candles='[[200.22, 200.99, 193.2, 196.58], [199.48, 200.98, 194.74, 199.71], [198.88, 201.22, 197.01, 197.19], [199.34, 202.06, 198.66, 199.59], [201.63, 206.67, 200.2, 201.96], [202.53, 218.06, 202.29, 216.03], [215.74, 219.72, 214.08, 216.63], [218.0, 218.0, 212.58, 216.06], [215.25, 215.81, 209.67, 209.74], [212.74, 219.02, 210.75, 216.12]]'></canvas>
+            </td>
         </tr>
         
         <tr>
             <td>
-                <span class="ticker-text">INTC</span>
+                <span class="ticker-text">APH</span>
                 <div class="tv-links mt-1">
-                    <a href="https://jp.tradingview.com/symbols/INTC/" target="_blank" class="badge badge-info mr-1">概要 📄</a>
-                    <a href="https://jp.tradingview.com/chart/?symbol=INTC" target="_blank" class="badge badge-primary">チャート 📈</a>
+                    <a href="https://jp.tradingview.com/symbols/APH/" target="_blank" class="badge badge-info mr-1">概要 📄</a>
+                    <a href="https://jp.tradingview.com/chart/?symbol=APH" target="_blank" class="badge badge-primary">チャート 📈</a>
                 </div>
             </td>
             <td class="text-center text-success vertical-middle"><strong>3 回</strong></td>
-            <td class="vertical-middle">$120.35</td>
-            <td class="vertical-middle">$142.35</td>
-        </tr>
-        
-        <tr>
-            <td>
-                <span class="ticker-text">JCI</span>
-                <div class="tv-links mt-1">
-                    <a href="https://jp.tradingview.com/symbols/JCI/" target="_blank" class="badge badge-info mr-1">概要 📄</a>
-                    <a href="https://jp.tradingview.com/chart/?symbol=JCI" target="_blank" class="badge badge-primary">チャート 📈</a>
-                </div>
+            <td class="vertical-middle">$164.59</td>
+            <td class="vertical-middle">$178.52</td>
+            <td class="text-center vertical-middle">
+                <canvas class="spark-candle" width="120" height="35" data-candles='[[165.07, 166.1, 162.42, 163.71], [166.11, 168.5, 163.8, 165.71], [159.71, 162.27, 158.5, 158.7], [157.34, 166.33, 156.21, 162.78], [166.15, 168.72, 163.8, 165.15], [162.47, 165.94, 160.66, 163.72], [164.26, 166.9, 159.73, 166.42], [167.17, 178.52, 167.15, 176.32], [174.14, 174.14, 167.53, 172.22], [170.01, 173.0, 161.36, 164.59]]'></canvas>
             </td>
-            <td class="text-center text-success vertical-middle"><strong>3 回</strong></td>
-            <td class="vertical-middle">$140.76</td>
-            <td class="vertical-middle">$151.18</td>
-        </tr>
-        
-        <tr>
-            <td>
-                <span class="ticker-text">PLD</span>
-                <div class="tv-links mt-1">
-                    <a href="https://jp.tradingview.com/symbols/PLD/" target="_blank" class="badge badge-info mr-1">概要 📄</a>
-                    <a href="https://jp.tradingview.com/chart/?symbol=PLD" target="_blank" class="badge badge-primary">チャート 📈</a>
-                </div>
-            </td>
-            <td class="text-center text-success vertical-middle"><strong>3 回</strong></td>
-            <td class="vertical-middle">$139.43</td>
-            <td class="vertical-middle">$149.1</td>
-        </tr>
-        
-        <tr>
-            <td>
-                <span class="ticker-text">HWM</span>
-                <div class="tv-links mt-1">
-                    <a href="https://jp.tradingview.com/symbols/HWM/" target="_blank" class="badge badge-info mr-1">概要 📄</a>
-                    <a href="https://jp.tradingview.com/chart/?symbol=HWM" target="_blank" class="badge badge-primary">チャート 📈</a>
-                </div>
-            </td>
-            <td class="text-center text-success vertical-middle"><strong>3 回</strong></td>
-            <td class="vertical-middle">$270.41</td>
-            <td class="vertical-middle">$290.63</td>
         </tr>
         
         <tr>
@@ -1182,97 +1365,25 @@
             <td class="text-center text-success vertical-middle"><strong>3 回</strong></td>
             <td class="vertical-middle">$23.35</td>
             <td class="vertical-middle">$24.47</td>
+            <td class="text-center vertical-middle">
+                <canvas class="spark-candle" width="120" height="35" data-candles='[[24.06, 24.42, 23.91, 24.09], [24.19, 24.47, 24.07, 24.2], [23.94, 24.39, 23.86, 23.9], [24.2, 24.2, 23.44, 23.67], [23.94, 24.11, 23.71, 24.06], [24.01, 24.18, 23.82, 24.13], [23.87, 24.24, 23.87, 24.0], [24.0, 24.06, 23.62, 23.71], [23.46, 23.64, 22.92, 23.35], [23.51, 23.51, 23.22, 23.35]]'></canvas>
+            </td>
         </tr>
         
         <tr>
             <td>
-                <span class="ticker-text">USB</span>
+                <span class="ticker-text">INTC</span>
                 <div class="tv-links mt-1">
-                    <a href="https://jp.tradingview.com/symbols/USB/" target="_blank" class="badge badge-info mr-1">概要 📄</a>
-                    <a href="https://jp.tradingview.com/chart/?symbol=USB" target="_blank" class="badge badge-primary">チャート 📈</a>
+                    <a href="https://jp.tradingview.com/symbols/INTC/" target="_blank" class="badge badge-info mr-1">概要 📄</a>
+                    <a href="https://jp.tradingview.com/chart/?symbol=INTC" target="_blank" class="badge badge-primary">チャート 📈</a>
                 </div>
             </td>
             <td class="text-center text-success vertical-middle"><strong>3 回</strong></td>
-            <td class="vertical-middle">$61.73</td>
-            <td class="vertical-middle">$62.38</td>
-        </tr>
-        
-        <tr>
-            <td>
-                <span class="ticker-text">GWW</span>
-                <div class="tv-links mt-1">
-                    <a href="https://jp.tradingview.com/symbols/GWW/" target="_blank" class="badge badge-info mr-1">概要 📄</a>
-                    <a href="https://jp.tradingview.com/chart/?symbol=GWW" target="_blank" class="badge badge-primary">チャート 📈</a>
-                </div>
+            <td class="vertical-middle">$120.35</td>
+            <td class="vertical-middle">$142.35</td>
+            <td class="text-center vertical-middle">
+                <canvas class="spark-candle" width="120" height="35" data-candles='[[131.81, 135.48, 127.9, 133.99], [139.12, 141.45, 136.21, 140.94], [129.73, 137.98, 128.3, 132.28], [133.05, 136.08, 127.95, 131.65], [139.73, 140.72, 125.41, 132.87], [128.71, 131.23, 125.5, 128.32], [127.0, 132.05, 118.5, 131.72], [131.99, 142.35, 131.52, 139.63], [135.0, 135.74, 126.68, 127.02], [128.92, 130.74, 117.63, 120.35]]'></canvas>
             </td>
-            <td class="text-center text-success vertical-middle"><strong>3 回</strong></td>
-            <td class="vertical-middle">$1,342.98</td>
-            <td class="vertical-middle">$1,390.96</td>
-        </tr>
-        
-        <tr>
-            <td>
-                <span class="ticker-text">STLD</span>
-                <div class="tv-links mt-1">
-                    <a href="https://jp.tradingview.com/symbols/STLD/" target="_blank" class="badge badge-info mr-1">概要 📄</a>
-                    <a href="https://jp.tradingview.com/chart/?symbol=STLD" target="_blank" class="badge badge-primary">チャート 📈</a>
-                </div>
-            </td>
-            <td class="text-center text-success vertical-middle"><strong>3 回</strong></td>
-            <td class="vertical-middle">$220.39</td>
-            <td class="vertical-middle">$288.09</td>
-        </tr>
-        
-        <tr>
-            <td>
-                <span class="ticker-text">RL</span>
-                <div class="tv-links mt-1">
-                    <a href="https://jp.tradingview.com/symbols/RL/" target="_blank" class="badge badge-info mr-1">概要 📄</a>
-                    <a href="https://jp.tradingview.com/chart/?symbol=RL" target="_blank" class="badge badge-primary">チャート 📈</a>
-                </div>
-            </td>
-            <td class="text-center text-success vertical-middle"><strong>3 回</strong></td>
-            <td class="vertical-middle">$398.22</td>
-            <td class="vertical-middle">$420.57</td>
-        </tr>
-        
-        <tr>
-            <td>
-                <span class="ticker-text">PNC</span>
-                <div class="tv-links mt-1">
-                    <a href="https://jp.tradingview.com/symbols/PNC/" target="_blank" class="badge badge-info mr-1">概要 📄</a>
-                    <a href="https://jp.tradingview.com/chart/?symbol=PNC" target="_blank" class="badge badge-primary">チャート 📈</a>
-                </div>
-            </td>
-            <td class="text-center text-success vertical-middle"><strong>3 回</strong></td>
-            <td class="vertical-middle">$249.49</td>
-            <td class="vertical-middle">$254.0</td>
-        </tr>
-        
-        <tr>
-            <td>
-                <span class="ticker-text">JBL</span>
-                <div class="tv-links mt-1">
-                    <a href="https://jp.tradingview.com/symbols/JBL/" target="_blank" class="badge badge-info mr-1">概要 📄</a>
-                    <a href="https://jp.tradingview.com/chart/?symbol=JBL" target="_blank" class="badge badge-primary">チャート 📈</a>
-                </div>
-            </td>
-            <td class="text-center text-success vertical-middle"><strong>3 回</strong></td>
-            <td class="vertical-middle">$341.3</td>
-            <td class="vertical-middle">$428.93</td>
-        </tr>
-        
-        <tr>
-            <td>
-                <span class="ticker-text">JPM</span>
-                <div class="tv-links mt-1">
-                    <a href="https://jp.tradingview.com/symbols/JPM/" target="_blank" class="badge badge-info mr-1">概要 📄</a>
-                    <a href="https://jp.tradingview.com/chart/?symbol=JPM" target="_blank" class="badge badge-primary">チャート 📈</a>
-                </div>
-            </td>
-            <td class="text-center text-success vertical-middle"><strong>3 回</strong></td>
-            <td class="vertical-middle">$334.47</td>
-            <td class="vertical-middle">$343.45</td>
         </tr>
         
         <tr>
@@ -1286,6 +1397,185 @@
             <td class="text-center text-success vertical-middle"><strong>3 回</strong></td>
             <td class="vertical-middle">$116.86</td>
             <td class="vertical-middle">$118.69</td>
+            <td class="text-center vertical-middle">
+                <canvas class="spark-candle" width="120" height="35" data-candles='[[99.58, 99.62, 96.09, 98.22], [99.79, 103.71, 99.79, 103.66], [104.61, 105.48, 103.07, 104.4], [105.53, 109.1, 104.49, 108.46], [108.35, 110.75, 106.48, 107.53], [109.48, 115.56, 109.48, 113.75], [115.48, 115.48, 112.89, 114.66], [115.0, 115.46, 112.8, 113.36], [114.7, 116.0, 113.31, 113.81], [114.18, 118.69, 113.5, 116.86]]'></canvas>
+            </td>
+        </tr>
+        
+        <tr>
+            <td>
+                <span class="ticker-text">HWM</span>
+                <div class="tv-links mt-1">
+                    <a href="https://jp.tradingview.com/symbols/HWM/" target="_blank" class="badge badge-info mr-1">概要 📄</a>
+                    <a href="https://jp.tradingview.com/chart/?symbol=HWM" target="_blank" class="badge badge-primary">チャート 📈</a>
+                </div>
+            </td>
+            <td class="text-center text-success vertical-middle"><strong>3 回</strong></td>
+            <td class="vertical-middle">$270.41</td>
+            <td class="vertical-middle">$290.63</td>
+            <td class="text-center vertical-middle">
+                <canvas class="spark-candle" width="120" height="35" data-candles='[[288.32, 290.63, 276.01, 277.66], [278.22, 280.68, 275.5, 280.36], [276.47, 279.15, 269.22, 275.13], [275.03, 279.14, 274.23, 276.06], [276.32, 281.46, 269.83, 273.14], [269.0, 270.68, 258.59, 268.87], [268.58, 271.71, 264.1, 268.57], [271.99, 274.09, 264.21, 268.86], [271.34, 273.48, 266.44, 267.41], [271.9, 277.65, 267.07, 270.41]]'></canvas>
+            </td>
+        </tr>
+        
+        <tr>
+            <td>
+                <span class="ticker-text">CNP</span>
+                <div class="tv-links mt-1">
+                    <a href="https://jp.tradingview.com/symbols/CNP/" target="_blank" class="badge badge-info mr-1">概要 📄</a>
+                    <a href="https://jp.tradingview.com/chart/?symbol=CNP" target="_blank" class="badge badge-primary">チャート 📈</a>
+                </div>
+            </td>
+            <td class="text-center text-success vertical-middle"><strong>3 回</strong></td>
+            <td class="vertical-middle">$44.61</td>
+            <td class="vertical-middle">$45.22</td>
+            <td class="text-center vertical-middle">
+                <canvas class="spark-candle" width="120" height="35" data-candles='[[42.89, 43.34, 42.59, 42.82], [41.6, 43.46, 41.6, 43.12], [43.36, 43.65, 42.85, 43.5], [43.74, 43.95, 43.31, 43.86], [44.22, 44.49, 43.59, 44.22], [44.46, 45.08, 44.31, 45.04], [44.82, 45.22, 44.65, 44.79], [44.5, 44.68, 44.01, 44.04], [44.15, 44.23, 43.72, 43.73], [44.11, 44.63, 43.73, 44.61]]'></canvas>
+            </td>
+        </tr>
+        
+        <tr>
+            <td>
+                <span class="ticker-text">USB</span>
+                <div class="tv-links mt-1">
+                    <a href="https://jp.tradingview.com/symbols/USB/" target="_blank" class="badge badge-info mr-1">概要 📄</a>
+                    <a href="https://jp.tradingview.com/chart/?symbol=USB" target="_blank" class="badge badge-primary">チャート 📈</a>
+                </div>
+            </td>
+            <td class="text-center text-success vertical-middle"><strong>3 回</strong></td>
+            <td class="vertical-middle">$61.73</td>
+            <td class="vertical-middle">$62.38</td>
+            <td class="text-center vertical-middle">
+                <canvas class="spark-candle" width="120" height="35" data-candles='[[58.11, 58.24, 57.06, 57.65], [57.76, 58.6, 57.76, 58.18], [58.42, 59.62, 58.08, 59.54], [59.51, 59.79, 59.22, 59.6], [59.97, 61.35, 59.84, 60.69], [60.92, 60.99, 59.84, 60.39], [60.31, 61.11, 60.19, 60.76], [60.49, 60.87, 60.21, 60.4], [60.4, 62.2, 60.2, 61.96], [62.2, 62.38, 61.19, 61.73]]'></canvas>
+            </td>
+        </tr>
+        
+        <tr>
+            <td>
+                <span class="ticker-text">GWW</span>
+                <div class="tv-links mt-1">
+                    <a href="https://jp.tradingview.com/symbols/GWW/" target="_blank" class="badge badge-info mr-1">概要 📄</a>
+                    <a href="https://jp.tradingview.com/chart/?symbol=GWW" target="_blank" class="badge badge-primary">チャート 📈</a>
+                </div>
+            </td>
+            <td class="text-center text-success vertical-middle"><strong>3 回</strong></td>
+            <td class="vertical-middle">$1,342.98</td>
+            <td class="vertical-middle">$1,390.96</td>
+            <td class="text-center vertical-middle">
+                <canvas class="spark-candle" width="120" height="35" data-candles='[[1322.69, 1365.42, 1316.17, 1365.41], [1356.45, 1377.08, 1339.47, 1341.42], [1328.51, 1341.42, 1312.16, 1320.48], [1329.23, 1348.13, 1324.57, 1342.57], [1337.76, 1390.96, 1337.76, 1374.78], [1379.46, 1379.46, 1341.43, 1353.61], [1346.95, 1365.26, 1339.0, 1353.29], [1358.68, 1378.45, 1349.29, 1360.4], [1358.55, 1369.92, 1338.2, 1338.24], [1359.6, 1359.6, 1328.95, 1342.98]]'></canvas>
+            </td>
+        </tr>
+        
+        <tr>
+            <td>
+                <span class="ticker-text">STLD</span>
+                <div class="tv-links mt-1">
+                    <a href="https://jp.tradingview.com/symbols/STLD/" target="_blank" class="badge badge-info mr-1">概要 📄</a>
+                    <a href="https://jp.tradingview.com/chart/?symbol=STLD" target="_blank" class="badge badge-primary">チャート 📈</a>
+                </div>
+            </td>
+            <td class="text-center text-success vertical-middle"><strong>3 回</strong></td>
+            <td class="vertical-middle">$220.39</td>
+            <td class="vertical-middle">$288.09</td>
+            <td class="text-center vertical-middle">
+                <canvas class="spark-candle" width="120" height="35" data-candles='[[261.31, 261.4, 247.49, 249.34], [249.79, 252.93, 248.72, 250.41], [245.69, 248.16, 242.13, 243.14], [243.06, 244.62, 238.98, 240.88], [242.98, 250.63, 240.58, 250.43], [244.83, 248.71, 241.32, 244.93], [243.63, 246.35, 230.97, 233.69], [235.54, 236.12, 228.97, 229.46], [226.11, 226.86, 218.73, 221.76], [220.6, 224.4, 216.36, 220.39]]'></canvas>
+            </td>
+        </tr>
+        
+        <tr>
+            <td>
+                <span class="ticker-text">PNC</span>
+                <div class="tv-links mt-1">
+                    <a href="https://jp.tradingview.com/symbols/PNC/" target="_blank" class="badge badge-info mr-1">概要 📄</a>
+                    <a href="https://jp.tradingview.com/chart/?symbol=PNC" target="_blank" class="badge badge-primary">チャート 📈</a>
+                </div>
+            </td>
+            <td class="text-center text-success vertical-middle"><strong>3 回</strong></td>
+            <td class="vertical-middle">$249.49</td>
+            <td class="vertical-middle">$254.0</td>
+            <td class="text-center vertical-middle">
+                <canvas class="spark-candle" width="120" height="35" data-candles='[[233.64, 236.09, 231.33, 232.04], [233.75, 235.46, 232.21, 234.71], [235.69, 238.86, 234.37, 238.67], [238.88, 240.37, 238.0, 239.92], [242.66, 249.01, 241.71, 245.28], [246.03, 246.03, 243.08, 244.99], [244.46, 247.97, 243.0, 246.73], [246.05, 247.47, 244.69, 246.22], [246.05, 252.73, 244.87, 251.62], [253.45, 254.0, 247.34, 249.49]]'></canvas>
+            </td>
+        </tr>
+        
+        <tr>
+            <td>
+                <span class="ticker-text">RL</span>
+                <div class="tv-links mt-1">
+                    <a href="https://jp.tradingview.com/symbols/RL/" target="_blank" class="badge badge-info mr-1">概要 📄</a>
+                    <a href="https://jp.tradingview.com/chart/?symbol=RL" target="_blank" class="badge badge-primary">チャート 📈</a>
+                </div>
+            </td>
+            <td class="text-center text-success vertical-middle"><strong>3 回</strong></td>
+            <td class="vertical-middle">$398.22</td>
+            <td class="vertical-middle">$420.57</td>
+            <td class="text-center vertical-middle">
+                <canvas class="spark-candle" width="120" height="35" data-candles='[[411.22, 417.19, 406.09, 412.0], [413.94, 418.84, 407.65, 409.92], [404.52, 407.98, 397.25, 406.02], [407.84, 416.05, 407.84, 413.24], [413.63, 416.9, 407.48, 409.11], [407.32, 418.63, 407.32, 411.16], [409.59, 411.96, 396.64, 397.61], [395.73, 407.55, 395.19, 401.41], [402.05, 404.62, 396.6, 398.02], [397.55, 405.71, 392.36, 398.22]]'></canvas>
+            </td>
+        </tr>
+        
+        <tr>
+            <td>
+                <span class="ticker-text">PLD</span>
+                <div class="tv-links mt-1">
+                    <a href="https://jp.tradingview.com/symbols/PLD/" target="_blank" class="badge badge-info mr-1">概要 📄</a>
+                    <a href="https://jp.tradingview.com/chart/?symbol=PLD" target="_blank" class="badge badge-primary">チャート 📈</a>
+                </div>
+            </td>
+            <td class="text-center text-success vertical-middle"><strong>3 回</strong></td>
+            <td class="vertical-middle">$139.43</td>
+            <td class="vertical-middle">$149.1</td>
+            <td class="text-center vertical-middle">
+                <canvas class="spark-candle" width="120" height="35" data-candles='[[139.95, 141.49, 139.43, 140.54], [140.66, 144.81, 140.31, 143.83], [143.61, 146.16, 143.39, 145.25], [145.17, 145.55, 137.67, 140.87], [141.85, 142.37, 138.36, 140.53], [141.46, 141.87, 138.98, 139.97], [139.06, 139.5, 136.81, 138.89], [137.54, 138.37, 135.22, 135.47], [135.68, 138.8, 135.1, 136.8], [138.36, 139.5, 136.86, 139.43]]'></canvas>
+            </td>
+        </tr>
+        
+        <tr>
+            <td>
+                <span class="ticker-text">JPM</span>
+                <div class="tv-links mt-1">
+                    <a href="https://jp.tradingview.com/symbols/JPM/" target="_blank" class="badge badge-info mr-1">概要 📄</a>
+                    <a href="https://jp.tradingview.com/chart/?symbol=JPM" target="_blank" class="badge badge-primary">チャート 📈</a>
+                </div>
+            </td>
+            <td class="text-center text-success vertical-middle"><strong>3 回</strong></td>
+            <td class="vertical-middle">$334.47</td>
+            <td class="vertical-middle">$343.45</td>
+            <td class="text-center vertical-middle">
+                <canvas class="spark-candle" width="120" height="35" data-candles='[[336.95, 338.09, 324.16, 325.22], [329.7, 332.77, 326.75, 331.48], [329.47, 335.37, 327.21, 334.14], [333.07, 334.53, 329.77, 333.45], [334.96, 343.45, 334.76, 335.12], [336.0, 336.4, 327.5, 329.05], [328.28, 332.39, 327.2, 329.39], [328.89, 330.44, 326.68, 327.33], [328.37, 335.64, 325.01, 334.07], [338.02, 340.0, 331.77, 334.47]]'></canvas>
+            </td>
+        </tr>
+        
+        <tr>
+            <td>
+                <span class="ticker-text">JBL</span>
+                <div class="tv-links mt-1">
+                    <a href="https://jp.tradingview.com/symbols/JBL/" target="_blank" class="badge badge-info mr-1">概要 📄</a>
+                    <a href="https://jp.tradingview.com/chart/?symbol=JBL" target="_blank" class="badge badge-primary">チャート 📈</a>
+                </div>
+            </td>
+            <td class="text-center text-success vertical-middle"><strong>3 回</strong></td>
+            <td class="vertical-middle">$341.3</td>
+            <td class="vertical-middle">$428.93</td>
+            <td class="text-center vertical-middle">
+                <canvas class="spark-candle" width="120" height="35" data-candles='[[388.3, 390.05, 366.21, 371.88], [376.0, 379.0, 362.0, 377.24], [361.2, 373.74, 359.0, 372.99], [370.0, 386.87, 365.0, 371.8], [378.38, 383.94, 370.01, 374.64], [364.37, 369.97, 356.0, 358.6], [359.0, 373.61, 350.25, 373.58], [374.73, 386.38, 373.58, 385.48], [377.66, 379.19, 367.59, 375.34], [372.22, 374.0, 338.73, 341.3]]'></canvas>
+            </td>
+        </tr>
+        
+        <tr>
+            <td>
+                <span class="ticker-text">JCI</span>
+                <div class="tv-links mt-1">
+                    <a href="https://jp.tradingview.com/symbols/JCI/" target="_blank" class="badge badge-info mr-1">概要 📄</a>
+                    <a href="https://jp.tradingview.com/chart/?symbol=JCI" target="_blank" class="badge badge-primary">チャート 📈</a>
+                </div>
+            </td>
+            <td class="text-center text-success vertical-middle"><strong>3 回</strong></td>
+            <td class="vertical-middle">$140.76</td>
+            <td class="vertical-middle">$151.18</td>
+            <td class="text-center vertical-middle">
+                <canvas class="spark-candle" width="120" height="35" data-candles='[[148.7, 149.38, 144.79, 144.82], [145.31, 148.78, 145.06, 148.21], [143.76, 145.95, 141.07, 141.28], [141.84, 144.46, 140.53, 142.81], [145.83, 147.76, 144.96, 145.49], [143.6, 143.6, 138.15, 138.4], [138.48, 140.94, 138.16, 140.47], [141.58, 148.26, 141.58, 146.11], [144.25, 151.18, 142.72, 144.8], [144.58, 146.27, 139.23, 140.76]]'></canvas>
+            </td>
         </tr>
         
         <tr>
@@ -1299,6 +1589,9 @@
             <td class="text-center text-success vertical-middle"><strong>2 回</strong></td>
             <td class="vertical-middle">$314.19</td>
             <td class="vertical-middle">$314.28</td>
+            <td class="text-center vertical-middle">
+                <canvas class="spark-candle" width="120" height="35" data-candles='[[281.65, 282.09, 276.9, 278.48], [277.65, 283.1, 277.09, 281.36], [279.7, 282.79, 277.9, 280.71], [280.26, 280.83, 273.81, 277.01], [276.1, 280.89, 274.63, 278.2], [277.57, 280.53, 275.46, 276.08], [275.7, 277.46, 268.44, 269.67], [294.12, 302.89, 288.8, 291.37], [291.36, 307.76, 285.91, 306.4], [306.46, 314.28, 303.83, 314.19]]'></canvas>
+            </td>
         </tr>
         
         <tr>
@@ -1312,19 +1605,9 @@
             <td class="text-center text-success vertical-middle"><strong>2 回</strong></td>
             <td class="vertical-middle">$138.51</td>
             <td class="vertical-middle">$139.33</td>
-        </tr>
-        
-        <tr>
-            <td>
-                <span class="ticker-text">AEE</span>
-                <div class="tv-links mt-1">
-                    <a href="https://jp.tradingview.com/symbols/AEE/" target="_blank" class="badge badge-info mr-1">概要 📄</a>
-                    <a href="https://jp.tradingview.com/chart/?symbol=AEE" target="_blank" class="badge badge-primary">チャート 📈</a>
-                </div>
+            <td class="text-center vertical-middle">
+                <canvas class="spark-candle" width="120" height="35" data-candles='[[128.66, 129.65, 126.98, 127.69], [128.19, 130.88, 127.94, 130.3], [131.43, 134.05, 130.25, 133.74], [134.22, 135.5, 132.92, 134.96], [135.23, 137.54, 135.01, 137.0], [138.03, 139.08, 137.6, 138.69], [139.03, 139.33, 136.56, 137.97], [137.0, 138.02, 136.12, 136.81], [136.87, 137.36, 134.47, 135.05], [135.88, 138.6, 135.66, 138.51]]'></canvas>
             </td>
-            <td class="text-center text-success vertical-middle"><strong>2 回</strong></td>
-            <td class="vertical-middle">$115.02</td>
-            <td class="vertical-middle">$118.32</td>
         </tr>
         
         <tr>
@@ -1338,6 +1621,9 @@
             <td class="text-center text-success vertical-middle"><strong>2 回</strong></td>
             <td class="vertical-middle">$118.83</td>
             <td class="vertical-middle">$119.06</td>
+            <td class="text-center vertical-middle">
+                <canvas class="spark-candle" width="120" height="35" data-candles='[[112.18, 113.56, 111.26, 112.17], [112.01, 113.83, 111.97, 113.04], [114.31, 114.89, 113.08, 114.14], [115.02, 116.05, 114.39, 115.61], [116.27, 117.52, 115.53, 117.07], [117.95, 118.9, 117.36, 118.85], [118.27, 119.06, 117.95, 118.44], [117.93, 118.08, 116.74, 116.77], [116.65, 117.15, 115.72, 116.22], [117.13, 118.95, 116.47, 118.83]]'></canvas>
+            </td>
         </tr>
         
         <tr>
@@ -1351,110 +1637,25 @@
             <td class="text-center text-success vertical-middle"><strong>2 回</strong></td>
             <td class="vertical-middle">$47.82</td>
             <td class="vertical-middle">$49.21</td>
+            <td class="text-center vertical-middle">
+                <canvas class="spark-candle" width="120" height="35" data-candles='[[47.13, 47.41, 46.84, 47.26], [46.94, 47.9, 46.59, 47.63], [47.21, 47.74, 46.17, 47.26], [47.22, 47.68, 47.07, 47.63], [47.99, 48.38, 47.53, 47.81], [48.18, 49.08, 48.06, 49.08], [48.81, 49.21, 47.94, 48.15], [47.65, 48.18, 47.5, 47.55], [47.55, 47.7, 46.86, 46.87], [47.34, 47.82, 46.98, 47.82]]'></canvas>
+            </td>
         </tr>
         
         <tr>
             <td>
-                <span class="ticker-text">FFIV</span>
+                <span class="ticker-text">AEE</span>
                 <div class="tv-links mt-1">
-                    <a href="https://jp.tradingview.com/symbols/FFIV/" target="_blank" class="badge badge-info mr-1">概要 📄</a>
-                    <a href="https://jp.tradingview.com/chart/?symbol=FFIV" target="_blank" class="badge badge-primary">チャート 📈</a>
+                    <a href="https://jp.tradingview.com/symbols/AEE/" target="_blank" class="badge badge-info mr-1">概要 📄</a>
+                    <a href="https://jp.tradingview.com/chart/?symbol=AEE" target="_blank" class="badge badge-primary">チャート 📈</a>
                 </div>
             </td>
             <td class="text-center text-success vertical-middle"><strong>2 回</strong></td>
-            <td class="vertical-middle">$408.14</td>
-            <td class="vertical-middle">$427.54</td>
-        </tr>
-        
-        <tr>
-            <td>
-                <span class="ticker-text">FRT</span>
-                <div class="tv-links mt-1">
-                    <a href="https://jp.tradingview.com/symbols/FRT/" target="_blank" class="badge badge-info mr-1">概要 📄</a>
-                    <a href="https://jp.tradingview.com/chart/?symbol=FRT" target="_blank" class="badge badge-primary">チャート 📈</a>
-                </div>
+            <td class="vertical-middle">$115.02</td>
+            <td class="vertical-middle">$118.32</td>
+            <td class="text-center vertical-middle">
+                <canvas class="spark-candle" width="120" height="35" data-candles='[[109.11, 110.09, 108.17, 108.67], [108.67, 110.34, 108.6, 109.7], [110.46, 111.94, 109.61, 111.7], [113.0, 113.47, 112.02, 113.32], [114.04, 114.8, 113.06, 114.53], [115.03, 118.32, 114.31, 118.32], [116.4, 117.39, 114.36, 114.59], [113.85, 114.54, 113.01, 113.04], [113.28, 113.42, 111.98, 112.19], [113.19, 115.24, 112.73, 115.02]]'></canvas>
             </td>
-            <td class="text-center text-success vertical-middle"><strong>2 回</strong></td>
-            <td class="vertical-middle">$121.69</td>
-            <td class="vertical-middle">$125.25</td>
-        </tr>
-        
-        <tr>
-            <td>
-                <span class="ticker-text">CRWD</span>
-                <div class="tv-links mt-1">
-                    <a href="https://jp.tradingview.com/symbols/CRWD/" target="_blank" class="badge badge-info mr-1">概要 📄</a>
-                    <a href="https://jp.tradingview.com/chart/?symbol=CRWD" target="_blank" class="badge badge-primary">チャート 📈</a>
-                </div>
-            </td>
-            <td class="text-center text-success vertical-middle"><strong>2 回</strong></td>
-            <td class="vertical-middle">$193.98</td>
-            <td class="vertical-middle">$199.53</td>
-        </tr>
-        
-        <tr>
-            <td>
-                <span class="ticker-text">CNC</span>
-                <div class="tv-links mt-1">
-                    <a href="https://jp.tradingview.com/symbols/CNC/" target="_blank" class="badge badge-info mr-1">概要 📄</a>
-                    <a href="https://jp.tradingview.com/chart/?symbol=CNC" target="_blank" class="badge badge-primary">チャート 📈</a>
-                </div>
-            </td>
-            <td class="text-center text-success vertical-middle"><strong>2 回</strong></td>
-            <td class="vertical-middle">$67.86</td>
-            <td class="vertical-middle">$69.29</td>
-        </tr>
-        
-        <tr>
-            <td>
-                <span class="ticker-text">EXPD</span>
-                <div class="tv-links mt-1">
-                    <a href="https://jp.tradingview.com/symbols/EXPD/" target="_blank" class="badge badge-info mr-1">概要 📄</a>
-                    <a href="https://jp.tradingview.com/chart/?symbol=EXPD" target="_blank" class="badge badge-primary">チャート 📈</a>
-                </div>
-            </td>
-            <td class="text-center text-success vertical-middle"><strong>2 回</strong></td>
-            <td class="vertical-middle">$167.57</td>
-            <td class="vertical-middle">$168.52</td>
-        </tr>
-        
-        <tr>
-            <td>
-                <span class="ticker-text">CMI</span>
-                <div class="tv-links mt-1">
-                    <a href="https://jp.tradingview.com/symbols/CMI/" target="_blank" class="badge badge-info mr-1">概要 📄</a>
-                    <a href="https://jp.tradingview.com/chart/?symbol=CMI" target="_blank" class="badge badge-primary">チャート 📈</a>
-                </div>
-            </td>
-            <td class="text-center text-success vertical-middle"><strong>2 回</strong></td>
-            <td class="vertical-middle">$661.7</td>
-            <td class="vertical-middle">$737.76</td>
-        </tr>
-        
-        <tr>
-            <td>
-                <span class="ticker-text">IRM</span>
-                <div class="tv-links mt-1">
-                    <a href="https://jp.tradingview.com/symbols/IRM/" target="_blank" class="badge badge-info mr-1">概要 📄</a>
-                    <a href="https://jp.tradingview.com/chart/?symbol=IRM" target="_blank" class="badge badge-primary">チャート 📈</a>
-                </div>
-            </td>
-            <td class="text-center text-success vertical-middle"><strong>2 回</strong></td>
-            <td class="vertical-middle">$117.16</td>
-            <td class="vertical-middle">$134.68</td>
-        </tr>
-        
-        <tr>
-            <td>
-                <span class="ticker-text">EG</span>
-                <div class="tv-links mt-1">
-                    <a href="https://jp.tradingview.com/symbols/EG/" target="_blank" class="badge badge-info mr-1">概要 📄</a>
-                    <a href="https://jp.tradingview.com/chart/?symbol=EG" target="_blank" class="badge badge-primary">チャート 📈</a>
-                </div>
-            </td>
-            <td class="text-center text-success vertical-middle"><strong>2 回</strong></td>
-            <td class="vertical-middle">$371.35</td>
-            <td class="vertical-middle">$372.36</td>
         </tr>
         
         <tr>
@@ -1468,45 +1669,9 @@
             <td class="text-center text-success vertical-middle"><strong>2 回</strong></td>
             <td class="vertical-middle">$313.0</td>
             <td class="vertical-middle">$344.08</td>
-        </tr>
-        
-        <tr>
-            <td>
-                <span class="ticker-text">LLY</span>
-                <div class="tv-links mt-1">
-                    <a href="https://jp.tradingview.com/symbols/LLY/" target="_blank" class="badge badge-info mr-1">概要 📄</a>
-                    <a href="https://jp.tradingview.com/chart/?symbol=LLY" target="_blank" class="badge badge-primary">チャート 📈</a>
-                </div>
+            <td class="text-center vertical-middle">
+                <canvas class="spark-candle" width="120" height="35" data-candles='[[328.72, 329.86, 323.26, 324.98], [326.31, 332.4, 325.66, 328.78], [326.01, 327.4, 316.36, 317.24], [314.77, 323.68, 306.05, 316.83], [319.04, 329.49, 317.75, 329.44], [327.58, 327.62, 316.12, 318.53], [317.91, 325.73, 317.91, 325.4], [324.56, 325.73, 309.02, 313.13], [313.0, 317.08, 310.61, 313.89], [317.82, 317.99, 310.3, 313.0]]'></canvas>
             </td>
-            <td class="text-center text-success vertical-middle"><strong>2 回</strong></td>
-            <td class="vertical-middle">$1,213.91</td>
-            <td class="vertical-middle">$1,238.0</td>
-        </tr>
-        
-        <tr>
-            <td>
-                <span class="ticker-text">MAR</span>
-                <div class="tv-links mt-1">
-                    <a href="https://jp.tradingview.com/symbols/MAR/" target="_blank" class="badge badge-info mr-1">概要 📄</a>
-                    <a href="https://jp.tradingview.com/chart/?symbol=MAR" target="_blank" class="badge badge-primary">チャート 📈</a>
-                </div>
-            </td>
-            <td class="text-center text-success vertical-middle"><strong>2 回</strong></td>
-            <td class="vertical-middle">$372.95</td>
-            <td class="vertical-middle">$410.98</td>
-        </tr>
-        
-        <tr>
-            <td>
-                <span class="ticker-text">GNRC</span>
-                <div class="tv-links mt-1">
-                    <a href="https://jp.tradingview.com/symbols/GNRC/" target="_blank" class="badge badge-info mr-1">概要 📄</a>
-                    <a href="https://jp.tradingview.com/chart/?symbol=GNRC" target="_blank" class="badge badge-primary">チャート 📈</a>
-                </div>
-            </td>
-            <td class="text-center text-success vertical-middle"><strong>2 回</strong></td>
-            <td class="vertical-middle">$252.66</td>
-            <td class="vertical-middle">$296.44</td>
         </tr>
         
         <tr>
@@ -1520,6 +1685,105 @@
             <td class="text-center text-success vertical-middle"><strong>2 回</strong></td>
             <td class="vertical-middle">$1,021.0</td>
             <td class="vertical-middle">$1,125.0</td>
+            <td class="text-center vertical-middle">
+                <canvas class="spark-candle" width="120" height="35" data-candles='[[1120.0, 1125.0, 1093.33, 1096.56], [1109.7, 1115.98, 1091.63, 1106.37], [1077.34, 1103.55, 1069.0, 1094.44], [1090.0, 1090.1, 1068.51, 1076.91], [1095.62, 1105.25, 1062.1, 1065.09], [1054.74, 1057.0, 1013.38, 1019.61], [1029.19, 1035.93, 1016.17, 1020.21], [1019.29, 1026.32, 1006.11, 1011.37], [1010.0, 1033.53, 1003.0, 1019.61], [1038.99, 1039.28, 1009.73, 1021.0]]'></canvas>
+            </td>
+        </tr>
+        
+        <tr>
+            <td>
+                <span class="ticker-text">CNC</span>
+                <div class="tv-links mt-1">
+                    <a href="https://jp.tradingview.com/symbols/CNC/" target="_blank" class="badge badge-info mr-1">概要 📄</a>
+                    <a href="https://jp.tradingview.com/chart/?symbol=CNC" target="_blank" class="badge badge-primary">チャート 📈</a>
+                </div>
+            </td>
+            <td class="text-center text-success vertical-middle"><strong>2 回</strong></td>
+            <td class="vertical-middle">$67.86</td>
+            <td class="vertical-middle">$69.29</td>
+            <td class="text-center vertical-middle">
+                <canvas class="spark-candle" width="120" height="35" data-candles='[[61.15, 61.98, 60.37, 61.02], [62.0, 64.1, 61.98, 63.68], [63.62, 64.25, 63.14, 63.14], [63.8, 63.96, 61.72, 62.97], [62.76, 65.64, 62.76, 64.77], [65.13, 65.76, 64.71, 65.73], [65.2, 65.47, 63.88, 64.54], [64.45, 64.91, 63.71, 64.19], [66.48, 68.41, 65.44, 68.35], [68.8, 69.29, 67.05, 67.86]]'></canvas>
+            </td>
+        </tr>
+        
+        <tr>
+            <td>
+                <span class="ticker-text">EG</span>
+                <div class="tv-links mt-1">
+                    <a href="https://jp.tradingview.com/symbols/EG/" target="_blank" class="badge badge-info mr-1">概要 📄</a>
+                    <a href="https://jp.tradingview.com/chart/?symbol=EG" target="_blank" class="badge badge-primary">チャート 📈</a>
+                </div>
+            </td>
+            <td class="text-center text-success vertical-middle"><strong>2 回</strong></td>
+            <td class="vertical-middle">$371.35</td>
+            <td class="vertical-middle">$372.36</td>
+            <td class="text-center vertical-middle">
+                <canvas class="spark-candle" width="120" height="35" data-candles='[[335.45, 339.42, 333.71, 335.63], [339.96, 344.65, 336.05, 339.3], [341.14, 344.16, 339.04, 343.56], [344.45, 349.51, 343.45, 345.74], [343.0, 348.23, 340.17, 343.02], [345.42, 355.7, 344.9, 355.52], [353.55, 361.26, 352.14, 360.79], [360.66, 360.9, 356.73, 357.23], [360.0, 364.18, 357.39, 359.93], [361.37, 372.36, 357.89, 371.35]]'></canvas>
+            </td>
+        </tr>
+        
+        <tr>
+            <td>
+                <span class="ticker-text">CRWD</span>
+                <div class="tv-links mt-1">
+                    <a href="https://jp.tradingview.com/symbols/CRWD/" target="_blank" class="badge badge-info mr-1">概要 📄</a>
+                    <a href="https://jp.tradingview.com/chart/?symbol=CRWD" target="_blank" class="badge badge-primary">チャート 📈</a>
+                </div>
+            </td>
+            <td class="text-center text-success vertical-middle"><strong>2 回</strong></td>
+            <td class="vertical-middle">$193.98</td>
+            <td class="vertical-middle">$199.53</td>
+            <td class="text-center vertical-middle">
+                <canvas class="spark-candle" width="120" height="35" data-candles='[[171.69, 173.98, 165.23, 171.21], [171.27, 178.04, 168.3, 168.86], [167.25, 172.73, 165.5, 170.23], [170.12, 171.79, 167.25, 168.26], [170.1, 173.18, 167.5, 169.66], [171.55, 176.21, 168.4, 175.27], [177.38, 188.99, 176.03, 185.73], [184.12, 191.32, 183.0, 190.79], [193.75, 196.5, 191.25, 193.18], [191.26, 199.53, 190.61, 193.98]]'></canvas>
+            </td>
+        </tr>
+        
+        <tr>
+            <td>
+                <span class="ticker-text">EXPD</span>
+                <div class="tv-links mt-1">
+                    <a href="https://jp.tradingview.com/symbols/EXPD/" target="_blank" class="badge badge-info mr-1">概要 📄</a>
+                    <a href="https://jp.tradingview.com/chart/?symbol=EXPD" target="_blank" class="badge badge-primary">チャート 📈</a>
+                </div>
+            </td>
+            <td class="text-center text-success vertical-middle"><strong>2 回</strong></td>
+            <td class="vertical-middle">$167.57</td>
+            <td class="vertical-middle">$168.52</td>
+            <td class="text-center vertical-middle">
+                <canvas class="spark-candle" width="120" height="35" data-candles='[[161.46, 162.99, 160.1, 161.32], [162.79, 164.95, 162.17, 163.15], [164.0, 164.44, 160.82, 161.34], [161.57, 162.24, 158.96, 160.16], [160.36, 164.0, 159.75, 161.67], [161.71, 162.49, 160.0, 160.73], [160.01, 163.0, 159.67, 161.97], [162.04, 163.78, 161.03, 162.98], [164.02, 167.65, 163.21, 166.81], [167.81, 168.12, 166.15, 167.57]]'></canvas>
+            </td>
+        </tr>
+        
+        <tr>
+            <td>
+                <span class="ticker-text">CMI</span>
+                <div class="tv-links mt-1">
+                    <a href="https://jp.tradingview.com/symbols/CMI/" target="_blank" class="badge badge-info mr-1">概要 📄</a>
+                    <a href="https://jp.tradingview.com/chart/?symbol=CMI" target="_blank" class="badge badge-primary">チャート 📈</a>
+                </div>
+            </td>
+            <td class="text-center text-success vertical-middle"><strong>2 回</strong></td>
+            <td class="vertical-middle">$661.7</td>
+            <td class="vertical-middle">$737.76</td>
+            <td class="text-center vertical-middle">
+                <canvas class="spark-candle" width="120" height="35" data-candles='[[732.89, 737.76, 710.1, 716.86], [720.0, 731.54, 716.93, 724.93], [700.88, 711.36, 685.26, 699.05], [693.6, 708.31, 688.06, 694.87], [707.91, 728.32, 707.69, 727.59], [709.06, 711.67, 681.86, 685.87], [682.0, 702.3, 680.19, 691.09], [696.9, 713.29, 692.75, 713.21], [700.0, 701.39, 681.2, 682.32], [683.0, 687.79, 653.95, 661.7]]'></canvas>
+            </td>
+        </tr>
+        
+        <tr>
+            <td>
+                <span class="ticker-text">FRT</span>
+                <div class="tv-links mt-1">
+                    <a href="https://jp.tradingview.com/symbols/FRT/" target="_blank" class="badge badge-info mr-1">概要 📄</a>
+                    <a href="https://jp.tradingview.com/chart/?symbol=FRT" target="_blank" class="badge badge-primary">チャート 📈</a>
+                </div>
+            </td>
+            <td class="text-center text-success vertical-middle"><strong>2 回</strong></td>
+            <td class="vertical-middle">$121.69</td>
+            <td class="vertical-middle">$125.25</td>
+            <td class="text-center vertical-middle">
+                <canvas class="spark-candle" width="120" height="35" data-candles='[[119.99, 120.41, 119.1, 119.29], [119.48, 121.41, 119.42, 120.61], [121.25, 122.61, 120.92, 122.55], [122.55, 124.09, 122.52, 123.48], [123.9, 124.71, 122.69, 123.41], [124.48, 125.02, 123.1, 123.93], [123.84, 124.34, 123.29, 124.27], [122.97, 123.57, 122.24, 122.31], [121.84, 122.6, 119.97, 120.41], [120.91, 121.89, 120.85, 121.69]]'></canvas>
+            </td>
         </tr>
         
         <tr>
@@ -1533,19 +1797,9 @@
             <td class="text-center text-success vertical-middle"><strong>2 回</strong></td>
             <td class="vertical-middle">$25.32</td>
             <td class="vertical-middle">$26.08</td>
-        </tr>
-        
-        <tr>
-            <td>
-                <span class="ticker-text">NUE</span>
-                <div class="tv-links mt-1">
-                    <a href="https://jp.tradingview.com/symbols/NUE/" target="_blank" class="badge badge-info mr-1">概要 📄</a>
-                    <a href="https://jp.tradingview.com/chart/?symbol=NUE" target="_blank" class="badge badge-primary">チャート 📈</a>
-                </div>
+            <td class="text-center vertical-middle">
+                <canvas class="spark-candle" width="120" height="35" data-candles='[[24.65, 24.7, 24.3, 24.38], [24.68, 24.87, 24.57, 24.69], [24.99, 25.2, 24.75, 25.19], [25.26, 25.52, 25.2, 25.42], [25.44, 25.6, 25.21, 25.52], [25.73, 25.9, 25.56, 25.89], [25.78, 25.88, 25.59, 25.83], [25.65, 25.72, 25.32, 25.35], [25.34, 25.47, 25.08, 25.08], [25.22, 25.36, 25.16, 25.32]]'></canvas>
             </td>
-            <td class="text-center text-success vertical-middle"><strong>2 回</strong></td>
-            <td class="vertical-middle">$220.75</td>
-            <td class="vertical-middle">$270.24</td>
         </tr>
         
         <tr>
@@ -1559,19 +1813,73 @@
             <td class="text-center text-success vertical-middle"><strong>2 回</strong></td>
             <td class="vertical-middle">$116.52</td>
             <td class="vertical-middle">$116.58</td>
+            <td class="text-center vertical-middle">
+                <canvas class="spark-candle" width="120" height="35" data-candles='[[107.71, 107.95, 106.58, 107.28], [107.49, 109.1, 107.02, 108.13], [109.15, 110.67, 108.14, 110.58], [110.98, 112.31, 110.35, 111.92], [111.73, 113.16, 110.69, 110.9], [109.59, 113.37, 109.59, 113.25], [113.54, 114.39, 113.05, 113.69], [113.77, 114.29, 112.94, 113.21], [113.64, 115.1, 113.5, 114.12], [114.62, 116.58, 113.54, 116.52]]'></canvas>
+            </td>
         </tr>
         
         <tr>
             <td>
-                <span class="ticker-text">VLO</span>
+                <span class="ticker-text">FFIV</span>
                 <div class="tv-links mt-1">
-                    <a href="https://jp.tradingview.com/symbols/VLO/" target="_blank" class="badge badge-info mr-1">概要 📄</a>
-                    <a href="https://jp.tradingview.com/chart/?symbol=VLO" target="_blank" class="badge badge-primary">チャート 📈</a>
+                    <a href="https://jp.tradingview.com/symbols/FFIV/" target="_blank" class="badge badge-info mr-1">概要 📄</a>
+                    <a href="https://jp.tradingview.com/chart/?symbol=FFIV" target="_blank" class="badge badge-primary">チャート 📈</a>
                 </div>
             </td>
             <td class="text-center text-success vertical-middle"><strong>2 回</strong></td>
-            <td class="vertical-middle">$267.76</td>
-            <td class="vertical-middle">$274.92</td>
+            <td class="vertical-middle">$408.14</td>
+            <td class="vertical-middle">$427.54</td>
+            <td class="text-center vertical-middle">
+                <canvas class="spark-candle" width="120" height="35" data-candles='[[389.68, 391.77, 374.4, 385.49], [383.73, 392.59, 383.64, 391.27], [387.2, 393.68, 386.67, 389.53], [389.01, 391.49, 382.16, 384.78], [384.78, 390.0, 381.67, 386.01], [386.23, 395.96, 382.01, 394.53], [400.0, 414.0, 396.92, 410.56], [413.41, 427.54, 407.0, 415.96], [413.41, 424.87, 413.01, 424.18], [422.37, 425.34, 404.54, 408.14]]'></canvas>
+            </td>
+        </tr>
+        
+        <tr>
+            <td>
+                <span class="ticker-text">GNRC</span>
+                <div class="tv-links mt-1">
+                    <a href="https://jp.tradingview.com/symbols/GNRC/" target="_blank" class="badge badge-info mr-1">概要 📄</a>
+                    <a href="https://jp.tradingview.com/chart/?symbol=GNRC" target="_blank" class="badge badge-primary">チャート 📈</a>
+                </div>
+            </td>
+            <td class="text-center text-success vertical-middle"><strong>2 回</strong></td>
+            <td class="vertical-middle">$252.66</td>
+            <td class="vertical-middle">$296.44</td>
+            <td class="text-center vertical-middle">
+                <canvas class="spark-candle" width="120" height="35" data-candles='[[273.71, 289.0, 273.51, 279.15], [287.19, 296.03, 286.01, 295.54], [282.0, 283.84, 272.02, 274.54], [271.32, 287.67, 270.15, 284.14], [292.0, 296.44, 284.58, 295.16], [285.97, 287.19, 276.26, 278.62], [278.93, 284.03, 268.56, 283.81], [287.0, 295.41, 283.5, 292.81], [288.05, 289.41, 269.19, 270.22], [270.23, 273.04, 248.65, 252.66]]'></canvas>
+            </td>
+        </tr>
+        
+        <tr>
+            <td>
+                <span class="ticker-text">IRM</span>
+                <div class="tv-links mt-1">
+                    <a href="https://jp.tradingview.com/symbols/IRM/" target="_blank" class="badge badge-info mr-1">概要 📄</a>
+                    <a href="https://jp.tradingview.com/chart/?symbol=IRM" target="_blank" class="badge badge-primary">チャート 📈</a>
+                </div>
+            </td>
+            <td class="text-center text-success vertical-middle"><strong>2 回</strong></td>
+            <td class="vertical-middle">$117.16</td>
+            <td class="vertical-middle">$134.68</td>
+            <td class="text-center vertical-middle">
+                <canvas class="spark-candle" width="120" height="35" data-candles='[[128.83, 129.21, 126.76, 127.83], [128.9, 132.99, 127.95, 131.86], [129.75, 133.57, 129.4, 133.06], [134.1, 134.68, 129.66, 130.59], [132.28, 132.99, 128.75, 131.06], [130.47, 132.62, 129.49, 132.44], [131.72, 133.71, 128.32, 129.97], [128.45, 129.19, 124.52, 126.31], [125.62, 126.53, 121.25, 121.9], [121.81, 122.81, 115.68, 117.16]]'></canvas>
+            </td>
+        </tr>
+        
+        <tr>
+            <td>
+                <span class="ticker-text">LLY</span>
+                <div class="tv-links mt-1">
+                    <a href="https://jp.tradingview.com/symbols/LLY/" target="_blank" class="badge badge-info mr-1">概要 📄</a>
+                    <a href="https://jp.tradingview.com/chart/?symbol=LLY" target="_blank" class="badge badge-primary">チャート 📈</a>
+                </div>
+            </td>
+            <td class="text-center text-success vertical-middle"><strong>2 回</strong></td>
+            <td class="vertical-middle">$1,213.91</td>
+            <td class="vertical-middle">$1,238.0</td>
+            <td class="text-center vertical-middle">
+                <canvas class="spark-candle" width="120" height="35" data-candles='[[1120.49, 1122.33, 1088.66, 1098.57], [1112.24, 1119.45, 1093.15, 1102.08], [1117.0, 1122.02, 1079.22, 1107.08], [1129.41, 1135.14, 1100.98, 1117.26], [1126.99, 1145.43, 1114.0, 1127.69], [1128.8, 1215.76, 1128.0, 1208.12], [1222.78, 1238.0, 1203.14, 1229.93], [1228.88, 1230.05, 1190.2, 1199.43], [1217.51, 1217.51, 1173.93, 1191.74], [1193.01, 1232.0, 1180.3, 1213.91]]'></canvas>
+            </td>
         </tr>
         
         <tr>
@@ -1585,19 +1893,25 @@
             <td class="text-center text-success vertical-middle"><strong>2 回</strong></td>
             <td class="vertical-middle">$282.25</td>
             <td class="vertical-middle">$282.8</td>
+            <td class="text-center vertical-middle">
+                <canvas class="spark-candle" width="120" height="35" data-candles='[[258.08, 263.68, 256.12, 256.88], [256.54, 262.64, 255.22, 259.91], [261.04, 262.87, 258.13, 258.61], [260.92, 263.29, 258.4, 259.96], [262.01, 267.98, 262.01, 267.73], [269.54, 270.78, 266.74, 268.35], [268.3, 273.5, 268.21, 272.7], [273.29, 273.34, 268.78, 272.0], [270.76, 278.8, 270.0, 277.73], [279.0, 282.8, 278.58, 282.25]]'></canvas>
+            </td>
         </tr>
         
         <tr>
             <td>
-                <span class="ticker-text">ROST</span>
+                <span class="ticker-text">VLO</span>
                 <div class="tv-links mt-1">
-                    <a href="https://jp.tradingview.com/symbols/ROST/" target="_blank" class="badge badge-info mr-1">概要 📄</a>
-                    <a href="https://jp.tradingview.com/chart/?symbol=ROST" target="_blank" class="badge badge-primary">チャート 📈</a>
+                    <a href="https://jp.tradingview.com/symbols/VLO/" target="_blank" class="badge badge-info mr-1">概要 📄</a>
+                    <a href="https://jp.tradingview.com/chart/?symbol=VLO" target="_blank" class="badge badge-primary">チャート 📈</a>
                 </div>
             </td>
             <td class="text-center text-success vertical-middle"><strong>2 回</strong></td>
-            <td class="vertical-middle">$213.43</td>
-            <td class="vertical-middle">$242.81</td>
+            <td class="vertical-middle">$267.76</td>
+            <td class="vertical-middle">$274.92</td>
+            <td class="text-center vertical-middle">
+                <canvas class="spark-candle" width="120" height="35" data-candles='[[236.92, 238.03, 232.72, 236.3], [238.48, 243.8, 233.95, 243.78], [242.84, 245.77, 241.17, 243.68], [238.91, 244.21, 236.1, 242.43], [240.7, 255.74, 240.02, 255.06], [253.46, 260.67, 252.0, 259.37], [262.42, 272.17, 261.03, 266.32], [267.0, 269.69, 259.42, 260.44], [263.04, 269.9, 260.75, 269.44], [269.9, 274.92, 267.36, 267.76]]'></canvas>
+            </td>
         </tr>
         
         <tr>
@@ -1611,6 +1925,57 @@
             <td class="text-center text-success vertical-middle"><strong>2 回</strong></td>
             <td class="vertical-middle">$80.96</td>
             <td class="vertical-middle">$81.93</td>
+            <td class="text-center vertical-middle">
+                <canvas class="spark-candle" width="120" height="35" data-candles='[[77.83, 77.83, 76.69, 76.88], [76.75, 77.62, 76.75, 77.36], [77.79, 78.81, 77.76, 78.67], [79.1, 80.16, 78.94, 79.87], [79.74, 80.62, 79.35, 80.25], [80.92, 81.93, 80.45, 81.81], [81.81, 81.87, 80.71, 81.3], [80.74, 80.75, 79.66, 79.74], [79.84, 80.15, 79.07, 79.37], [79.91, 80.97, 79.53, 80.96]]'></canvas>
+            </td>
+        </tr>
+        
+        <tr>
+            <td>
+                <span class="ticker-text">NUE</span>
+                <div class="tv-links mt-1">
+                    <a href="https://jp.tradingview.com/symbols/NUE/" target="_blank" class="badge badge-info mr-1">概要 📄</a>
+                    <a href="https://jp.tradingview.com/chart/?symbol=NUE" target="_blank" class="badge badge-primary">チャート 📈</a>
+                </div>
+            </td>
+            <td class="text-center text-success vertical-middle"><strong>2 回</strong></td>
+            <td class="vertical-middle">$220.75</td>
+            <td class="vertical-middle">$270.24</td>
+            <td class="text-center vertical-middle">
+                <canvas class="spark-candle" width="120" height="35" data-candles='[[252.33, 253.49, 241.46, 243.23], [244.18, 245.26, 240.83, 244.33], [239.56, 241.38, 236.92, 239.04], [242.13, 243.59, 237.81, 239.93], [241.7, 249.04, 240.8, 248.28], [244.54, 246.31, 237.24, 239.19], [238.91, 241.16, 227.49, 228.02], [228.96, 229.52, 221.46, 222.75], [220.27, 220.9, 214.61, 219.02], [219.9, 222.0, 216.88, 220.75]]'></canvas>
+            </td>
+        </tr>
+        
+        <tr>
+            <td>
+                <span class="ticker-text">ROST</span>
+                <div class="tv-links mt-1">
+                    <a href="https://jp.tradingview.com/symbols/ROST/" target="_blank" class="badge badge-info mr-1">概要 📄</a>
+                    <a href="https://jp.tradingview.com/chart/?symbol=ROST" target="_blank" class="badge badge-primary">チャート 📈</a>
+                </div>
+            </td>
+            <td class="text-center text-success vertical-middle"><strong>2 回</strong></td>
+            <td class="vertical-middle">$213.43</td>
+            <td class="vertical-middle">$242.81</td>
+            <td class="text-center vertical-middle">
+                <canvas class="spark-candle" width="120" height="35" data-candles='[[235.35, 236.93, 232.06, 232.8], [235.41, 240.94, 233.81, 236.97], [233.11, 234.99, 227.62, 229.05], [228.04, 231.21, 226.67, 228.59], [228.59, 230.0, 214.94, 215.13], [214.88, 216.63, 210.83, 213.26], [211.02, 213.54, 207.0, 208.83], [208.47, 213.12, 205.92, 212.85], [212.66, 213.5, 210.15, 211.9], [211.33, 214.29, 211.19, 213.43]]'></canvas>
+            </td>
+        </tr>
+        
+        <tr>
+            <td>
+                <span class="ticker-text">MAR</span>
+                <div class="tv-links mt-1">
+                    <a href="https://jp.tradingview.com/symbols/MAR/" target="_blank" class="badge badge-info mr-1">概要 📄</a>
+                    <a href="https://jp.tradingview.com/chart/?symbol=MAR" target="_blank" class="badge badge-primary">チャート 📈</a>
+                </div>
+            </td>
+            <td class="text-center text-success vertical-middle"><strong>2 回</strong></td>
+            <td class="vertical-middle">$372.95</td>
+            <td class="vertical-middle">$410.98</td>
+            <td class="text-center vertical-middle">
+                <canvas class="spark-candle" width="120" height="35" data-candles='[[398.63, 403.26, 394.9, 396.2], [394.56, 395.02, 383.2, 384.19], [384.46, 390.36, 381.43, 386.83], [389.52, 392.63, 382.17, 383.56], [383.54, 388.25, 377.92, 378.91], [379.48, 381.21, 372.81, 377.31], [378.57, 382.27, 373.81, 374.88], [373.57, 374.57, 367.38, 370.59], [369.95, 373.38, 365.45, 368.32], [369.88, 374.07, 366.97, 372.95]]'></canvas>
+            </td>
         </tr>
         
         <tr>
@@ -1624,6 +1989,9 @@
             <td class="text-center text-success vertical-middle"><strong>1 回</strong></td>
             <td class="vertical-middle">$377.16</td>
             <td class="vertical-middle">$445.91</td>
+            <td class="text-center vertical-middle">
+                <canvas class="spark-candle" width="120" height="35" data-candles='[[426.23, 438.56, 426.23, 434.46], [437.75, 445.91, 436.39, 445.48], [426.86, 426.86, 403.21, 407.26], [407.22, 414.46, 404.0, 413.16], [424.25, 431.87, 412.35, 417.93], [405.43, 406.08, 382.82, 386.91], [388.16, 398.06, 385.01, 391.78], [392.92, 401.82, 391.78, 397.17], [390.89, 397.58, 387.84, 388.98], [390.81, 396.0, 372.64, 377.16]]'></canvas>
+            </td>
         </tr>
         
         <tr>
@@ -1637,6 +2005,9 @@
             <td class="text-center text-success vertical-middle"><strong>1 回</strong></td>
             <td class="vertical-middle">$234.62</td>
             <td class="vertical-middle">$244.71</td>
+            <td class="text-center vertical-middle">
+                <canvas class="spark-candle" width="120" height="35" data-candles='[[234.0, 238.67, 234.0, 237.42], [238.68, 241.62, 237.68, 241.55], [237.63, 237.63, 233.4, 234.08], [233.87, 239.81, 233.76, 235.38], [236.71, 244.71, 236.1, 240.95], [239.73, 239.73, 235.77, 237.52], [236.32, 239.08, 235.46, 237.72], [239.5, 243.2, 238.29, 241.94], [241.32, 243.63, 237.02, 237.13], [238.32, 239.91, 231.26, 234.62]]'></canvas>
+            </td>
         </tr>
         
         <tr>
@@ -1650,19 +2021,9 @@
             <td class="text-center text-success vertical-middle"><strong>1 回</strong></td>
             <td class="vertical-middle">$85.8</td>
             <td class="vertical-middle">$85.95</td>
-        </tr>
-        
-        <tr>
-            <td>
-                <span class="ticker-text">ETN</span>
-                <div class="tv-links mt-1">
-                    <a href="https://jp.tradingview.com/symbols/ETN/" target="_blank" class="badge badge-info mr-1">概要 📄</a>
-                    <a href="https://jp.tradingview.com/chart/?symbol=ETN" target="_blank" class="badge badge-primary">チャート 📈</a>
-                </div>
+            <td class="text-center vertical-middle">
+                <canvas class="spark-candle" width="120" height="35" data-candles='[[77.38, 79.05, 76.52, 78.59], [78.12, 78.92, 77.86, 78.86], [78.41, 80.28, 77.98, 79.11], [79.19, 80.96, 78.79, 80.09], [80.01, 81.78, 79.96, 81.62], [81.52, 82.67, 81.01, 82.62], [82.05, 83.44, 81.52, 83.37], [83.28, 85.18, 82.93, 84.69], [84.65, 85.95, 82.96, 83.54], [83.57, 85.83, 83.11, 85.8]]'></canvas>
             </td>
-            <td class="text-center text-success vertical-middle"><strong>1 回</strong></td>
-            <td class="vertical-middle">$398.52</td>
-            <td class="vertical-middle">$436.74</td>
         </tr>
         
         <tr>
@@ -1676,6 +2037,9 @@
             <td class="text-center text-success vertical-middle"><strong>1 回</strong></td>
             <td class="vertical-middle">$797.42</td>
             <td class="vertical-middle">$927.85</td>
+            <td class="text-center vertical-middle">
+                <canvas class="spark-candle" width="120" height="35" data-candles='[[859.56, 862.38, 832.5, 842.25], [845.0, 845.0, 830.56, 831.67], [835.01, 839.51, 826.0, 831.89], [833.41, 835.63, 762.76, 801.35], [800.0, 801.0, 777.33, 784.71], [786.78, 793.64, 763.25, 778.63], [792.81, 804.66, 765.62, 780.24], [785.18, 799.93, 765.03, 794.79], [793.59, 793.59, 771.61, 784.28], [784.28, 799.16, 781.23, 797.42]]'></canvas>
+            </td>
         </tr>
         
         <tr>
@@ -1689,45 +2053,9 @@
             <td class="text-center text-success vertical-middle"><strong>1 回</strong></td>
             <td class="vertical-middle">$230.69</td>
             <td class="vertical-middle">$236.62</td>
-        </tr>
-        
-        <tr>
-            <td>
-                <span class="ticker-text">ELV</span>
-                <div class="tv-links mt-1">
-                    <a href="https://jp.tradingview.com/symbols/ELV/" target="_blank" class="badge badge-info mr-1">概要 📄</a>
-                    <a href="https://jp.tradingview.com/chart/?symbol=ELV" target="_blank" class="badge badge-primary">チャート 📈</a>
-                </div>
+            <td class="text-center vertical-middle">
+                <canvas class="spark-candle" width="120" height="35" data-candles='[[183.7, 186.18, 181.96, 185.0], [183.51, 186.3, 178.92, 181.56], [182.21, 187.64, 181.53, 186.6], [189.91, 202.79, 189.91, 202.1], [203.9, 213.9, 202.78, 212.71], [210.0, 217.19, 210.0, 215.75], [215.41, 225.87, 214.76, 225.57], [225.75, 228.09, 222.11, 226.79], [225.62, 236.62, 224.93, 229.09], [229.5, 231.46, 226.95, 230.69]]'></canvas>
             </td>
-            <td class="text-center text-success vertical-middle"><strong>1 回</strong></td>
-            <td class="vertical-middle">$417.89</td>
-            <td class="vertical-middle">$427.19</td>
-        </tr>
-        
-        <tr>
-            <td>
-                <span class="ticker-text">FCX</span>
-                <div class="tv-links mt-1">
-                    <a href="https://jp.tradingview.com/symbols/FCX/" target="_blank" class="badge badge-info mr-1">概要 📄</a>
-                    <a href="https://jp.tradingview.com/chart/?symbol=FCX" target="_blank" class="badge badge-primary">チャート 📈</a>
-                </div>
-            </td>
-            <td class="text-center text-success vertical-middle"><strong>1 回</strong></td>
-            <td class="vertical-middle">$60.97</td>
-            <td class="vertical-middle">$72.28</td>
-        </tr>
-        
-        <tr>
-            <td>
-                <span class="ticker-text">HON</span>
-                <div class="tv-links mt-1">
-                    <a href="https://jp.tradingview.com/symbols/HON/" target="_blank" class="badge badge-info mr-1">概要 📄</a>
-                    <a href="https://jp.tradingview.com/chart/?symbol=HON" target="_blank" class="badge badge-primary">チャート 📈</a>
-                </div>
-            </td>
-            <td class="text-center text-success vertical-middle"><strong>1 回</strong></td>
-            <td class="vertical-middle">$229.86</td>
-            <td class="vertical-middle">$252.0</td>
         </tr>
         
         <tr>
@@ -1741,6 +2069,57 @@
             <td class="text-center text-success vertical-middle"><strong>1 回</strong></td>
             <td class="vertical-middle">$1,002.02</td>
             <td class="vertical-middle">$1,124.0</td>
+            <td class="text-center vertical-middle">
+                <canvas class="spark-candle" width="120" height="35" data-candles='[[1104.5, 1114.6, 1088.62, 1092.19], [1100.23, 1117.68, 1087.55, 1115.94], [1104.6, 1124.0, 1096.01, 1115.93], [1116.0, 1117.98, 1088.97, 1095.0], [1096.65, 1106.0, 1074.68, 1087.61], [1081.24, 1094.87, 1071.93, 1091.3], [1097.1, 1106.46, 1075.31, 1085.17], [1067.73, 1070.62, 1040.57, 1042.39], [1027.55, 1045.54, 1003.4, 1013.62], [1028.63, 1028.63, 994.04, 1002.02]]'></canvas>
+            </td>
+        </tr>
+        
+        <tr>
+            <td>
+                <span class="ticker-text">ETN</span>
+                <div class="tv-links mt-1">
+                    <a href="https://jp.tradingview.com/symbols/ETN/" target="_blank" class="badge badge-info mr-1">概要 📄</a>
+                    <a href="https://jp.tradingview.com/chart/?symbol=ETN" target="_blank" class="badge badge-primary">チャート 📈</a>
+                </div>
+            </td>
+            <td class="text-center text-success vertical-middle"><strong>1 回</strong></td>
+            <td class="vertical-middle">$398.52</td>
+            <td class="vertical-middle">$436.74</td>
+            <td class="text-center vertical-middle">
+                <canvas class="spark-candle" width="120" height="35" data-candles='[[420.84, 425.92, 414.73, 421.77], [426.98, 436.74, 422.61, 435.78], [421.55, 421.55, 405.28, 405.28], [405.01, 412.73, 400.51, 404.59], [414.91, 426.0, 413.97, 419.87], [410.55, 413.14, 398.12, 402.68], [404.06, 411.74, 401.33, 408.26], [411.0, 427.93, 409.93, 426.12], [419.99, 423.45, 404.74, 412.31], [408.77, 414.74, 392.3, 398.52]]'></canvas>
+            </td>
+        </tr>
+        
+        <tr>
+            <td>
+                <span class="ticker-text">HON</span>
+                <div class="tv-links mt-1">
+                    <a href="https://jp.tradingview.com/symbols/HON/" target="_blank" class="badge badge-info mr-1">概要 📄</a>
+                    <a href="https://jp.tradingview.com/chart/?symbol=HON" target="_blank" class="badge badge-primary">チャート 📈</a>
+                </div>
+            </td>
+            <td class="text-center text-success vertical-middle"><strong>1 回</strong></td>
+            <td class="vertical-middle">$229.86</td>
+            <td class="vertical-middle">$252.0</td>
+            <td class="text-center vertical-middle">
+                <canvas class="spark-candle" width="120" height="35" data-candles='[[232.29, 232.88, 226.89, 229.01], [229.78, 231.4, 227.2, 228.11], [225.63, 225.78, 220.64, 222.37], [223.82, 228.81, 223.71, 227.42], [227.77, 237.37, 227.77, 231.24], [229.53, 233.66, 226.29, 232.21], [240.65, 252.0, 227.16, 227.8], [231.35, 232.55, 219.33, 223.9], [227.31, 227.31, 220.6, 221.75], [222.28, 230.13, 220.22, 229.86]]'></canvas>
+            </td>
+        </tr>
+        
+        <tr>
+            <td>
+                <span class="ticker-text">ELV</span>
+                <div class="tv-links mt-1">
+                    <a href="https://jp.tradingview.com/symbols/ELV/" target="_blank" class="badge badge-info mr-1">概要 📄</a>
+                    <a href="https://jp.tradingview.com/chart/?symbol=ELV" target="_blank" class="badge badge-primary">チャート 📈</a>
+                </div>
+            </td>
+            <td class="text-center text-success vertical-middle"><strong>1 回</strong></td>
+            <td class="vertical-middle">$417.89</td>
+            <td class="vertical-middle">$427.19</td>
+            <td class="text-center vertical-middle">
+                <canvas class="spark-candle" width="120" height="35" data-candles='[[392.67, 393.91, 387.08, 388.5], [389.11, 397.13, 388.94, 394.82], [398.88, 399.28, 393.28, 395.1], [396.59, 397.27, 381.24, 384.0], [387.0, 389.89, 383.42, 387.32], [386.25, 395.58, 384.44, 395.18], [393.16, 395.0, 386.81, 388.03], [389.77, 391.12, 384.54, 386.73], [389.9, 416.26, 388.7, 416.19], [422.0, 427.19, 414.68, 417.89]]'></canvas>
+            </td>
         </tr>
         
         <tr>
@@ -1754,6 +2133,9 @@
             <td class="text-center text-success vertical-middle"><strong>1 回</strong></td>
             <td class="vertical-middle">$313.86</td>
             <td class="vertical-middle">$374.96</td>
+            <td class="text-center vertical-middle">
+                <canvas class="spark-candle" width="120" height="35" data-candles='[[359.45, 367.17, 357.71, 363.67], [370.94, 374.96, 367.57, 373.34], [359.07, 359.66, 351.8, 352.58], [350.0, 359.08, 348.0, 351.3], [362.67, 368.99, 355.34, 360.06], [354.44, 354.44, 328.66, 328.66], [330.05, 342.76, 327.04, 340.13], [340.87, 354.99, 340.28, 350.07], [342.14, 345.2, 334.11, 335.6], [331.59, 333.35, 311.32, 313.86]]'></canvas>
+            </td>
         </tr>
         
         <tr>
@@ -1767,6 +2149,9 @@
             <td class="text-center text-success vertical-middle"><strong>1 回</strong></td>
             <td class="vertical-middle">$285.83</td>
             <td class="vertical-middle">$294.98</td>
+            <td class="text-center vertical-middle">
+                <canvas class="spark-candle" width="120" height="35" data-candles='[[267.27, 275.2, 265.37, 271.22], [272.86, 277.1, 266.9, 273.48], [272.88, 274.66, 268.98, 269.24], [270.56, 272.26, 267.12, 269.06], [272.25, 278.37, 270.23, 274.68], [275.05, 281.41, 273.91, 280.3], [280.03, 288.35, 279.04, 287.89], [287.63, 291.39, 283.93, 289.43], [289.43, 294.98, 285.92, 290.07], [292.05, 294.43, 282.93, 285.83]]'></canvas>
+            </td>
         </tr>
         
         <tr>
@@ -1780,6 +2165,9 @@
             <td class="text-center text-success vertical-middle"><strong>1 回</strong></td>
             <td class="vertical-middle">$83.83</td>
             <td class="vertical-middle">$83.83</td>
+            <td class="text-center vertical-middle">
+                <canvas class="spark-candle" width="120" height="35" data-candles='[[76.3, 77.58, 76.28, 76.72], [76.25, 76.96, 75.58, 75.95], [75.57, 76.22, 74.32, 74.71], [76.01, 77.15, 75.58, 75.83], [75.89, 77.07, 74.71, 75.08], [74.37, 76.37, 74.09, 76.35], [76.23, 76.56, 75.07, 76.5], [76.66, 79.25, 75.49, 79.22], [79.24, 81.62, 78.95, 81.15], [81.97, 83.83, 81.37, 83.83]]'></canvas>
+            </td>
         </tr>
         
         <tr>
@@ -1793,6 +2181,9 @@
             <td class="text-center text-success vertical-middle"><strong>1 回</strong></td>
             <td class="vertical-middle">$27.01</td>
             <td class="vertical-middle">$29.82</td>
+            <td class="text-center vertical-middle">
+                <canvas class="spark-candle" width="120" height="35" data-candles='[[29.16, 29.3, 27.81, 28.14], [28.23, 28.78, 28.06, 28.78], [28.21, 28.49, 26.69, 27.02], [26.96, 27.07, 25.59, 25.97], [26.43, 26.68, 25.71, 25.87], [26.15, 26.44, 25.88, 26.16], [25.95, 26.42, 25.75, 26.3], [26.35, 26.61, 26.25, 26.39], [26.34, 27.4, 26.23, 26.83], [27.45, 27.68, 26.59, 27.01]]'></canvas>
+            </td>
         </tr>
         
         <tr>
@@ -1806,32 +2197,25 @@
             <td class="text-center text-success vertical-middle"><strong>1 回</strong></td>
             <td class="vertical-middle">$373.54</td>
             <td class="vertical-middle">$373.6</td>
+            <td class="text-center vertical-middle">
+                <canvas class="spark-candle" width="120" height="35" data-candles='[[363.66, 365.39, 347.3, 348.48], [345.56, 346.65, 339.32, 341.86], [344.48, 349.24, 342.93, 348.8], [349.14, 350.42, 342.41, 342.81], [341.37, 350.61, 340.44, 343.19], [344.97, 349.04, 342.84, 345.19], [345.6, 349.67, 345.16, 346.54], [347.57, 353.03, 345.04, 352.69], [354.59, 363.46, 353.44, 361.27], [365.31, 373.6, 364.96, 373.54]]'></canvas>
+            </td>
         </tr>
         
         <tr>
             <td>
-                <span class="ticker-text">PSA</span>
+                <span class="ticker-text">FCX</span>
                 <div class="tv-links mt-1">
-                    <a href="https://jp.tradingview.com/symbols/PSA/" target="_blank" class="badge badge-info mr-1">概要 📄</a>
-                    <a href="https://jp.tradingview.com/chart/?symbol=PSA" target="_blank" class="badge badge-primary">チャート 📈</a>
+                    <a href="https://jp.tradingview.com/symbols/FCX/" target="_blank" class="badge badge-info mr-1">概要 📄</a>
+                    <a href="https://jp.tradingview.com/chart/?symbol=FCX" target="_blank" class="badge badge-primary">チャート 📈</a>
                 </div>
             </td>
             <td class="text-center text-success vertical-middle"><strong>1 回</strong></td>
-            <td class="vertical-middle">$329.64</td>
-            <td class="vertical-middle">$329.74</td>
-        </tr>
-        
-        <tr>
-            <td>
-                <span class="ticker-text">NDSN</span>
-                <div class="tv-links mt-1">
-                    <a href="https://jp.tradingview.com/symbols/NDSN/" target="_blank" class="badge badge-info mr-1">概要 📄</a>
-                    <a href="https://jp.tradingview.com/chart/?symbol=NDSN" target="_blank" class="badge badge-primary">チャート 📈</a>
-                </div>
+            <td class="vertical-middle">$60.97</td>
+            <td class="vertical-middle">$72.28</td>
+            <td class="text-center vertical-middle">
+                <canvas class="spark-candle" width="120" height="35" data-candles='[[69.95, 70.62, 68.02, 68.68], [68.5, 69.91, 68.16, 69.21], [65.43, 65.89, 63.7, 64.4], [62.71, 62.79, 61.05, 61.84], [63.23, 63.75, 61.71, 62.8], [62.06, 63.0, 61.64, 62.45], [61.91, 62.35, 60.51, 61.62], [62.98, 63.29, 62.06, 62.89], [61.7, 63.05, 60.53, 60.53], [61.32, 62.26, 59.44, 60.97]]'></canvas>
             </td>
-            <td class="text-center text-success vertical-middle"><strong>1 回</strong></td>
-            <td class="vertical-middle">$290.38</td>
-            <td class="vertical-middle">$307.74</td>
         </tr>
         
         <tr>
@@ -1845,19 +2229,41 @@
             <td class="text-center text-success vertical-middle"><strong>1 回</strong></td>
             <td class="vertical-middle">$245.29</td>
             <td class="vertical-middle">$329.88</td>
+            <td class="text-center vertical-middle">
+                <canvas class="spark-candle" width="120" height="35" data-candles='[[305.47, 329.88, 302.36, 310.58], [313.39, 314.17, 298.18, 307.86], [278.82, 290.95, 276.25, 279.04], [281.95, 281.95, 263.66, 276.7], [291.18, 292.51, 263.72, 281.26], [268.37, 274.2, 262.0, 266.77], [272.41, 278.28, 250.52, 277.75], [278.75, 300.0, 275.5, 297.89], [282.47, 292.5, 271.35, 272.05], [269.5, 274.95, 237.2, 245.29]]'></canvas>
+            </td>
         </tr>
         
         <tr>
             <td>
-                <span class="ticker-text">RF</span>
+                <span class="ticker-text">NDSN</span>
                 <div class="tv-links mt-1">
-                    <a href="https://jp.tradingview.com/symbols/RF/" target="_blank" class="badge badge-info mr-1">概要 📄</a>
-                    <a href="https://jp.tradingview.com/chart/?symbol=RF" target="_blank" class="badge badge-primary">チャート 📈</a>
+                    <a href="https://jp.tradingview.com/symbols/NDSN/" target="_blank" class="badge badge-info mr-1">概要 📄</a>
+                    <a href="https://jp.tradingview.com/chart/?symbol=NDSN" target="_blank" class="badge badge-primary">チャート 📈</a>
                 </div>
             </td>
             <td class="text-center text-success vertical-middle"><strong>1 回</strong></td>
-            <td class="vertical-middle">$30.28</td>
-            <td class="vertical-middle">$31.04</td>
+            <td class="vertical-middle">$290.38</td>
+            <td class="vertical-middle">$307.74</td>
+            <td class="text-center vertical-middle">
+                <canvas class="spark-candle" width="120" height="35" data-candles='[[293.6, 297.99, 291.88, 295.92], [295.49, 298.04, 293.08, 295.06], [291.37, 294.43, 287.03, 291.07], [291.95, 298.93, 291.95, 296.11], [299.59, 307.74, 298.64, 304.64], [303.53, 305.24, 298.15, 301.47], [300.08, 302.61, 298.45, 302.16], [303.8, 306.57, 301.46, 301.69], [300.52, 301.0, 294.79, 295.64], [295.97, 297.65, 287.89, 290.38]]'></canvas>
+            </td>
+        </tr>
+        
+        <tr>
+            <td>
+                <span class="ticker-text">PSA</span>
+                <div class="tv-links mt-1">
+                    <a href="https://jp.tradingview.com/symbols/PSA/" target="_blank" class="badge badge-info mr-1">概要 📄</a>
+                    <a href="https://jp.tradingview.com/chart/?symbol=PSA" target="_blank" class="badge badge-primary">チャート 📈</a>
+                </div>
+            </td>
+            <td class="text-center text-success vertical-middle"><strong>1 回</strong></td>
+            <td class="vertical-middle">$329.64</td>
+            <td class="vertical-middle">$329.74</td>
+            <td class="text-center vertical-middle">
+                <canvas class="spark-candle" width="120" height="35" data-candles='[[318.72, 320.31, 314.61, 318.12], [317.46, 323.0, 317.27, 320.22], [322.67, 325.87, 319.74, 321.29], [323.95, 323.95, 313.6, 317.92], [319.74, 321.72, 315.16, 320.74], [321.84, 327.48, 321.0, 324.39], [322.62, 324.76, 318.9, 324.45], [320.88, 321.08, 316.29, 318.31], [318.09, 324.61, 318.08, 323.04], [324.54, 329.74, 323.44, 329.64]]'></canvas>
+            </td>
         </tr>
         
         <tr>
@@ -1871,6 +2277,9 @@
             <td class="text-center text-success vertical-middle"><strong>1 回</strong></td>
             <td class="vertical-middle">$478.13</td>
             <td class="vertical-middle">$505.87</td>
+            <td class="text-center vertical-middle">
+                <canvas class="spark-candle" width="120" height="35" data-candles='[[482.18, 491.83, 478.37, 483.4], [488.3, 495.55, 481.65, 491.59], [484.88, 485.34, 470.69, 474.34], [476.45, 485.92, 476.29, 483.15], [489.91, 505.87, 489.2, 503.46], [499.0, 499.0, 463.84, 477.89], [479.01, 488.08, 476.02, 480.35], [483.0, 494.54, 482.88, 491.16], [485.0, 497.65, 476.66, 484.58], [484.4, 487.74, 468.98, 478.13]]'></canvas>
+            </td>
         </tr>
         
         <tr>
@@ -1884,6 +2293,9 @@
             <td class="text-center text-success vertical-middle"><strong>1 回</strong></td>
             <td class="vertical-middle">$293.08</td>
             <td class="vertical-middle">$334.03</td>
+            <td class="text-center vertical-middle">
+                <canvas class="spark-candle" width="120" height="35" data-candles='[[313.11, 323.6, 311.56, 322.86], [328.0, 334.03, 326.04, 332.28], [313.91, 316.26, 301.08, 304.36], [303.13, 307.82, 300.07, 303.11], [315.7, 316.59, 305.0, 311.81], [302.46, 305.0, 279.55, 285.43], [280.33, 290.27, 275.78, 285.48], [286.23, 300.23, 286.23, 298.07], [294.1, 303.3, 293.07, 298.41], [299.98, 305.27, 288.62, 293.08]]'></canvas>
+            </td>
         </tr>
         
         <tr>
@@ -1897,6 +2309,9 @@
             <td class="text-center text-success vertical-middle"><strong>1 回</strong></td>
             <td class="vertical-middle">$154.26</td>
             <td class="vertical-middle">$170.0</td>
+            <td class="text-center vertical-middle">
+                <canvas class="spark-candle" width="120" height="35" data-candles='[[164.92, 166.88, 163.13, 163.81], [166.08, 167.29, 164.06, 164.17], [164.87, 166.53, 163.43, 164.35], [164.73, 166.26, 164.07, 165.17], [163.14, 166.54, 154.65, 155.19], [156.03, 157.13, 153.51, 155.43], [154.71, 155.06, 150.64, 151.23], [150.93, 152.3, 149.61, 151.5], [152.05, 152.36, 149.71, 151.35], [151.8, 154.26, 150.52, 154.26]]'></canvas>
+            </td>
         </tr>
         
         <tr>
@@ -1910,6 +2325,9 @@
             <td class="text-center text-success vertical-middle"><strong>1 回</strong></td>
             <td class="vertical-middle">$362.13</td>
             <td class="vertical-middle">$362.13</td>
+            <td class="text-center vertical-middle">
+                <canvas class="spark-candle" width="120" height="35" data-candles='[[331.0, 332.33, 327.0, 327.24], [328.33, 333.0, 325.86, 326.6], [328.82, 331.28, 328.09, 328.48], [329.0, 334.8, 327.22, 332.23], [332.56, 339.94, 330.07, 330.52], [332.24, 339.72, 331.44, 336.23], [338.27, 345.81, 338.27, 341.65], [341.76, 344.29, 339.08, 343.09], [344.56, 353.36, 340.98, 351.08], [352.51, 362.13, 352.51, 362.13]]'></canvas>
+            </td>
         </tr>
         
         <tr>
@@ -1923,6 +2341,9 @@
             <td class="text-center text-success vertical-middle"><strong>1 回</strong></td>
             <td class="vertical-middle">$528.04</td>
             <td class="vertical-middle">$529.14</td>
+            <td class="text-center vertical-middle">
+                <canvas class="spark-candle" width="120" height="35" data-candles='[[462.17, 464.98, 450.39, 451.63], [455.65, 468.18, 453.21, 466.79], [469.67, 470.82, 463.76, 468.42], [471.38, 480.86, 469.93, 475.2], [475.11, 486.49, 473.5, 480.18], [482.5, 503.89, 482.2, 491.34], [495.83, 499.87, 487.62, 499.65], [500.49, 500.99, 489.62, 496.73], [502.71, 502.71, 494.8, 498.01], [503.76, 529.14, 501.53, 528.04]]'></canvas>
+            </td>
         </tr>
         
         <tr>
@@ -1936,6 +2357,9 @@
             <td class="text-center text-success vertical-middle"><strong>1 回</strong></td>
             <td class="vertical-middle">$92.52</td>
             <td class="vertical-middle">$92.86</td>
+            <td class="text-center vertical-middle">
+                <canvas class="spark-candle" width="120" height="35" data-candles='[[82.23, 82.23, 80.55, 81.12], [81.33, 82.69, 80.35, 82.56], [83.17, 85.19, 83.07, 84.87], [85.65, 87.29, 84.9, 86.07], [85.64, 87.23, 85.64, 86.92], [87.84, 89.08, 87.13, 88.53], [88.38, 88.89, 87.54, 88.78], [88.45, 89.8, 87.9, 88.8], [89.03, 90.31, 88.71, 89.65], [90.52, 92.86, 89.71, 92.52]]'></canvas>
+            </td>
         </tr>
         
         <tr>
@@ -1949,6 +2373,9 @@
             <td class="text-center text-success vertical-middle"><strong>1 回</strong></td>
             <td class="vertical-middle">$1,098.59</td>
             <td class="vertical-middle">$1,143.69</td>
+            <td class="text-center vertical-middle">
+                <canvas class="spark-candle" width="120" height="35" data-candles='[[1063.59, 1091.9, 1063.59, 1076.81], [1077.0, 1096.68, 1074.9, 1092.68], [1062.17, 1075.33, 1055.7, 1063.14], [1073.76, 1085.41, 1065.82, 1083.72], [1095.17, 1143.69, 1090.63, 1139.51], [1137.14, 1142.74, 1114.71, 1121.66], [1121.23, 1129.25, 1111.69, 1122.67], [1128.43, 1140.69, 1120.01, 1132.89], [1128.3, 1142.0, 1111.1, 1111.76], [1125.58, 1125.58, 1084.92, 1098.59]]'></canvas>
+            </td>
         </tr>
         
                     </tbody>
@@ -1964,8 +2391,71 @@
     <script src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js"></script>
     <script src="https://cdn.datatables.net/1.10.21/js/dataTables.bootstrap4.min.js"></script>
     <script>
+        // ローソク足を描画する関数
+        function drawCandles() {
+            document.querySelectorAll('.spark-candle').forEach(canvas => {
+                if (canvas.getContext) {
+                    const ctx = canvas.getContext('2d');
+                    const rawData = canvas.getAttribute('data-candles');
+                    if (!rawData) return;
+                    
+                    const candles = JSON.parse(rawData); // [[O, H, L, C], ...]
+                    if (candles.length === 0) return;
+
+                    // 描画エリアの初期化
+                    ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+                    // 2週間分の中での最高値と最安値を計算し、縦幅の基準にする
+                    let maxVal = -Infinity;
+                    let minVal = Infinity;
+                    candles.forEach(c => {
+                        if (c[1] > maxVal) maxVal = c[1];
+                        if (c[2] < minVal) minVal = c[2];
+                    });
+                    const valRange = maxVal - minVal || 1;
+
+                    // レイアウト計算用変数
+                    const padding = 3;
+                    const chartHeight = canvas.height - (padding * 2);
+                    const numCandles = candles.length;
+                    const candleWidth = Math.floor((canvas.width) / numCandles) - 2;
+
+                    candles.forEach((candle, index) => {
+                        const [open, high, low, close] = candle;
+                        const isUp = close >= open;
+
+                        // 値をCanvasのY座標に変換するヘルパー関数
+                        const getY = (val) => canvas.height - padding - ((val - minVal) / valRange) * chartHeight;
+
+                        const x = index * (candleWidth + 2) + 1;
+                        const yHigh = getY(high);
+                        const yLow = getY(low);
+                        const yOpen = getY(open);
+                        const yClose = getY(close);
+
+                        // 色の設定（陽線は緑、陰線は赤）
+                        const color = isUp ? '#2ec4b6' : '#e71d36';
+                        ctx.strokeStyle = color;
+                        ctx.fillStyle = color;
+                        ctx.lineWidth = 1;
+
+                        // 1. 髭（ひげ）を描画
+                        ctx.beginPath();
+                        ctx.moveTo(x + candleWidth / 2, yHigh);
+                        ctx.lineTo(x + candleWidth / 2, yLow);
+                        ctx.stroke();
+
+                        // 2. 実体を描画
+                        const bodyY = Math.min(yOpen, yClose);
+                        const bodyHeight = Math.max(Math.abs(yOpen - yClose), 1); // 最低1px確保
+                        ctx.fillRect(x, bodyY, candleWidth, bodyHeight);
+                    });
+                }
+            });
+        }
+
         $(document).ready(function() {
-            $('#screenerTable').DataTable({
+            const table = $('#screenerTable').DataTable({
                 "order": [[ 1, "desc" ]],
                 "pageLength": 50,
                 "language": {
@@ -1974,6 +2464,12 @@
                     "info": "全 _TOTAL_ 銘柄中 _START_ から _END_ まで表示",
                     "paginate": { "next": "次", "previous": "前" }
                 }
+            });
+
+            // 初回表示時およびページ切り替え・検索時にローソク足を再描画
+            drawCandles();
+            table.on('draw', function() {
+                drawCandles();
             });
         });
     </script>
