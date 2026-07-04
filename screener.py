@@ -429,7 +429,7 @@ if __name__ == "__main__":
 
     if result_df is None or result_df.empty:
     # 💡【修正】"Sector" をカラムに追加
-    result_df = pd.DataFrame(columns=["Ticker", "High_Count", "Current_Price", "52W_High_Price", "Candles", "Sector"])
+        result_df = pd.DataFrame(columns=["Ticker", "High_Count", "Current_Price", "52W_High_Price", "Candles", "Sector"])
         
     generate_html_report(result_df, html_name, title_suffix)
     print(f"\n[成功] スクリーニング結果を '{html_name}' に上書き保存しました。")
