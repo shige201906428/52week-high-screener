@@ -41,8 +41,70 @@ def load_tickers_from_file(file_path, is_japan=False):
             tickers.append(ticker)
     return tickers
 
+# def check_52week_high(ticker_list, lookback_days=15):
+#     """過去3週間（15営業日）の間に52週新高値を更新した回数をカウントし、直近2週間（10営業日）のローソク足データも取得する"""
+#     results = []
+#     end_date = datetime.date.today()
+#     start_date = end_date - datetime.timedelta(days=365 * 2)
+
+#     print(f"\nYahoo Financeから全株価データを一括ダウンロード中...")
+#     try:
+#         all_data = yf.download(ticker_list, start=start_date, end=end_date, group_by='ticker', progress=False)
+#     except Exception as e:
+#         print(f"データのダウンロード中にエラーが発生しました: {e}")
+#         return pd.DataFrame()
+
+#     for ticker_symbol in tqdm(ticker_list, desc="スクリーニング中"):
+#         try:
+#             if ticker_symbol not in all_data.columns.levels[0]:
+#                 continue
+#             df = all_data[ticker_symbol].dropna()
+
+#             if len(df) < 252:
+#                 continue
+
+#             high_count = 0
+#             for i in range(-lookback_days, 0):
+#                 if abs(i) > len(df):
+#                     continue
+#                 target_day_high = df["High"].iloc[i]
+#                 past_52w_high = df["High"].iloc[i - 252 : i].max()
+
+#                 if target_day_high >= past_52w_high:
+#                     high_count += 1
+
+#             if high_count > 0:
+#                 current_price = df["Close"].iloc[-1]
+#                 latest_52w_high = df["High"].iloc[-252:].max()
+                
+#                 # 直近2週間（15営業日分）のOHLCデータを抽出
+#                 candles_df = df.tail(15)
+#                 candles_data = []
+#                 for _, r in candles_df.iterrows():
+#                     candles_data.append([
+#                         round(r["Open"], 2),
+#                         round(r["High"], 2),
+#                         round(r["Low"], 2),
+#                         round(r["Close"], 2)
+#                     ])
+
+#                 results.append({
+#                     "Ticker": ticker_symbol,
+#                     "High_Count": high_count,
+#                     "Current_Price": round(current_price, 2),
+#                     "52W_High_Price": round(latest_52w_high, 2),
+#                     "Candles": json.dumps(candles_data)  # JSON文字列として保存
+#                 })
+#         except Exception:
+#             continue
+
+#     res_df = pd.DataFrame(results)
+#     if not res_df.empty:
+#         res_df = res_df.sort_values(by="High_Count", ascending=False).reset_index(drop=True)
+#     return res_df
+
 def check_52week_high(ticker_list, lookback_days=15):
-    """過去3週間（15営業日）の間に52週新高値を更新した回数をカウントし、直近2週間（10営業日）のローソク足データも取得する"""
+    """過去3週間（15営業日）の間に52週新高値を更新した回数をカウントし、直近3週間のローソク足と業種データも取得する"""
     results = []
     end_date = datetime.date.today()
     start_date = end_date - datetime.timedelta(days=365 * 2)
@@ -77,7 +139,7 @@ def check_52week_high(ticker_list, lookback_days=15):
                 current_price = df["Close"].iloc[-1]
                 latest_52w_high = df["High"].iloc[-252:].max()
                 
-                # 直近2週間（15営業日分）のOHLCデータを抽出
+                # 直近3週間（15営業日分）のOHLCデータを抽出
                 candles_df = df.tail(15)
                 candles_data = []
                 for _, r in candles_df.iterrows():
@@ -88,12 +150,21 @@ def check_52week_high(ticker_list, lookback_days=15):
                         round(r["Close"], 2)
                     ])
 
+                # 💡【追加】ヒットした銘柄のみ業種（セクター）を取得
+                try:
+                    ticker_info = yf.Ticker(ticker_symbol).info
+                    # 日本株と米国株でキーが異なる場合があるため、両対応
+                    sector = ticker_info.get("sectorDisp", ticker_info.get("sector", "Unknown"))
+                except Exception:
+                    sector = "Unknown"
+
                 results.append({
                     "Ticker": ticker_symbol,
                     "High_Count": high_count,
                     "Current_Price": round(current_price, 2),
                     "52W_High_Price": round(latest_52w_high, 2),
-                    "Candles": json.dumps(candles_data)  # JSON文字列として保存
+                    "Candles": json.dumps(candles_data),
+                    "Sector": sector  # 💡【追加】
                 })
         except Exception:
             continue
@@ -102,6 +173,7 @@ def check_52week_high(ticker_list, lookback_days=15):
     if not res_df.empty:
         res_df = res_df.sort_values(by="High_Count", ascending=False).reset_index(drop=True)
     return res_df
+
 
 def generate_html_report(df, output_path, title_suffix=""):
     """index.htmlとして概要・チャート・直近2週間ローソク足付きレポートを出力する"""
