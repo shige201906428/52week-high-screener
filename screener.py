@@ -175,13 +175,50 @@ def check_52week_high(ticker_list, lookback_days=15):
     return res_df
 
 
+# def generate_html_report(df, output_path, title_suffix=""):
+#     """index.htmlとして概要・チャート・直近2週間ローソク足付きレポートを出力する"""
+#     now_str = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+
+#     table_rows = ""
+#     for idx, row in df.iterrows():
+#         ticker = row['Ticker']
+#         if ".T" in ticker:
+#             code = ticker.split('.')[0]
+#             symbols_url = f"https://jp.tradingview.com/symbols/TSE-{code}/"
+#             chart_url = f"https://jp.tradingview.com/chart/?symbol=TSE:{code}"
+#             currency_prefix = "¥"
+#         else:
+#             symbols_url = f"https://jp.tradingview.com/symbols/{ticker}/"
+#             chart_url = f"https://jp.tradingview.com/chart/?symbol={ticker}"
+#             currency_prefix = "$"
+
+#         table_rows += f"""
+#         <tr>
+#             <td>
+#                 <span class="ticker-text">{ticker}</span>
+#                 <div class="tv-links mt-1">
+#                     <a href="{symbols_url}" target="_blank" class="badge badge-info mr-1">概要 📄</a>
+#                     <a href="{chart_url}" target="_blank" class="badge badge-primary">チャート 📈</a>
+#                 </div>
+#             </td>
+#             <td class="text-center text-success vertical-middle"><strong>{row['High_Count']} 回</strong></td>
+#             <td class="vertical-middle">{currency_prefix}{row['Current_Price']:,}</td>
+#             <td class="vertical-middle">{currency_prefix}{row['52W_High_Price']:,}</td>
+#             <td class="text-center vertical-middle">
+#                 <canvas class="spark-candle" width="160" height="35" data-candles='{row['Candles']}'></canvas>
+#             </td>
+#         </tr>
+#         """
+
 def generate_html_report(df, output_path, title_suffix=""):
-    """index.htmlとして概要・チャート・直近2週間ローソク足付きレポートを出力する"""
+    """index.htmlとして概要・チャート・直近3週間ローソク足付きレポートを出力する"""
     now_str = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
 
     table_rows = ""
     for idx, row in df.iterrows():
         ticker = row['Ticker']
+        sector = row.get('Sector', 'Unknown') # 💡【追加】
+        
         if ".T" in ticker:
             code = ticker.split('.')[0]
             symbols_url = f"https://jp.tradingview.com/symbols/TSE-{code}/"
@@ -195,7 +232,10 @@ def generate_html_report(df, output_path, title_suffix=""):
         table_rows += f"""
         <tr>
             <td>
-                <span class="ticker-text">{ticker}</span>
+                <div>
+                    <span class="ticker-text">{ticker}</span>
+                    <span class="badge badge-secondary ml-1" style="background-color: #6c757d;">{sector}</span>
+                </div>
                 <div class="tv-links mt-1">
                     <a href="{symbols_url}" target="_blank" class="badge badge-info mr-1">概要 📄</a>
                     <a href="{chart_url}" target="_blank" class="badge badge-primary">チャート 📈</a>
@@ -209,7 +249,9 @@ def generate_html_report(df, output_path, title_suffix=""):
             </td>
         </tr>
         """
-
+        
+    # --- 以下、html_content の文字列やファイル書き込み処理は以前のままでOKです ---
+    
     html_content = f"""<!DOCTYPE html>
 <html lang="ja">
 <head>
